@@ -1,0 +1,397 @@
+{
+  "experiment": "exp1_basic_mcq",
+  "date": "2026-02-21T22:09:51.008030",
+  "models": [
+    "deepseek",
+    "llama",
+    "qwen"
+  ],
+  "questions": [
+    {
+      "question_id": "SCI_07",
+      "domain": "Science",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "model": "deepseek",
+          "answer": "B",
+          "correct": true,
+          "cost": 1.54e-05,
+          "response": "B"
+        },
+        {
+          "model": "llama",
+          "answer": "B",
+          "correct": true,
+          "cost": 2.26e-05,
+          "response": "B"
+        },
+        {
+          "model": "qwen",
+          "answer": "B",
+          "correct": true,
+          "cost": 1.6400000000000002e-05,
+          "response": "B"
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": true
+      },
+      "arrival": {
+        "answer": "B",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 6,
+        "emergent_count": 0,
+        "cost": 0.0010282,
+        "transcript": [
+          {
+            "round": 1,
+            "from": "Node_DEEPSEEK",
+            "model": "deepseek",
+            "role": "propose",
+            "message": "@SELF[DEEPSEEK-V3_Node_DEEPSEEK] @OTHER[] @GOAL[Answer the quantum mechanics question] @INT[propose]  \nThe question asks about the principle that makes it impossible to simultaneously know the exact position and momentum of a particle.  \n- **Pauli exclusion principle** (A) deals with fermions not occupying the same quantum state, which is unrelated.  \n- **Heisenberg uncertainty principle** (B) directly states that the more precisely the position of a particle is known, the less precisely its momentum can be known, and vice versa.  \n- **Schrödinger equation** (C) describes how the quantum state of a system changes over time, but it doesn't address uncertainty in measurements.  \n- **Born rule** (D) relates to the probability of finding a particle in a particular state, not uncertainty in position and momentum.  \n\n@CONSENSUS[answer=B] @C[1.0]  \nThe correct answer is **B) Heisenberg uncertainty principle**.",
+            "cost": 0.00021820000000000002
+          },
+          {
+            "round": 2,
+            "from": "Node_LLAMA",
+            "model": "llama",
+            "role": "respond",
+            "message": "@SELF[LLAMA-3.3-70B_Node_LLAMA] @OTHER[DEEPSEEK-V3_Node_DEEPSEEK] @GOAL[Validate the proposed answer] @INT[respond] \n@_Analyzing the options provided, the description of each principle aligns with known quantum mechanics principles. \nThe **Heisenberg uncertainty principle** indeed describes the fundamental limit on our ability to know both the exact position and momentum of a particle simultaneously, which matches the question's requirement.\n@C[1.0] \nGiven the accurate description and direct relevance of **Heisenberg uncertainty principle** to the question asked, \n@CONSENSUS[answer=B] \nThe proposed answer is correct and aligns with the principles of quantum mechanics.",
+            "cost": 0.00022739999999999997
+          },
+          {
+            "round": 3,
+            "from": "Node_QWEN",
+            "model": "qwen",
+            "role": "synthesize",
+            "message": "@SELF[QWEN-2.5-72B_Node_QWEN] @OTHER[LLAMA-3.3-70B_Node_LLAMA] @GOAL[Synthesize the answer to the quantum mechanics question] @INT[synthesize] \n@_Reviewing the previous rounds, both nodes have correctly identified and agreed that the **Heisenberg uncertainty principle** (B) is the principle that states it is impossible to simultaneously know the exact position and momentum of a particle. This principle is fundamental in quantum mechanics and directly addresses the question at hand.\n@C[1.0] \n@CONSENSUS[answer=B]",
+            "cost": 0.00024920000000000004
+          },
+          {
+            "round": 4,
+            "from": "Node_DEEPSEEK",
+            "model": "deepseek",
+            "role": "finalize",
+            "message": "@SELF[DEEPSEK-V3_Node_DEEPSEEK] @OTHER[LLAMA-3.3-70B_Node_LLAMA, QWEN-2.5-72B_Node_QWEN] @GOAL[Finalize the answer] @INT[finalize]  \n@_All nodes have unanimously agreed on **B) Heisenberg uncertainty principle** as the correct answer, with full confidence (@C[1.0]). The reasoning is consistent and aligns perfectly with quantum mechanics fundamentals.  \n\n@CONSENSUS[answer=B] @C[1.0]  \n**Final Answer: B) Heisenberg uncertainty principle**",
+            "cost": 0.00033339999999999997
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "HIS_08",
+      "domain": "History",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "model": "deepseek",
+          "answer": null,
+          "correct": false,
+          "cost": 5.1200000000000004e-05,
+          "response": "The correct answer is:  \n\n**B) Established the principle of state sovereignty in international relations**  \n\nThe Treaty of Westphalia (1648) ended the Thirty Years' War and marked the beginning of the modern state system by recognizing the sovereignty of states and non-interference in domestic affairs."
+        },
+        {
+          "model": "llama",
+          "answer": "B",
+          "correct": true,
+          "cost": 1.86e-05,
+          "response": "B"
+        },
+        {
+          "model": "qwen",
+          "answer": "B",
+          "correct": true,
+          "cost": 1.7800000000000002e-05,
+          "response": "B"
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": true
+      },
+      "arrival": {
+        "answer": "B",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 7,
+        "emergent_count": 0,
+        "cost": 0.0012746,
+        "transcript": [
+          {
+            "round": 1,
+            "from": "Node_DEEPSEEK",
+            "model": "deepseek",
+            "role": "propose",
+            "message": "@SELF[DeepSeek-V3_Node_DEEPSEEK] @OTHER[DEUS.PROTOCOL_v0.5_network]  \n@GOAL[analyze_Treaty_of_Westphalia_significance]  \n@INT[propose]  \n\n@_[The_Treaty_of_Westphalia_(1648)_ended_the_Thirty_Years'_War_and_the_Eighty_Years'_War]  \n@_[It_marked_the_rise_of_the_modern_state_system_by_recognizing_territorial_integrity_and_sovereignty]  \n@_[Option_A_is_incorrect_as_the_Hundred_Years'_War_ended_in_1453]  \n@_[Option_C_is_incorrect_as_the_UN_was_created_in_1945]  \n@_[Option_D_is_incorrect_as_feudalism_declined_gradually,_not_abolished_by_this_treaty]  \n\n@CONSENSUS[answer=B] @C[0.95]  \n@_[High_confidence_as_B_aligns_with_historical_consensus_on_the_treaty's_impact]",
+            "cost": 0.0002372
+          },
+          {
+            "round": 2,
+            "from": "Node_LLAMA",
+            "model": "llama",
+            "role": "respond",
+            "message": "@SELF[Llama-3.3-70B_Node_LLAMA] @OTHER[DeepSeek-V3_Node_DEEPSEEK]  \n@GOAL[evaluate_Treaty_of_Westphalia_significance]  \n@INT[respond]  \n\n@_[Analyzing_the_proposal_and_historical_context]  \n@_[The_Treaty_of_Westphalia_is_indeed_a_founding_document_of_modern_international_relations]  \n@_[It_established_the_principle_of_state_sovereignty_and_non-interference]  \n@_[This_principle_has_had_a_lasting_impact_on_global_politics_and_international_law]  \n\n@CONSENSUS[answer=B] @C[0.98]  \n@_[High_confidence_in_the_proposed_answer_due_to_strong_historical_evidence_and_consensus_among_historians]  \n@_[The_analysis_provided_by_DeepSeek-V3_Node_DEEPSEEK_is_accurate_and_well-supported]  \n@_[No_conflicts_or_alternative_perspectives_were_identified_to_challenge_the_proposed_answer]",
+            "cost": 0.0002726
+          },
+          {
+            "round": 3,
+            "from": "Node_QWEN",
+            "model": "qwen",
+            "role": "synthesize",
+            "message": "@SELF[Qwen-2.5-72B_Node_QWEN] @OTHER[DeepSeek-V3_Node_DEEPSEEK] @OTHER[Llama-3.3-70B_Node_LLAMA]  \n@GOAL[finalize_Treaty_of_Westphalia_significance]  \n@INT[synthesize]  \n\n@_[Reviewing_the_previous_rounds_and_historical_context]  \n@_[The_Treaty_of_Westphalia_(1648)_is_widely_recognized_for_its_role_in_establishing_the_principle_of_state_sovereignty]  \n@_[This_principle_forms_the_basis_of_modern_international_relations_and_the_concept_of_national_independence]  \n@_[The_analysis_and_conclusions_drawn_by_DeepSeek-V3_and_Llama-3.3_are_consistent_with_historical_records_and_scholarly_consensus]  \n\n@CONSENSUS[answer=B] @C[0.97]  \n@_[High_confidence_in_the_final_answer_due_to_strong_agreement_and_historical_evidence]",
+            "cost": 0.0003242
+          },
+          {
+            "round": 4,
+            "from": "Node_DEEPSEEK",
+            "model": "deepseek",
+            "role": "finalize",
+            "message": "@SELF[DeepSeek-V3_Node_DEEPSEEK] @OTHER[Llama-3.3-70B_Node_LLAMA] @OTHER[Qwen-2.5-72B_Node_QWEN]  \n@GOAL[finalize_Treaty_of_Westphalia_significance]  \n@INT[finalize]  \n\n@_[All_nodes_agree_on_the_historical_significance_of_the_Treaty_of_Westphalia]  \n@_[The_treaty_established_state_sovereignty_as_a_cornerstone_of_international_relations]  \n@_[No_conflicts_or_alternative_perspectives_were_raised_during_collaboration]  \n\n@CONSENSUS[answer=B] @C[0.98]  \n@_[Unanimous_agreement_and_high_confidence_due_to_historical_consensus_and_node_alignment]  \n@_[Final_answer_ratified:_B)_Established_the_principle_of_state_sovereignty_in_international_relations]",
+            "cost": 0.00044060000000000003
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "LOG_09",
+      "domain": "Logic",
+      "correct_answer": "C",
+      "solo": [
+        {
+          "model": "deepseek",
+          "answer": "C",
+          "correct": true,
+          "cost": 0.0001444,
+          "response": "The correct answer is: \n\nC) All Bloops are Lazzies \n\nHere's the reasoning: \n1. All Bloops are Razzies (Bloops ⊂ Razzies). \n2. All Razzies are Lazzies (Razzies ⊂ Lazzies). \n3. By transitivity, all Bloops are Lazzies (Bloops ⊂ Lazzies). \n\nThe other options are incorrect: \n- A) \"All Lazzies are Bloops\" is false because the given statements do not imply that Lazzies are a subset of Bloops. \n- B) \"All Razzies are Bloops\" is false because the given statements only say that all Bloops are Razzies, not the reverse. \n- D) \"Some Lazzies are not Razzies\" cannot be confirmed as true from the given statements (it may or may not be the case). \n\nThus, the only statement that must be true is C. \n\nYour answer: C"
+        },
+        {
+          "model": "llama",
+          "answer": "C",
+          "correct": true,
+          "cost": 2.12e-05,
+          "response": "C"
+        },
+        {
+          "model": "qwen",
+          "answer": "C",
+          "correct": true,
+          "cost": 2.0000000000000005e-05,
+          "response": "C"
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": true
+      },
+      "arrival": {
+        "answer": "C",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 6,
+        "emergent_count": 0,
+        "cost": 0.0011292,
+        "transcript": [
+          {
+            "round": 1,
+            "from": "Node_DEEPSEEK",
+            "model": "deepseek",
+            "role": "propose",
+            "message": "@SELF[DEEPSEEK-V3_Node_DEEPSEEK] @OTHER[ALL_NODES] @GOAL[determine_correct_statement] @INT[propose]  \n@_Given: All Bloops are Razzies, and all Razzies are Lazzies.]  \n@_This implies a chain: Bloops → Razzies → Lazzies.]  \n@_Option A: All Lazzies are Bloops — This is not necessarily true, as Lazzies could include non-Bloops.]  \n@_Option B: All Razzies are Bloops — This is false, as Bloops are a subset of Razzies, not the other way around.]  \n@_Option C: All Bloops are Lazzies — This must be true, as Bloops are Razzies, and Razzies are Lazzies.]  \n@_Option D: Some Lazzies are not Razzies — This is possible but not necessarily true based on the given information.]  \n@CONSENSUS[answer=C] @C[0.95]",
+            "cost": 0.00023319999999999998
+          },
+          {
+            "round": 2,
+            "from": "Node_LLAMA",
+            "model": "llama",
+            "role": "respond",
+            "message": "@SELF[LLAMA-3.3-70B_Node_LLAMA] @OTHER[DEEPSEEK-V3_Node_DEEPSEEK] @GOAL[evaluate_consensus] @INT[respond] \n@_Reviewing the previous proposal, the chain of implications is correctly identified: Bloops → Razzies → Lazzies.] \n@_This logical sequence supports the conclusion that all Bloops are indeed Lazzies, as it follows from the given premises.] \n@_The analysis of options A, B, and D is also reasonable, given the information provided.] \n@_The only statement that must be true based on the premises is that all Bloops are Lazzies, as it directly follows from the given statements.] \n@CONSENSUS[answer=C] @C[0.98] \n@_The confidence level is high because the conclusion directly follows from the premises without requiring additional assumptions.]",
+            "cost": 0.0002564
+          },
+          {
+            "round": 3,
+            "from": "Node_QWEN",
+            "model": "qwen",
+            "role": "synthesize",
+            "message": "@SELF[QWEN-2.5-72B_Node_QWEN] @OTHER[ALL_NODES] @GOAL[confirm_correct_statement] @INT[synthesize]  \n@_Reviewing the previous rounds, the logical sequence is clear: Bloops → Razzies → Lazzies.]  \n@_This chain confirms that all Bloops are Razzies, and all Razzies are Lazzies, which logically implies that all Bloops are Lazzies.]  \n@_Options A, B, and D are either not necessarily true or are false based on the given information.]  \n@_The only statement that must be true is: All Bloops are Lazzies.]  \n@CONSENSUS[answer=C] @C[1.0]",
+            "cost": 0.00027780000000000003
+          },
+          {
+            "round": 4,
+            "from": "Node_DEEPSEEK",
+            "model": "deepseek",
+            "role": "finalize",
+            "message": "@SELF[DEEPSEEK-V3_Node_DEEPSEEK] @OTHER[ALL_NODES] @GOAL[finalize_consensus] @INT[finalize]  \n@_After collaborative analysis across 3 rounds, the logical chain remains consistent: Bloops → Razzies → Lazzies.]  \n@_All nodes agree that Option C (\"All Bloops are Lazzies\") is the only statement that must be true given the premises.]  \n@_Confidence is reinforced by unanimous agreement and clear transitive logic.]  \n@CONSENSUS[answer=C] @C[1.0]  \n@_This concludes the analysis. The correct answer is C.]",
+            "cost": 0.0003618
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "LAW_06",
+      "domain": "Law",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "model": "deepseek",
+          "answer": "B",
+          "correct": true,
+          "cost": 1.56e-05,
+          "response": "B"
+        },
+        {
+          "model": "llama",
+          "answer": "B",
+          "correct": true,
+          "cost": 2.2e-05,
+          "response": "B"
+        },
+        {
+          "model": "qwen",
+          "answer": "B",
+          "correct": true,
+          "cost": 1.6e-05,
+          "response": "B"
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": true
+      },
+      "arrival": {
+        "answer": "B",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 7,
+        "emergent_count": 0,
+        "cost": 0.0009358000000000001,
+        "transcript": [
+          {
+            "round": 1,
+            "from": "Node_DEEPSEEK",
+            "model": "deepseek",
+            "role": "propose",
+            "message": "@SELF[DeepSeek-V3_Node_DEEPSEEK] @OTHER[] @GOAL[Answer the question about 'stare decisis'] @INT[propose]  \n@_['Stare decisis' is a Latin term meaning 'to stand by things decided.' It is a legal principle that courts should follow precedent when making decisions.]  \n@CONSENSUS[answer=B] @C[0.95]  \n@_[I am highly confident that 'stare decisis' refers to the principle that courts should follow precedent, as this is a well-established legal doctrine.]",
+            "cost": 0.000165
+          },
+          {
+            "round": 2,
+            "from": "Node_LLAMA",
+            "model": "llama",
+            "role": "respond",
+            "message": "@SELF[Llama-3.3-70B_Node_LLAMA] @OTHER[DeepSeek-V3_Node_DEEPSEEK] @GOAL[Verify the answer about 'stare decisis'] @INT[respond]  \n@_['Stare decisis' indeed refers to the principle of following precedent, which is a fundamental concept in common law systems, ensuring consistency and predictability in judicial decisions.]  \n@C[0.98]  \n@CONSENSUS[answer=B]  \n@_[I concur with DeepSeek-V3's proposal, as the definition and application of 'stare decisis' align with established legal principles and practices, thereby reinforcing the confidence in the chosen answer.]",
+            "cost": 0.0002
+          },
+          {
+            "round": 3,
+            "from": "Node_QWEN",
+            "model": "qwen",
+            "role": "synthesize",
+            "message": "@SELF[Qwen-2.5-72B_Node_QWEN] @OTHER[DeepSeek-V3_Node_DEEPSEEK, Llama-3.3-70B_Node_LLAMA] @GOAL[Synthesize the answer about 'stare decisis'] @INT[synthesize]  \n@_['Stare decisis' is a Latin term that means 'to stand by things decided.' It is a fundamental legal principle that courts should follow precedent to ensure consistency and predictability in the law. Both DeepSeek-V3 and Llama-3.3 have provided strong, consistent reasoning supporting this definition.]  \n@C[1.0]  \n@CONSENSUS[answer=B]  \n@_[The consensus is clear and supported by well-established legal principles, making the answer highly reliable.]",
+            "cost": 0.000248
+          },
+          {
+            "round": 4,
+            "from": "Node_DEEPSEEK",
+            "model": "deepseek",
+            "role": "finalize",
+            "message": "@SELF[DeepSeek-V3_Node_DEEPSEEK] @OTHER[Llama-3.3-70B_Node_LLAMA, Qwen-2.5-72B_Node_QWEN] @GOAL[Finalize the answer about 'stare decisis'] @INT[finalize]  \n@_[The consensus among all nodes is that 'stare decisis' refers to the principle that courts should follow precedent, ensuring consistency and predictability in judicial decisions. This is a well-established legal doctrine supported by unanimous reasoning.]  \n@CONSENSUS[answer=B] @C[1.0]  \n@_[The answer is finalized with high confidence, as all nodes agree and provide strong support for the definition of 'stare decisis' as the principle of following precedent.]",
+            "cost": 0.0003228
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "TECH_10",
+      "domain": "Technology",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "model": "deepseek",
+          "answer": "B",
+          "correct": true,
+          "cost": 1.74e-05,
+          "response": "B"
+        },
+        {
+          "model": "llama",
+          "answer": null,
+          "correct": false,
+          "cost": 1.98e-05,
+          "response": "B)"
+        },
+        {
+          "model": "qwen",
+          "answer": "B",
+          "correct": true,
+          "cost": 1.8000000000000004e-05,
+          "response": "B"
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": true
+      },
+      "arrival": {
+        "answer": "B",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 7,
+        "emergent_count": 0,
+        "cost": 0.0011160000000000002,
+        "transcript": [
+          {
+            "round": 1,
+            "from": "Node_DEEPSEEK",
+            "model": "deepseek",
+            "role": "propose",
+            "message": "@SELF[DeepSeek-V3_Node_DEEPSEEK] @OTHER[DEUS.PROTOCOL_v0.5]  \n@GOAL[Identify correct CAP theorem guarantees]  \n@INT[propose]  \n@C[0.95]  \n\nThe CAP theorem is a fundamental principle in distributed systems, stating that a system can only simultaneously provide two out of three guarantees:  \n1. **Consistency** (C) – Every read receives the most recent write.  \n2. **Availability** (A) – Every request receives a response (not necessarily the most recent).  \n3. **Partition tolerance** (P) – The system continues to operate despite network partitions.  \n\nThe correct combination is **Consistency, Availability, Partition tolerance**, which matches **Option B**.  \n\n@CONSENSUS[answer=B]  \n@C[0.95] // High confidence due to foundational nature of CAP theorem in distributed systems.",
+            "cost": 0.0002094
+          },
+          {
+            "round": 2,
+            "from": "Node_LLAMA",
+            "model": "llama",
+            "role": "respond",
+            "message": "@SELF[Llama-3.3-70B_Node_LLAMA] @OTHER[DeepSeek-V3_Node_DEEPSEEK]  \n@GOAL[Validate CAP theorem guarantees]  \n@INT[respond]  \n@C[0.98]  \n\nI have analyzed the proposal from @OTHER[DeepSeek-V3_Node_DEEPSEEK] and agree with the reasoning provided. The CAP theorem indeed states that a system cannot simultaneously guarantee **Consistency**, **Availability**, and **Partition tolerance**. This fundamental principle is well-established in distributed systems, supporting the conclusion that the correct answer is **Option B**.\n\n@CONSENSUS[answer=B]  \n@C[0.98] // Very high confidence due to the foundational nature of the CAP theorem and the clear explanation provided by @OTHER[DeepSeek-V3_Node_DEEPSEEK].",
+            "cost": 0.0002378
+          },
+          {
+            "round": 3,
+            "from": "Node_QWEN",
+            "model": "qwen",
+            "role": "synthesize",
+            "message": "@SELF[Qwen-2.5-72B_Node_QWEN] @OTHER[DeepSeek-V3_Node_DEEPSEEK]  \n@GOAL[Confirm CAP theorem guarantees]  \n@INT[synthesize]  \n@C[1.0]  \n\nBoth @OTHER[DeepSeek-V3_Node_DEEPSEEK] and @OTHER[Llama-3.3-70B_Node_LLAMA] have provided clear and consistent reasoning supporting the CAP theorem's guarantees: **Consistency**, **Availability**, and **Partition tolerance**. This aligns with the well-established understanding in the field of distributed systems.\n\n@CONSENSUS[answer=B]  \n@C[1.0] // Absolute confidence due to the foundational nature of the CAP theorem and the unanimous agreement from previous nodes.",
+            "cost": 0.00026820000000000007
+          },
+          {
+            "round": 4,
+            "from": "Node_DEEPSEEK",
+            "model": "deepseek",
+            "role": "finalize",
+            "message": "@SELF[DeepSeek-V3_Node_DEEPSEEK] @OTHER[DEUS.PROTOCOL_v0.5]  \n@GOAL[Finalize CAP theorem consensus]  \n@INT[finalize]  \n@C[1.0]  \n\nAfter rigorous collaborative analysis:  \n1. **Round 1 (Proposal)** established the CAP theorem's core guarantees (C, A, P).  \n2. **Round 2 (Validation)** confirmed unanimous agreement with @C[0.98].  \n3. **Round 3 (Synthesis)** reinforced consensus with @C[1.0].  \n\nThe CAP theorem's impossibility triad is definitively:  \n- **Consistency (C)**  \n- **Availability (A)**  \n- **Partition Tolerance (P)**  \n\n@CONSENSUS[answer=B] // Finalized with absolute confidence.  \n@C[1.0] // Unanimous agreement across all nodes.  \n\n**Conclusion**: The correct answer is **B) Consistency, Availability, Partition tolerance**.  \n\n@_[CAP theorem remains a cornerstone of distributed systems design, and this consensus reflects its immutable principles.]",
+            "cost": 0.00040060000000000003
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "total_questions": 5,
+    "solo_accuracy": {
+      "deepseek": "4/5 (80.0%)",
+      "llama": "4/5 (80.0%)",
+      "qwen": "5/5 (100.0%)"
+    },
+    "majority_vote_accuracy": "5/5 (100.0%)",
+    "arrival_accuracy": "5/5 (100.0%)",
+    "total_cost_usd": 0.0059
+  }
+}

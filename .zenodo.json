@@ -1,0 +1,65 @@
+{
+  "title": "ARRIVAL Protocol: AI-to-AI Coordination Through Structured Semantic Atoms",
+  "description": "Source code, experimental data, and documentation for the ARRIVAL Protocol — a structured multi-agent coordination framework that enables cross-architecture LLM ensembles to solve graduate-level scientific questions. Includes 539+ experiments across 9 LLM architectures, MEANING-CRDT v1.1 mathematical framework, echo-chamber analysis, adversarial robustness testing, and memory persistence modules. Total experimental cost: under $10.",
+  "creators": [
+    {
+      "name": "Kelevra, Mefodiy",
+      "orcid": "0009-0003-4153-392X"
+    }
+  ],
+  "license": {
+    "id": "AGPL-3.0-or-later"
+  },
+  "upload_type": "software",
+  "access_right": "open",
+  "keywords": [
+    "multi-agent debate",
+    "LLM coordination",
+    "CRDT",
+    "conflict-free replicated data types",
+    "semantic atoms",
+    "GPQA Diamond",
+    "echo chamber",
+    "adversarial robustness",
+    "cross-architecture",
+    "MEANING-CRDT",
+    "CARE Resolve",
+    "Meaning Debt"
+  ],
+  "subjects": [
+    {
+      "term": "Computer Science - Artificial Intelligence",
+      "identifier": "cs.AI",
+      "scheme": "arxiv"
+    },
+    {
+      "term": "Computer Science - Multi-Agent Systems",
+      "identifier": "cs.MA",
+      "scheme": "arxiv"
+    },
+    {
+      "term": "Computer Science - Computation and Language",
+      "identifier": "cs.CL",
+      "scheme": "arxiv"
+    }
+  ],
+  "language": "eng",
+  "notes": "Documentation is bilingual (English/Russian). Code is licensed under AGPL-3.0-or-later; documentation under CC BY-NC 4.0.",
+  "related_identifiers": [
+    {
+      "identifier": "2305.14325",
+      "relation": "cites",
+      "scheme": "arxiv"
+    },
+    {
+      "identifier": "2311.12022",
+      "relation": "cites",
+      "scheme": "arxiv"
+    },
+    {
+      "identifier": "2406.04692",
+      "relation": "cites",
+      "scheme": "arxiv"
+    }
+  ]
+}

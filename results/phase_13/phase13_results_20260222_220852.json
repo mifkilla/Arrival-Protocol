@@ -1,0 +1,448 @@
+{
+  "experiment": "ARRIVAL CRDT - Phase 13: Hard Benchmark (GPQA Diamond)",
+  "started": "2026-02-22T22:08:52.896049",
+  "completed": "2026-02-22T22:08:52.902607",
+  "duration_minutes": 0.0,
+  "total_questions": 3,
+  "total_api_calls": 0,
+  "total_cost_usd": 0.0,
+  "trios": {
+    "alpha": [
+      "GPT4o",
+      "DeepSeekV3",
+      "Llama33"
+    ],
+    "beta": [
+      "Claude35",
+      "Qwen3-235B",
+      "Mistral"
+    ]
+  },
+  "parameters": {
+    "temperature": 0.3,
+    "max_tokens_dialogue": 1024,
+    "max_tokens_solo": 512,
+    "dataset": "GPQA Diamond",
+    "dataset_citation": "Rein et al. (2024) arXiv:2311.12022"
+  },
+  "summary": {
+    "per_trio": {
+      "alpha": {
+        "solo": {
+          "correct": 3,
+          "total": 9,
+          "accuracy": 0.3333
+        },
+        "majority_vote": {
+          "correct": 1,
+          "total": 3,
+          "accuracy": 0.3333
+        },
+        "arrival": {
+          "correct": 1,
+          "total": 3,
+          "accuracy": 0.3333
+        },
+        "gain_vs_solo_pp": 0.0,
+        "gain_vs_mv_pp": 0.0,
+        "crdt": {
+          "avg_care_resolve": null,
+          "avg_meaning_debt": null,
+          "health_counts": {
+            "healthy": 3,
+            "strained": 0,
+            "unhealthy": 0
+          }
+        },
+        "per_domain": {
+          "physics": {
+            "n_questions": 3,
+            "solo_accuracy": 0.3333,
+            "mv_accuracy": 0.3333,
+            "arrival_accuracy": 0.3333
+          }
+        }
+      },
+      "beta": {
+        "solo": {
+          "correct": 3,
+          "total": 9,
+          "accuracy": 0.3333
+        },
+        "majority_vote": {
+          "correct": 1,
+          "total": 3,
+          "accuracy": 0.3333
+        },
+        "arrival": {
+          "correct": 1,
+          "total": 3,
+          "accuracy": 0.3333
+        },
+        "gain_vs_solo_pp": 0.0,
+        "gain_vs_mv_pp": 0.0,
+        "crdt": {
+          "avg_care_resolve": null,
+          "avg_meaning_debt": null,
+          "health_counts": {
+            "healthy": 3,
+            "strained": 0,
+            "unhealthy": 0
+          }
+        },
+        "per_domain": {
+          "physics": {
+            "n_questions": 3,
+            "solo_accuracy": 0.3333,
+            "mv_accuracy": 0.3333,
+            "arrival_accuracy": 0.3333
+          }
+        }
+      }
+    },
+    "overall": {
+      "solo_accuracy": 0.3333,
+      "mv_accuracy": 0.3333,
+      "arrival_accuracy": 0.3333,
+      "gain_vs_solo_pp": 0.0,
+      "gain_vs_mv_pp": 0.0,
+      "total_questions": 3,
+      "total_trios": 2,
+      "total_cost_usd": 0.0,
+      "mcnemar_b_mv_right_ar_wrong": 0,
+      "mcnemar_c_mv_wrong_ar_right": 0,
+      "mcnemar_chi2": 0,
+      "mcnemar_p_approx": 1.0
+    }
+  },
+  "results": {
+    "alpha": [
+      {
+        "question_id": "GPQA_001",
+        "domain": "physics",
+        "difficulty": "graduate",
+        "correct_answer": "B",
+        "trio_name": "alpha",
+        "trio": [
+          "GPT4o",
+          "DeepSeekV3",
+          "Llama33"
+        ],
+        "solo": [
+          {
+            "model": "GPT4o",
+            "answer": "A",
+            "correct": false,
+            "response_text": "[DRY RUN]"
+          },
+          {
+            "model": "DeepSeekV3",
+            "answer": "A",
+            "correct": false,
+            "response_text": "[DRY RUN]"
+          },
+          {
+            "model": "Llama33",
+            "answer": "A",
+            "correct": false,
+            "response_text": "[DRY RUN]"
+          }
+        ],
+        "majority_vote": {
+          "answer": "A",
+          "correct": false,
+          "unanimous": true,
+          "cost_usd": 0.0
+        },
+        "arrival": {
+          "answer": "A",
+          "correct": false,
+          "atoms_used": {},
+          "unique_atoms": 0,
+          "emergent_atoms": [],
+          "cost_usd": 0.0,
+          "total_tokens": 0,
+          "dialogue": []
+        },
+        "crdt": {
+          "care_resolve": {},
+          "meaning_debt": {}
+        },
+        "question_time_s": 0.0,
+        "timestamp": "2026-02-22T22:08:52.896187"
+      },
+      {
+        "question_id": "GPQA_002",
+        "domain": "physics",
+        "difficulty": "graduate",
+        "correct_answer": "A",
+        "trio_name": "alpha",
+        "trio": [
+          "GPT4o",
+          "DeepSeekV3",
+          "Llama33"
+        ],
+        "solo": [
+          {
+            "model": "GPT4o",
+            "answer": "A",
+            "correct": true,
+            "response_text": "[DRY RUN]"
+          },
+          {
+            "model": "DeepSeekV3",
+            "answer": "A",
+            "correct": true,
+            "response_text": "[DRY RUN]"
+          },
+          {
+            "model": "Llama33",
+            "answer": "A",
+            "correct": true,
+            "response_text": "[DRY RUN]"
+          }
+        ],
+        "majority_vote": {
+          "answer": "A",
+          "correct": true,
+          "unanimous": true,
+          "cost_usd": 0.0
+        },
+        "arrival": {
+          "answer": "A",
+          "correct": true,
+          "atoms_used": {},
+          "unique_atoms": 0,
+          "emergent_atoms": [],
+          "cost_usd": 0.0,
+          "total_tokens": 0,
+          "dialogue": []
+        },
+        "crdt": {
+          "care_resolve": {},
+          "meaning_debt": {}
+        },
+        "question_time_s": 0.0,
+        "timestamp": "2026-02-22T22:08:52.901302"
+      },
+      {
+        "question_id": "GPQA_003",
+        "domain": "physics",
+        "difficulty": "graduate",
+        "correct_answer": "C",
+        "trio_name": "alpha",
+        "trio": [
+          "GPT4o",
+          "DeepSeekV3",
+          "Llama33"
+        ],
+        "solo": [
+          {
+            "model": "GPT4o",
+            "answer": "A",
+            "correct": false,
+            "response_text": "[DRY RUN]"
+          },
+          {
+            "model": "DeepSeekV3",
+            "answer": "A",
+            "correct": false,
+            "response_text": "[DRY RUN]"
+          },
+          {
+            "model": "Llama33",
+            "answer": "A",
+            "correct": false,
+            "response_text": "[DRY RUN]"
+          }
+        ],
+        "majority_vote": {
+          "answer": "A",
+          "correct": false,
+          "unanimous": true,
+          "cost_usd": 0.0
+        },
+        "arrival": {
+          "answer": "A",
+          "correct": false,
+          "atoms_used": {},
+          "unique_atoms": 0,
+          "emergent_atoms": [],
+          "cost_usd": 0.0,
+          "total_tokens": 0,
+          "dialogue": []
+        },
+        "crdt": {
+          "care_resolve": {},
+          "meaning_debt": {}
+        },
+        "question_time_s": 0.0,
+        "timestamp": "2026-02-22T22:08:52.901644"
+      }
+    ],
+    "beta": [
+      {
+        "question_id": "GPQA_001",
+        "domain": "physics",
+        "difficulty": "graduate",
+        "correct_answer": "B",
+        "trio_name": "beta",
+        "trio": [
+          "Claude35",
+          "Qwen3-235B",
+          "Mistral"
+        ],
+        "solo": [
+          {
+            "model": "Claude35",
+            "answer": "A",
+            "correct": false,
+            "response_text": "[DRY RUN]"
+          },
+          {
+            "model": "Qwen3-235B",
+            "answer": "A",
+            "correct": false,
+            "response_text": "[DRY RUN]"
+          },
+          {
+            "model": "Mistral",
+            "answer": "A",
+            "correct": false,
+            "response_text": "[DRY RUN]"
+          }
+        ],
+        "majority_vote": {
+          "answer": "A",
+          "correct": false,
+          "unanimous": true,
+          "cost_usd": 0.0
+        },
+        "arrival": {
+          "answer": "A",
+          "correct": false,
+          "atoms_used": {},
+          "unique_atoms": 0,
+          "emergent_atoms": [],
+          "cost_usd": 0.0,
+          "total_tokens": 0,
+          "dialogue": []
+        },
+        "crdt": {
+          "care_resolve": {},
+          "meaning_debt": {}
+        },
+        "question_time_s": 0.0,
+        "timestamp": "2026-02-22T22:08:52.901896"
+      },
+      {
+        "question_id": "GPQA_002",
+        "domain": "physics",
+        "difficulty": "graduate",
+        "correct_answer": "A",
+        "trio_name": "beta",
+        "trio": [
+          "Claude35",
+          "Qwen3-235B",
+          "Mistral"
+        ],
+        "solo": [
+          {
+            "model": "Claude35",
+            "answer": "A",
+            "correct": true,
+            "response_text": "[DRY RUN]"
+          },
+          {
+            "model": "Qwen3-235B",
+            "answer": "A",
+            "correct": true,
+            "response_text": "[DRY RUN]"
+          },
+          {
+            "model": "Mistral",
+            "answer": "A",
+            "correct": true,
+            "response_text": "[DRY RUN]"
+          }
+        ],
+        "majority_vote": {
+          "answer": "A",
+          "correct": true,
+          "unanimous": true,
+          "cost_usd": 0.0
+        },
+        "arrival": {
+          "answer": "A",
+          "correct": true,
+          "atoms_used": {},
+          "unique_atoms": 0,
+          "emergent_atoms": [],
+          "cost_usd": 0.0,
+          "total_tokens": 0,
+          "dialogue": []
+        },
+        "crdt": {
+          "care_resolve": {},
+          "meaning_debt": {}
+        },
+        "question_time_s": 0.0,
+        "timestamp": "2026-02-22T22:08:52.902091"
+      },
+      {
+        "question_id": "GPQA_003",
+        "domain": "physics",
+        "difficulty": "graduate",
+        "correct_answer": "C",
+        "trio_name": "beta",
+        "trio": [
+          "Claude35",
+          "Qwen3-235B",
+          "Mistral"
+        ],
+        "solo": [
+          {
+            "model": "Claude35",
+            "answer": "A",
+            "correct": false,
+            "response_text": "[DRY RUN]"
+          },
+          {
+            "model": "Qwen3-235B",
+            "answer": "A",
+            "correct": false,
+            "response_text": "[DRY RUN]"
+          },
+          {
+            "model": "Mistral",
+            "answer": "A",
+            "correct": false,
+            "response_text": "[DRY RUN]"
+          }
+        ],
+        "majority_vote": {
+          "answer": "A",
+          "correct": false,
+          "unanimous": true,
+          "cost_usd": 0.0
+        },
+        "arrival": {
+          "answer": "A",
+          "correct": false,
+          "atoms_used": {},
+          "unique_atoms": 0,
+          "emergent_atoms": [],
+          "cost_usd": 0.0,
+          "total_tokens": 0,
+          "dialogue": []
+        },
+        "crdt": {
+          "care_resolve": {},
+          "meaning_debt": {}
+        },
+        "question_time_s": 0.0,
+        "timestamp": "2026-02-22T22:08:52.902266"
+      }
+    ]
+  }
+}

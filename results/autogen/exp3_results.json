@@ -1,0 +1,159 @@
+{
+  "experiment": "exp3_vs_native",
+  "date": "2026-02-21T22:20:17.190412",
+  "models": [
+    "deepseek",
+    "llama",
+    "qwen"
+  ],
+  "comparisons": [
+    {
+      "question_id": "SCI_07",
+      "correct_answer": "B",
+      "ag2": {
+        "answer": "B",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 9,
+        "emergent_count": 3,
+        "cost": 0.0011811999999999999
+      },
+      "native": {
+        "answer": "B",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 6,
+        "emergent_count": 0,
+        "cost": 0.0006935999999999999
+      },
+      "delta": {
+        "same_answer": true,
+        "care_diff": 0.0,
+        "atoms_diff": 3
+      }
+    },
+    {
+      "question_id": "HIS_08",
+      "correct_answer": "B",
+      "ag2": {
+        "answer": "B",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 12,
+        "emergent_count": 6,
+        "cost": 0.0010793999999999999
+      },
+      "native": {
+        "answer": "B",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 6,
+        "emergent_count": 0,
+        "cost": 0.0005532000000000001
+      },
+      "delta": {
+        "same_answer": true,
+        "care_diff": 0.0,
+        "atoms_diff": 6
+      }
+    },
+    {
+      "question_id": "LOG_09",
+      "correct_answer": "C",
+      "ag2": {
+        "answer": "C",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 7,
+        "emergent_count": 0,
+        "cost": 0.0012758000000000001
+      },
+      "native": {
+        "answer": "C",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 6,
+        "emergent_count": 0,
+        "cost": 0.0006762000000000001
+      },
+      "delta": {
+        "same_answer": true,
+        "care_diff": 0.0,
+        "atoms_diff": 1
+      }
+    },
+    {
+      "question_id": "LAW_06",
+      "correct_answer": "B",
+      "ag2": {
+        "answer": "B",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 7,
+        "emergent_count": 0,
+        "cost": 0.0008622
+      },
+      "native": {
+        "answer": "B",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 7,
+        "emergent_count": 1,
+        "cost": 0.0007068
+      },
+      "delta": {
+        "same_answer": true,
+        "care_diff": 0.0,
+        "atoms_diff": 0
+      }
+    },
+    {
+      "question_id": "TECH_10",
+      "correct_answer": "B",
+      "ag2": {
+        "answer": "B",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 8,
+        "emergent_count": 0,
+        "cost": 0.0008944000000000001
+      },
+      "native": {
+        "answer": "B",
+        "correct": true,
+        "care_resolve": 1.0,
+        "meaning_debt": 0.0,
+        "atoms_count": 7,
+        "emergent_count": 0,
+        "cost": 0.0006956
+      },
+      "delta": {
+        "same_answer": true,
+        "care_diff": 0.0,
+        "atoms_diff": 1
+      }
+    }
+  ],
+  "summary": {
+    "ag2_accuracy": "5/5 (100.0%)",
+    "native_accuracy": "5/5 (100.0%)",
+    "accuracy_match": true,
+    "same_answer_rate": "5/5 (100.0%)",
+    "avg_ag2_care": 1.0,
+    "avg_native_care": 1.0,
+    "care_difference": 0.0,
+    "avg_ag2_atoms": 8.6,
+    "avg_native_atoms": 6.4,
+    "total_cost_usd": 0.0086,
+    "framework_agnostic": true
+  }
+}

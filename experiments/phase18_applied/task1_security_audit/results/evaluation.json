@@ -1,0 +1,91 @@
+[
+  {
+    "condition": "A_solo",
+    "bugs_found": 10,
+    "bugs_total": 10,
+    "bugs_found_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "bugs_missed": [],
+    "bonus_found": [
+      "B1",
+      "B2"
+    ],
+    "score_bugs": 1.0,
+    "prompt_tokens": 3947,
+    "completion_tokens": 7183,
+    "cost_usd": 0.119586,
+    "total_calls": 1,
+    "memory_injected": false
+  },
+  {
+    "condition": "B_arrival",
+    "bugs_found": 10,
+    "bugs_total": 10,
+    "bugs_found_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "bugs_missed": [],
+    "bonus_found": [
+      "B1",
+      "B2"
+    ],
+    "score_bugs": 1.0,
+    "prompt_tokens": 68762,
+    "completion_tokens": 25772,
+    "cost_usd": 0.1398447,
+    "total_calls": 11,
+    "care_resolve": 0.5,
+    "meaning_debt": 0.3,
+    "memory_injected": false
+  },
+  {
+    "condition": "C_arrival_memory",
+    "bugs_found": 10,
+    "bugs_total": 10,
+    "bugs_found_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "bugs_missed": [],
+    "bonus_found": [
+      "B1",
+      "B2"
+    ],
+    "score_bugs": 1.0,
+    "prompt_tokens": 69447,
+    "completion_tokens": 24227,
+    "cost_usd": 0.1400683,
+    "total_calls": 11,
+    "care_resolve": 0.5,
+    "meaning_debt": 0.3,
+    "memory_injected": true,
+    "memory_count": 1
+  }
+]

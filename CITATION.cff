@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+type: software
+title: "ARRIVAL Protocol: AI-to-AI Coordination Through Structured Semantic Atoms"
+abstract: >-
+  ARRIVAL (Atomic Reasoning via Rival Validation and Adversarial Logic) is a
+  structured multi-agent coordination protocol that enables cross-architecture
+  LLM ensembles to solve graduate-level scientific questions through 66
+  semantic @-atoms and CRDT-based conflict resolution. Validated across 539+
+  experiments on 9 LLM architectures for under $10 total.
+authors:
+  - family-names: Kelevra
+    given-names: Mefodiy
+    orcid: "https://orcid.org/0009-0003-4153-392X"
+version: "1.0.0"
+date-released: "2026-02-26"
+license: AGPL-3.0-or-later
+repository-code: "https://github.com/mefodiy-kelevra/arrival-protocol"
+keywords:
+  - multi-agent systems
+  - LLM coordination
+  - CRDT
+  - conflict-free replicated data types
+  - semantic atoms
+  - debate protocol
+  - GPQA
+  - echo chamber
+  - adversarial robustness
+references:
+  - type: article
+    title: "Improving Factuality and Reasoning in Language Models through Multiagent Debate"
+    authors:
+      - family-names: Du
+        given-names: Yilun
+      - family-names: Li
+        given-names: Shuang
+      - family-names: Torralba
+        given-names: Antonio
+      - family-names: Tenenbaum
+        given-names: Joshua B.
+      - family-names: Mordatch
+        given-names: Igor
+    year: 2024
+    journal: "ICML 2024"
+    identifiers:
+      - type: other
+        value: "arXiv:2305.14325"
+  - type: article
+    title: "GPQA: A Graduate-Level Google-Proof Q&A Benchmark"
+    authors:
+      - family-names: Rein
+        given-names: David
+    year: 2024
+    identifiers:
+      - type: other
+        value: "arXiv:2311.12022"

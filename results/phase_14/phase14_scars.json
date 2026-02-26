@@ -1,0 +1,550 @@
+{
+  "extraction_timestamp": "2026-02-23T13:13:35.624796+00:00",
+  "baseline_file": "E:\\Arrival Memory\\results\\phase13_baseline\\phase13_results.json",
+  "total_questions": 40,
+  "n_seen": 5,
+  "n_unseen": 35,
+  "seen_question_ids": [
+    "GPQA_032",
+    "GPQA_025",
+    "GPQA_012",
+    "GPQA_019",
+    "GPQA_018"
+  ],
+  "all_scores": [
+    {
+      "question_id": "GPQA_032",
+      "domain": "biology",
+      "composite_score": 1.2356,
+      "care_resolve": 0.3946,
+      "meaning_debt": 3.1511,
+      "health_assessment": "strained",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_025",
+      "domain": "chemistry",
+      "composite_score": 1.0271,
+      "care_resolve": 0.6545,
+      "meaning_debt": 3.4078,
+      "health_assessment": "strained",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_012",
+      "domain": "physics",
+      "composite_score": 0.8905,
+      "care_resolve": 0.5515,
+      "meaning_debt": 2.2098,
+      "health_assessment": "strained",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_019",
+      "domain": "chemistry",
+      "composite_score": 0.839,
+      "care_resolve": 0.5472,
+      "meaning_debt": 1.931,
+      "health_assessment": "strained",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_018",
+      "domain": "chemistry",
+      "composite_score": 0.7687,
+      "care_resolve": 0.5467,
+      "meaning_debt": 1.5771,
+      "health_assessment": "strained",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_008",
+      "domain": "physics",
+      "composite_score": 0.7618,
+      "care_resolve": 0.5641,
+      "meaning_debt": 1.6296,
+      "health_assessment": "strained",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_028",
+      "domain": "chemistry",
+      "composite_score": 0.5805,
+      "care_resolve": 0.7736,
+      "meaning_debt": 1.7704,
+      "health_assessment": "strained",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_003",
+      "domain": "physics",
+      "composite_score": 0.3404,
+      "care_resolve": 0.819,
+      "meaning_debt": 0.7969,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_010",
+      "domain": "physics",
+      "composite_score": 0.3241,
+      "care_resolve": 0.7799,
+      "meaning_debt": 0.52,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_004",
+      "domain": "physics",
+      "composite_score": 0.2652,
+      "care_resolve": 1.0,
+      "meaning_debt": 1.3261,
+      "health_assessment": "strained",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_020",
+      "domain": "chemistry",
+      "composite_score": 0.2,
+      "care_resolve": 0.8889,
+      "meaning_debt": 0.4443,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_009",
+      "domain": "physics",
+      "composite_score": 0.0753,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.3763,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_001",
+      "domain": "physics",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_002",
+      "domain": "physics",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_005",
+      "domain": "physics",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_006",
+      "domain": "physics",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_007",
+      "domain": "physics",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_011",
+      "domain": "physics",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_013",
+      "domain": "physics",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_014",
+      "domain": "physics",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_015",
+      "domain": "chemistry",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_016",
+      "domain": "chemistry",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_017",
+      "domain": "chemistry",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_021",
+      "domain": "chemistry",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_022",
+      "domain": "chemistry",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_023",
+      "domain": "chemistry",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_024",
+      "domain": "chemistry",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_026",
+      "domain": "chemistry",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_027",
+      "domain": "chemistry",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_029",
+      "domain": "biology",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_030",
+      "domain": "biology",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": false
+    },
+    {
+      "question_id": "GPQA_031",
+      "domain": "biology",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_033",
+      "domain": "biology",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_034",
+      "domain": "biology",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_035",
+      "domain": "interdisciplinary",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_036",
+      "domain": "interdisciplinary",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_037",
+      "domain": "interdisciplinary",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_038",
+      "domain": "interdisciplinary",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_039",
+      "domain": "interdisciplinary",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    },
+    {
+      "question_id": "GPQA_040",
+      "domain": "interdisciplinary",
+      "composite_score": 0.0,
+      "care_resolve": 1.0,
+      "meaning_debt": 0.0,
+      "health_assessment": "healthy",
+      "arrival_correct": true
+    }
+  ],
+  "scars": [
+    {
+      "question_id": "GPQA_032",
+      "domain": "biology",
+      "composite_score": 1.2356,
+      "care_resolve": 0.3946,
+      "meaning_debt": 3.1511,
+      "health_assessment": "strained",
+      "arrival_correct": false,
+      "per_agent_loss": {
+        "GPT4o": 0.0,
+        "DeepSeekV3": 8.55,
+        "Llama33": 3.2
+      },
+      "minority_voice": "DeepSeekV3",
+      "minority_loss": 8.55,
+      "round_dynamics": "persistent_minority",
+      "atom_count": {
+        "@SELF": 4,
+        "@GOAL": 4,
+        "@INT": 4,
+        "@C": 4,
+        "@CONSENSUS": 4,
+        "@OTHER": 1,
+        "@RESOLUTION": 1
+      },
+      "unresolved_conflicts": 0,
+      "fairness_index": 0.6865,
+      "total_dissatisfaction": 11.75,
+      "per_agent_debt": {
+        "GPT4o": 1.3124,
+        "DeepSeekV3": 1.7868,
+        "Llama33": 0.052
+      }
+    },
+    {
+      "question_id": "GPQA_025",
+      "domain": "chemistry",
+      "composite_score": 1.0271,
+      "care_resolve": 0.6545,
+      "meaning_debt": 3.4078,
+      "health_assessment": "strained",
+      "arrival_correct": false,
+      "per_agent_loss": {
+        "GPT4o": 0.0,
+        "DeepSeekV3": 8.55,
+        "Llama33": 0.0
+      },
+      "minority_voice": "DeepSeekV3",
+      "minority_loss": 8.55,
+      "round_dynamics": "persistent_minority",
+      "atom_count": {
+        "@SELF": 4,
+        "@GOAL": 4,
+        "@INT": 5,
+        "@C": 4,
+        "@CONSENSUS": 8,
+        "@CONFLICT": 2,
+        "@RESOLUTION": 2,
+        "@OTHER": 1
+      },
+      "unresolved_conflicts": 0,
+      "fairness_index": 0.9122,
+      "total_dissatisfaction": 8.55,
+      "per_agent_debt": {
+        "GPT4o": 0.5801,
+        "DeepSeekV3": 1.7868,
+        "Llama33": 1.041
+      }
+    },
+    {
+      "question_id": "GPQA_012",
+      "domain": "physics",
+      "composite_score": 0.8905,
+      "care_resolve": 0.5515,
+      "meaning_debt": 2.2098,
+      "health_assessment": "strained",
+      "arrival_correct": false,
+      "per_agent_loss": {
+        "GPT4o": 0.0,
+        "DeepSeekV3": 3.8,
+        "Llama33": 3.6
+      },
+      "minority_voice": "DeepSeekV3",
+      "minority_loss": 3.8,
+      "round_dynamics": "persistent_minority",
+      "atom_count": {
+        "@SELF": 4,
+        "@GOAL": 4,
+        "@INT": 4,
+        "@C": 4,
+        "@CONSENSUS": 5,
+        "@OTHER": 1,
+        "@RESOLUTION": 1
+      },
+      "unresolved_conflicts": 0,
+      "fairness_index": 0.9421,
+      "total_dissatisfaction": 7.4,
+      "per_agent_debt": {
+        "GPT4o": 0.9248,
+        "DeepSeekV3": 0.8993,
+        "Llama33": 0.3856
+      }
+    },
+    {
+      "question_id": "GPQA_019",
+      "domain": "chemistry",
+      "composite_score": 0.839,
+      "care_resolve": 0.5472,
+      "meaning_debt": 1.931,
+      "health_assessment": "strained",
+      "arrival_correct": false,
+      "per_agent_loss": {
+        "GPT4o": 0.0,
+        "DeepSeekV3": 3.6,
+        "Llama33": 3.6
+      },
+      "minority_voice": "DeepSeekV3",
+      "minority_loss": 3.6,
+      "round_dynamics": "late_flip",
+      "atom_count": {
+        "@SELF": 4,
+        "@GOAL": 4,
+        "@INT": 4,
+        "@C": 6,
+        "@CONSENSUS": 6,
+        "@CONFLICT": 1,
+        "@RESOLUTION": 1
+      },
+      "unresolved_conflicts": 0,
+      "fairness_index": -0.0,
+      "total_dissatisfaction": 7.2,
+      "per_agent_debt": {
+        "GPT4o": 1.931,
+        "DeepSeekV3": 0.0,
+        "Llama33": 0.0
+      }
+    },
+    {
+      "question_id": "GPQA_018",
+      "domain": "chemistry",
+      "composite_score": 0.7687,
+      "care_resolve": 0.5467,
+      "meaning_debt": 1.5771,
+      "health_assessment": "strained",
+      "arrival_correct": true,
+      "per_agent_loss": {
+        "GPT4o": 0.0,
+        "DeepSeekV3": 3.6,
+        "Llama33": 3.2
+      },
+      "minority_voice": "DeepSeekV3",
+      "minority_loss": 3.6,
+      "round_dynamics": "persistent_minority",
+      "atom_count": {
+        "@SELF": 4,
+        "@GOAL": 4,
+        "@INT": 4,
+        "@C": 4,
+        "@CONSENSUS": 5,
+        "@OTHER": 2,
+        "@CONFLICT": 1,
+        "@RESOLUTION": 1
+      },
+      "unresolved_conflicts": 0,
+      "fairness_index": 0.5247,
+      "total_dissatisfaction": 6.8,
+      "per_agent_debt": {
+        "GPT4o": 1.2959,
+        "DeepSeekV3": 0.1993,
+        "Llama33": 0.0819
+      }
+    }
+  ]
+}

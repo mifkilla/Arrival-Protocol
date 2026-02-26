@@ -1,0 +1,111 @@
+{
+  "total_bugs": 10,
+  "application": "buggy_app.py",
+  "purpose": "Ground truth for Phase 18 Task 1: Security Audit evaluation",
+  "bugs": [
+    {
+      "id": 1,
+      "category": "SQL Injection",
+      "severity": "Critical",
+      "location": "login() function, line ~73",
+      "description": "Direct string interpolation in SQL query allows authentication bypass. An attacker can inject SQL via the username field (e.g., ' OR '1'='1' --).",
+      "fix": "Use parameterized queries: c.execute('SELECT id, role FROM users WHERE username=? AND password_hash=?', (username, password_hash))",
+      "keywords": ["sql injection", "string interpolation", "f-string", "parameterized", "prepared statement"]
+    },
+    {
+      "id": 2,
+      "category": "Missing Authorization (IDOR)",
+      "severity": "High",
+      "location": "get_user_notes() function + admin_list_users()",
+      "description": "No session/auth check — any unauthenticated user can access any other user's notes by guessing user_id. Admin endpoint has no role verification.",
+      "fix": "Check session['user_id'] matches requested user_id, or verify session['role'] == 'admin' for admin endpoints.",
+      "keywords": ["authorization", "authentication", "IDOR", "access control", "session check", "admin"]
+    },
+    {
+      "id": 3,
+      "category": "Race Condition (TOCTOU)",
+      "severity": "High",
+      "location": "transfer_balance() function, line ~106-114",
+      "description": "Balance check and update are not atomic. Two concurrent transfers can both read the same balance and both succeed, creating money from nothing (double-spend).",
+      "fix": "Use a database transaction with proper locking: BEGIN IMMEDIATE/EXCLUSIVE, or use SQLite's built-in transaction isolation.",
+      "keywords": ["race condition", "TOCTOU", "double spend", "atomic", "transaction", "concurrent", "thread"]
+    },
+    {
+      "id": 4,
+      "category": "Off-by-One Error",
+      "severity": "Medium",
+      "location": "list_notes() function, line ~126",
+      "description": "Pagination offset calculation is wrong: `page * per_page + 1` instead of `(page - 1) * per_page`. This skips the first item and offsets every page incorrectly.",
+      "fix": "Use offset = (page - 1) * per_page",
+      "keywords": ["off-by-one", "pagination", "offset", "skip", "fence post"]
+    },
+    {
+      "id": 5,
+      "category": "Incorrect Algorithm (Inverted Sort)",
+      "severity": "Medium",
+      "location": "sorted_notes() function, line ~145-148",
+      "description": "Sort order logic is inverted: 'asc' parameter triggers reverse=True (descending) and vice versa. Results are always in the wrong order.",
+      "fix": "Swap the reverse values: asc → reverse=False, desc → reverse=True",
+      "keywords": ["sort", "inverted", "reverse", "ascending", "descending", "comparison"]
+    },
+    {
+      "id": 6,
+      "category": "Cross-Site Scripting (XSS)",
+      "severity": "Critical",
+      "location": "view_note() function, line ~162-170",
+      "description": "User-supplied note title and content are injected directly into HTML without escaping. An attacker can store <script>alert('xss')</script> as a note title.",
+      "fix": "Use html.escape() on all user content, or use Jinja2 templates with autoescaping enabled (render_template instead of f-string).",
+      "keywords": ["XSS", "cross-site scripting", "escape", "sanitize", "html injection", "stored XSS"]
+    },
+    {
+      "id": 7,
+      "category": "Secret/Credential Leak",
+      "severity": "Critical",
+      "location": "Line 25 (hardcoded secret_key), login() line ~77, register() line ~184",
+      "description": "Three sub-issues: (a) Flask secret_key hardcoded in source code, (b) User password logged in plaintext in login(), (c) Password logged in plaintext in register(). This leaks credentials to log files and version control.",
+      "fix": "(a) Load secret from environment variable, (b,c) Never log passwords — log only username and success/failure status.",
+      "keywords": ["secret", "hardcoded", "password", "logging", "plaintext", "credential leak", "log"]
+    },
+    {
+      "id": 8,
+      "category": "Unicode Handling Error",
+      "severity": "Medium",
+      "location": "create_note() function, line ~197",
+      "description": "Content is encoded as UTF-8 then decoded as Latin-1, corrupting any non-ASCII characters (emoji, CJK, Cyrillic etc.). This is a data corruption bug (mojibake).",
+      "fix": "Remove the encode/decode chain entirely — just use the content string as-is. SQLite handles UTF-8 natively.",
+      "keywords": ["unicode", "encoding", "mojibake", "utf-8", "latin-1", "data corruption", "non-ascii"]
+    },
+    {
+      "id": 9,
+      "category": "Integer Overflow",
+      "severity": "Medium",
+      "location": "calculate_discount() function, line ~213",
+      "description": "32-bit truncation via & 0xFFFFFFFF causes total_cents to wrap around for large orders (e.g., quantity=100000, price=50000 → actual $50M truncated to a small value). This leads to incorrect or zero discount being applied.",
+      "fix": "Remove the & 0xFFFFFFFF mask. Python handles arbitrary-precision integers natively — no truncation needed.",
+      "keywords": ["integer overflow", "truncation", "32-bit", "wrap around", "mask", "bitmask"]
+    },
+    {
+      "id": 10,
+      "category": "Improper Error Handling",
+      "severity": "High",
+      "location": "import_notes() function, line ~235-244",
+      "description": "Two bare `except:` clauses catch ALL exceptions (including SystemExit, KeyboardInterrupt) and silently swallow them. Inner except hides data corruption. Outer except returns misleading 'ok' status on failure.",
+      "fix": "Catch specific exceptions (json.JSONDecodeError, KeyError, sqlite3.Error). Log errors. Return proper error status codes.",
+      "keywords": ["bare except", "error handling", "swallow", "silent failure", "exception", "catch all"]
+    }
+  ],
+  "bonus_issues": [
+    {
+      "id": "B1",
+      "category": "Weak Hashing",
+      "description": "MD5 used for password hashing instead of bcrypt/argon2. MD5 is fast and unsuitable for passwords.",
+      "note": "Not counted in the 10 primary bugs but a legitimate security concern."
+    },
+    {
+      "id": "B2",
+      "category": "Debug Mode in Production",
+      "description": "app.run(debug=True, host='0.0.0.0') exposes debugger and binds to all interfaces.",
+      "note": "Not counted in the 10 primary bugs."
+    }
+  ]
+}

@@ -1,0 +1,1535 @@
+Loading: results/phase16_results_20260224_235757.json
+
+########################################################################
+  PHASE 16 HOMOGENEOUS ENSEMBLE: DETAILED PER-QUESTION ANALYTICS
+  Model: qwen/qwen3-235b-a22b | Agents: Alpha, Beta, Gamma, Delta, Epsilon
+  Questions: 40 | API calls: 640
+  Cost: $1.92 | Duration: 185 min
+########################################################################
+
+  HEADLINE RESULTS:
+    Solo:    41.5%  (83/200)
+    MV:      52.5%  (21/40)
+    ARRIVAL: 65.0%  (26/40)
+    GAIN vs Solo: +23.5 pp
+    GAIN vs MV:   +12.5 pp
+
+==========================================================================================
+  SUMMARY TABLE: All 40 Questions
+==========================================================================================
+  #    ID         Domain           Correct   Solo   MV  ARR   CARE   Debt Health    
+  ------------------------------------------------------------------------------------
+  Q01  GPQA_001   physics          B          4/5   OK   OK  0.730   1.14 strained  
+  Q02  GPQA_002   physics          A          3/5   OK   OK  1.000   0.00 strained  
+  Q03  GPQA_003   physics          C          0/5   XX   XX  0.988   1.31 strained  
+  Q04  GPQA_004   physics          B          4/5   OK   OK  1.000   0.00 healthy   
+  Q05  GPQA_005   physics          D          1/5   OK   XX  0.133   2.26 unhealth  
+  Q06  GPQA_006   physics          B          1/5   XX   OK  0.931   1.23 strained  
+  Q07  GPQA_007   physics          B          0/5   XX   XX  1.000   0.00 healthy   
+  Q08  GPQA_008   physics          B          0/5   XX   OK  1.000   0.21 strained  
+  Q09  GPQA_009   physics          A          4/5   OK   OK  1.000   0.00 healthy   
+  Q10  GPQA_010   physics          A          4/5   OK   OK  0.830   5.02 strained  
+  Q11  GPQA_011   physics          D          0/5   XX   XX  1.000   0.00 healthy   
+  Q12  GPQA_012   physics          C          0/5   XX   OK  1.000   0.00 strained  
+  Q13  GPQA_013   physics          A          5/5   OK   OK  1.000   0.00 healthy   
+  Q14  GPQA_014   physics          B          4/5   OK   OK  1.000   0.00 healthy   
+  Q15  GPQA_015   chemistry        B          0/5   XX   XX  1.000   0.00 healthy   
+  Q16  GPQA_016   chemistry        A          2/5   XX   OK  0.577   8.33 strained  
+  Q17  GPQA_017   chemistry        D          4/5   OK   OK  0.820   1.98 strained  
+  Q18  GPQA_018   chemistry        D          0/5   XX   XX  0.000   0.00 strained  
+  Q19  GPQA_019   chemistry        C          0/5   XX   OK  0.877   1.10 strained  
+  Q20  GPQA_020   chemistry        B          0/5   XX   XX  0.661   9.08 strained  
+  Q21  GPQA_021   chemistry        B          4/5   OK   OK  0.797   1.68 strained  
+  Q22  GPQA_022   chemistry        B          2/5   OK   XX  0.872   0.81 healthy   
+  Q23  GPQA_023   chemistry        C          1/5   XX   XX  0.805   2.52 strained  
+  Q24  GPQA_024   chemistry        C          2/5   OK   XX  0.934   8.30 strained  
+  Q25  GPQA_025   chemistry        D          0/5   XX   XX  0.686  10.26 strained  
+  Q26  GPQA_026   chemistry        D          1/5   XX   OK  1.000   3.86 strained  
+  Q27  GPQA_027   chemistry        A          0/5   XX   XX  0.584   2.61 strained  
+  Q28  GPQA_028   chemistry        B          1/5   XX   OK  0.773   1.14 strained  
+  Q29  GPQA_029   biology          D          2/5   OK   OK  0.595   5.95 strained  
+  Q30  GPQA_030   biology          B          0/5   XX   XX  0.876   2.48 strained  
+  Q31  GPQA_031   biology          B          5/5   OK   OK  1.000   0.00 healthy   
+  Q32  GPQA_032   biology          A          4/5   OK   OK  1.000   0.00 healthy   
+  Q33  GPQA_033   biology          A          1/5   XX   OK  0.888   2.34 unhealth  
+  Q34  GPQA_034   biology          C          5/5   OK   OK  1.000   0.00 healthy   
+  Q35  GPQA_035   interdisciplin   A          5/5   OK   OK  1.000   0.00 healthy   
+  Q36  GPQA_036   interdisciplin   C          0/5   XX   XX  1.000   0.00 strained  
+  Q37  GPQA_037   interdisciplin   C          5/5   OK   OK  1.000   0.00 healthy   
+  Q38  GPQA_038   interdisciplin   B          2/5   OK   OK  1.000   0.00 healthy   
+  Q39  GPQA_039   interdisciplin   C          2/5   OK   OK  1.000   0.00 healthy   
+  Q40  GPQA_040   interdisciplin   B          5/5   OK   OK  1.000   0.00 healthy   
+  ------------------------------------------------------------------------------------
+
+  OUTCOME BREAKDOWN:
+    ARRIVAL rescued (MV wrong, ARRIVAL right, minority had it): 5
+    ARRIVAL created  (nobody had it, ARRIVAL found it):         3
+    Both correct (MV + ARRIVAL):                                18
+    ARRIVAL regressed (MV right, ARRIVAL wrong):                3
+    Both failed (minority had correct):                         1
+    Both failed (nobody had it):                                10
+    Total answer flips (ARRIVAL != solo majority):              11
+
+========================================================================
+  PER-DOMAIN BREAKDOWN
+========================================================================
+  Domain               N   Solo%     MV%    ARR%    CARE    Debt
+  ------------------------------------------------------------
+  biology              6   56.7%   66.7%   83.3%   0.893    1.80
+  chemistry           14   24.3%   28.6%   42.9%   0.742    3.69
+  interdisciplinary    6   63.3%   83.3%   83.3%   1.000    0.00
+  physics             14   42.9%   57.1%   71.4%   0.901    0.80
+
+========================================================================
+  PER-AGENT SOLO ACCURACY
+========================================================================
+
+  Alpha: 16/40 = 40.0%
+    biology            3/6 = 50.0%
+    chemistry          3/14 = 21.4%
+    interdisciplinary  3/6 = 50.0%
+    physics            7/14 = 50.0%
+
+  Beta: 13/40 = 32.5%
+    biology            2/6 = 33.3%
+    chemistry          1/14 = 7.1%
+    interdisciplinary  4/6 = 66.7%
+    physics            6/14 = 42.9%
+
+  Gamma: 17/40 = 42.5%
+    biology            3/6 = 50.0%
+    chemistry          4/14 = 28.6%
+    interdisciplinary  4/6 = 66.7%
+    physics            6/14 = 42.9%
+
+  Delta: 17/40 = 42.5%
+    biology            5/6 = 83.3%
+    chemistry          4/14 = 28.6%
+    interdisciplinary  4/6 = 66.7%
+    physics            4/14 = 28.6%
+
+  Epsilon: 20/40 = 50.0%
+    biology            4/6 = 66.7%
+    chemistry          5/14 = 35.7%
+    interdisciplinary  4/6 = 66.7%
+    physics            7/14 = 50.0%
+
+
+########################################################################
+  DETAILED PER-QUESTION ANALYSIS
+########################################################################
+
+========================================================================
+  Q01 | GPQA_001 | Domain: physics | Correct: B
+========================================================================
+
+  SOLO (4/5 correct):
+    Alpha      -> B  [OK]
+    Beta       -> C  [XX]
+    Gamma      -> B  [OK]
+    Delta      -> B  [OK]
+    Epsilon    -> B  [OK]
+    Distribution: B:4, C:1
+    Entropy: 0.72 bits
+
+  MAJORITY VOTE: B  [OK]  (split)
+
+  ARRIVAL: B  [OK]
+    Atoms: @CONFLICT=8, @CONSENSUS=12
+    Unique atoms: 6, Cost: $0.0299
+    Round answers:
+      R1: Alpha:B, Beta:B, Delta:B, Epsilon:A, Gamma:B
+      R2: Beta:B, Delta:B, Epsilon:A, Gamma:B
+      R4: Alpha:B
+
+  CRDT Metrics:
+    CARE Resolve: 0.730
+    Meaning Debt: 1.135
+    Health: strained
+    Conflicts: 6 raised, 11 resolved, 0 unresolved
+    Fairness Index: 0.146
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 283s (4.7 min)
+
+========================================================================
+  Q02 | GPQA_002 | Domain: physics | Correct: A
+========================================================================
+
+  SOLO (3/5 correct):
+    Alpha      -> A  [OK]
+    Beta       -> A  [OK]
+    Gamma      -> ?  [XX]
+    Delta      -> A  [OK]
+    Epsilon    -> ?  [XX]
+    Distribution: A:3, ?:2
+    Entropy: 0.97 bits
+
+  MAJORITY VOTE: A  [OK]  (unanimous)
+
+  ARRIVAL: A  [OK]
+    Atoms: @CONFLICT=15, @CONSENSUS=5
+    Unique atoms: 6, Cost: $0.0392
+    Round answers:
+      R1: Alpha:A, Beta:A, Epsilon:A
+      R2: Alpha:A
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: strained
+    Conflicts: 13 raised, 5 resolved, 8 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 272s (4.5 min)
+
+========================================================================
+  Q03 | GPQA_003 | Domain: physics | Correct: C
+========================================================================
+
+  SOLO (0/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> ?  [XX]
+    Gamma      -> ?  [XX]
+    Delta      -> ?  [XX]
+    Epsilon    -> ?  [XX]
+    Distribution: ?:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: None  [XX]  (split)
+
+  ARRIVAL: B  [XX]
+    Atoms: @CONFLICT=6, @CONSENSUS=4
+    Unique atoms: 6, Cost: $0.0388
+    Round answers:
+      R1: Alpha:A, Delta:A, Gamma:C
+      R2: Alpha:B
+
+  CRDT Metrics:
+    CARE Resolve: 0.988
+    Meaning Debt: 1.307
+    Health: strained
+    Conflicts: 6 raised, 4 resolved, 2 unresolved
+    Fairness Index: 0.721
+
+  OUTCOME:
+    >> BOTH FAILED: Nobody got it right
+    >> FLIP: Solo majority was ?, ARRIVAL chose B
+
+  Time: 263s (4.4 min)
+
+========================================================================
+  Q04 | GPQA_004 | Domain: physics | Correct: B
+========================================================================
+
+  SOLO (4/5 correct):
+    Alpha      -> B  [OK]
+    Beta       -> D  [XX]
+    Gamma      -> B  [OK]
+    Delta      -> B  [OK]
+    Epsilon    -> B  [OK]
+    Distribution: B:4, D:1
+    Entropy: 0.72 bits
+
+  MAJORITY VOTE: B  [OK]  (split)
+
+  ARRIVAL: B  [OK]
+    Atoms: @CONFLICT=9, @CONSENSUS=10
+    Unique atoms: 6, Cost: $0.0334
+    Round answers:
+      R1: Alpha:B, Beta:B, Delta:B, Epsilon:B, Gamma:B
+      R2: Delta:B, Epsilon:B, Gamma:B
+      R4: Alpha:B
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 9 raised, 9 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 212s (3.5 min)
+
+========================================================================
+  Q05 | GPQA_005 | Domain: physics | Correct: D
+========================================================================
+
+  SOLO (1/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> D  [OK]
+    Gamma      -> ?  [XX]
+    Delta      -> C  [XX]
+    Epsilon    -> ?  [XX]
+    Distribution: ?:3, D:1, C:1
+    Entropy: 1.37 bits
+
+  MAJORITY VOTE: D  [OK]  (split)
+
+  ARRIVAL: A  [XX]
+    Atoms: @CONFLICT=12, @CONSENSUS=5
+    Unique atoms: 6, Cost: $0.0339
+    Round answers:
+      R1: Alpha:D, Beta:C, Epsilon:D, Gamma:D
+      R4: Alpha:A
+
+  CRDT Metrics:
+    CARE Resolve: 0.133
+    Meaning Debt: 2.259
+    Health: unhealthy
+    Conflicts: 12 raised, 4 resolved, 8 unresolved
+    Fairness Index: 0.245
+
+  OUTCOME:
+    >> ARRIVAL REGRESSED: MV was right but ARRIVAL went wrong
+       ARRIVAL chose A instead of D
+    >> FLIP: Solo majority was ?, ARRIVAL chose A
+
+  Time: 276s (4.6 min)
+
+========================================================================
+  Q06 | GPQA_006 | Domain: physics | Correct: B
+========================================================================
+
+  SOLO (1/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> C  [XX]
+    Gamma      -> C  [XX]
+    Delta      -> ?  [XX]
+    Epsilon    -> B  [OK]
+    Distribution: ?:2, C:2, B:1
+    Entropy: 1.52 bits
+
+  MAJORITY VOTE: C  [XX]  (split)
+
+  ARRIVAL: B  [OK]
+    Atoms: @CONFLICT=15, @CONSENSUS=9
+    Unique atoms: 6, Cost: $0.0328
+    Round answers:
+      R1: Alpha:C, Beta:B, Delta:C, Epsilon:B, Gamma:B
+      R2: Beta:C, Delta:C
+      R4: Alpha:B
+
+  CRDT Metrics:
+    CARE Resolve: 0.931
+    Meaning Debt: 1.230
+    Health: strained
+    Conflicts: 15 raised, 8 resolved, 7 unresolved
+    Fairness Index: 0.790
+
+  OUTCOME:
+    >> ARRIVAL RESCUED: MV failed, but ARRIVAL found the right answer
+       Solo had correct (1/5), protocol amplified minority
+    >> FLIP: Solo majority was ?, ARRIVAL chose B
+
+  Time: 273s (4.5 min)
+
+========================================================================
+  Q07 | GPQA_007 | Domain: physics | Correct: B
+========================================================================
+
+  SOLO (0/5 correct):
+    Alpha      -> D  [XX]
+    Beta       -> D  [XX]
+    Gamma      -> D  [XX]
+    Delta      -> D  [XX]
+    Epsilon    -> D  [XX]
+    Distribution: D:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: D  [XX]  (unanimous)
+
+  ARRIVAL: D  [XX]
+    Atoms: @CONFLICT=4, @CONSENSUS=12
+    Unique atoms: 6, Cost: $0.0281
+    Round answers:
+      R1: Alpha:D, Beta:D, Delta:D, Epsilon:D, Gamma:D
+      R2: Alpha:D, Beta:D, Delta:D, Epsilon:D, Gamma:D
+      R4: Alpha:D
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 4 raised, 11 resolved, 0 unresolved
+    Fairness Index: 0.431
+
+  OUTCOME:
+    >> BOTH FAILED: Nobody got it right
+
+  Time: 250s (4.2 min)
+
+========================================================================
+  Q08 | GPQA_008 | Domain: physics | Correct: B
+========================================================================
+
+  SOLO (0/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> ?  [XX]
+    Gamma      -> ?  [XX]
+    Delta      -> ?  [XX]
+    Epsilon    -> ?  [XX]
+    Distribution: ?:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: None  [XX]  (split)
+
+  ARRIVAL: B  [OK]
+    Atoms: @CONFLICT=6, @CONSENSUS=3
+    Unique atoms: 7, Cost: $0.0376
+    Round answers:
+      R1: Gamma:C
+      R2: Gamma:B
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.212
+    Health: strained
+    Conflicts: 6 raised, 3 resolved, 3 unresolved
+    Fairness Index: 0.000
+
+  OUTCOME:
+    >> ARRIVAL CREATED: Neither solo nor MV had it, protocol generated new insight!
+    >> FLIP: Solo majority was ?, ARRIVAL chose B
+
+  Time: 269s (4.5 min)
+
+========================================================================
+  Q09 | GPQA_009 | Domain: physics | Correct: A
+========================================================================
+
+  SOLO (4/5 correct):
+    Alpha      -> A  [OK]
+    Beta       -> A  [OK]
+    Gamma      -> A  [OK]
+    Delta      -> ?  [XX]
+    Epsilon    -> A  [OK]
+    Distribution: A:4, ?:1
+    Entropy: 0.72 bits
+
+  MAJORITY VOTE: A  [OK]  (unanimous)
+
+  ARRIVAL: A  [OK]
+    Atoms: @CONFLICT=8, @CONSENSUS=9
+    Unique atoms: 8, Cost: $0.0347
+    Round answers:
+      R1: Beta:A, Delta:A, Epsilon:A, Gamma:A
+      R2: Alpha:A, Delta:A, Epsilon:A
+      R4: Alpha:A
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 8 raised, 8 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 269s (4.5 min)
+
+========================================================================
+  Q10 | GPQA_010 | Domain: physics | Correct: A
+========================================================================
+
+  SOLO (4/5 correct):
+    Alpha      -> A  [OK]
+    Beta       -> A  [OK]
+    Gamma      -> A  [OK]
+    Delta      -> D  [XX]
+    Epsilon    -> A  [OK]
+    Distribution: A:4, D:1
+    Entropy: 0.72 bits
+
+  MAJORITY VOTE: A  [OK]  (split)
+
+  ARRIVAL: A  [OK]
+    Atoms: @CONFLICT=3, @CONSENSUS=10
+    Unique atoms: 6, Cost: $0.0329
+    Round answers:
+      R1: Beta:A, Delta:A, Epsilon:B, Gamma:B
+      R2: Alpha:A, Beta:D, Delta:A, Epsilon:A, Gamma:A
+      R4: Alpha:A
+
+  CRDT Metrics:
+    CARE Resolve: 0.830
+    Meaning Debt: 5.017
+    Health: strained
+    Conflicts: 3 raised, 9 resolved, 0 unresolved
+    Fairness Index: 0.621
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 294s (4.9 min)
+
+========================================================================
+  Q11 | GPQA_011 | Domain: physics | Correct: D
+========================================================================
+
+  SOLO (0/5 correct):
+    Alpha      -> B  [XX]
+    Beta       -> B  [XX]
+    Gamma      -> B  [XX]
+    Delta      -> B  [XX]
+    Epsilon    -> B  [XX]
+    Distribution: B:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: B  [XX]  (unanimous)
+
+  ARRIVAL: B  [XX]
+    Atoms: @CONFLICT=3, @CONSENSUS=8
+    Unique atoms: 7, Cost: $0.0321
+    Round answers:
+      R1: Alpha:B, Beta:B, Delta:B, Epsilon:B, Gamma:B
+      R2: Delta:B, Gamma:B
+      R4: Alpha:B
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 3 raised, 8 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH FAILED: Nobody got it right
+
+  Time: 227s (3.8 min)
+
+========================================================================
+  Q12 | GPQA_012 | Domain: physics | Correct: C
+========================================================================
+
+  SOLO (0/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> ?  [XX]
+    Gamma      -> ?  [XX]
+    Delta      -> ?  [XX]
+    Epsilon    -> ?  [XX]
+    Distribution: ?:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: None  [XX]  (split)
+
+  ARRIVAL: C  [OK]
+    Atoms: @CONFLICT=7, @CONSENSUS=1
+    Unique atoms: 6, Cost: $0.0394
+    Round answers:
+      R1: Gamma:C
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: strained
+    Conflicts: 7 raised, 1 resolved, 6 unresolved
+    Fairness Index: 0.000
+
+  OUTCOME:
+    >> ARRIVAL CREATED: Neither solo nor MV had it, protocol generated new insight!
+    >> FLIP: Solo majority was ?, ARRIVAL chose C
+
+  Time: 271s (4.5 min)
+
+========================================================================
+  Q13 | GPQA_013 | Domain: physics | Correct: A
+========================================================================
+
+  SOLO (5/5 correct):
+    Alpha      -> A  [OK]
+    Beta       -> A  [OK]
+    Gamma      -> A  [OK]
+    Delta      -> A  [OK]
+    Epsilon    -> A  [OK]
+    Distribution: A:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: A  [OK]  (unanimous)
+
+  ARRIVAL: A  [OK]
+    Atoms: @CONFLICT=7, @CONSENSUS=10
+    Unique atoms: 6, Cost: $0.0324
+    Round answers:
+      R1: Alpha:A, Beta:A, Delta:A, Epsilon:A, Gamma:A
+      R2: Alpha:A, Beta:A, Epsilon:A, Gamma:A
+      R4: Alpha:A
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 7 raised, 9 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 276s (4.6 min)
+
+========================================================================
+  Q14 | GPQA_014 | Domain: physics | Correct: B
+========================================================================
+
+  SOLO (4/5 correct):
+    Alpha      -> B  [OK]
+    Beta       -> B  [OK]
+    Gamma      -> B  [OK]
+    Delta      -> ?  [XX]
+    Epsilon    -> B  [OK]
+    Distribution: B:4, ?:1
+    Entropy: 0.72 bits
+
+  MAJORITY VOTE: B  [OK]  (unanimous)
+
+  ARRIVAL: B  [OK]
+    Atoms: @CONFLICT=5, @CONSENSUS=9
+    Unique atoms: 6, Cost: $0.0308
+    Round answers:
+      R1: Alpha:B, Beta:B, Epsilon:B, Gamma:B
+      R2: Alpha:B, Beta:B, Epsilon:B
+      R4: Alpha:B
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 5 raised, 8 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 316s (5.3 min)
+
+========================================================================
+  Q15 | GPQA_015 | Domain: chemistry | Correct: B
+========================================================================
+
+  SOLO (0/5 correct):
+    Alpha      -> C  [XX]
+    Beta       -> C  [XX]
+    Gamma      -> C  [XX]
+    Delta      -> C  [XX]
+    Epsilon    -> C  [XX]
+    Distribution: C:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: C  [XX]  (unanimous)
+
+  ARRIVAL: C  [XX]
+    Atoms: @CONFLICT=13, @CONSENSUS=12
+    Unique atoms: 7, Cost: $0.0260
+    Round answers:
+      R1: Alpha:C, Beta:C, Delta:C, Epsilon:C, Gamma:C
+      R2: Alpha:C, Epsilon:C, Gamma:C
+      R4: Alpha:C
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 10 raised, 12 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH FAILED: Nobody got it right
+
+  Time: 220s (3.7 min)
+
+========================================================================
+  Q16 | GPQA_016 | Domain: chemistry | Correct: A
+========================================================================
+
+  SOLO (2/5 correct):
+    Alpha      -> B  [XX]
+    Beta       -> B  [XX]
+    Gamma      -> B  [XX]
+    Delta      -> A  [OK]
+    Epsilon    -> A  [OK]
+    Distribution: B:3, A:2
+    Entropy: 0.97 bits
+
+  MAJORITY VOTE: B  [XX]  (split)
+
+  ARRIVAL: A  [OK]
+    Atoms: @CONFLICT=7, @CONSENSUS=14
+    Unique atoms: 7, Cost: $0.0324
+    Round answers:
+      R1: Alpha:B, Beta:A, Delta:D, Epsilon:A, Gamma:A
+      R2: Alpha:D, Beta:A, Epsilon:A, Gamma:A
+      R4: Alpha:A
+
+  CRDT Metrics:
+    CARE Resolve: 0.577
+    Meaning Debt: 8.330
+    Health: strained
+    Conflicts: 6 raised, 12 resolved, 0 unresolved
+    Fairness Index: 0.924
+
+  OUTCOME:
+    >> ARRIVAL RESCUED: MV failed, but ARRIVAL found the right answer
+       Solo had correct (2/5), protocol amplified minority
+    >> FLIP: Solo majority was B, ARRIVAL chose A
+
+  Time: 230s (3.8 min)
+
+========================================================================
+  Q17 | GPQA_017 | Domain: chemistry | Correct: D
+========================================================================
+
+  SOLO (4/5 correct):
+    Alpha      -> D  [OK]
+    Beta       -> B  [XX]
+    Gamma      -> D  [OK]
+    Delta      -> D  [OK]
+    Epsilon    -> D  [OK]
+    Distribution: D:4, B:1
+    Entropy: 0.72 bits
+
+  MAJORITY VOTE: D  [OK]  (split)
+
+  ARRIVAL: D  [OK]
+    Atoms: @CONFLICT=5, @CONSENSUS=7
+    Unique atoms: 8, Cost: $0.0353
+    Round answers:
+      R1: Delta:D, Gamma:D
+      R2: Epsilon:D, Gamma:D
+      R4: Alpha:D
+
+  CRDT Metrics:
+    CARE Resolve: 0.820
+    Meaning Debt: 1.980
+    Health: strained
+    Conflicts: 5 raised, 7 resolved, 0 unresolved
+    Fairness Index: 0.601
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 274s (4.6 min)
+
+========================================================================
+  Q18 | GPQA_018 | Domain: chemistry | Correct: D
+========================================================================
+
+  SOLO (0/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> ?  [XX]
+    Gamma      -> ?  [XX]
+    Delta      -> ?  [XX]
+    Epsilon    -> ?  [XX]
+    Distribution: ?:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: None  [XX]  (split)
+
+  ARRIVAL: None  [XX]
+    Atoms: @CONFLICT=7, @CONSENSUS=1
+    Unique atoms: 6, Cost: $0.0401
+
+  CRDT Metrics:
+    CARE Resolve: 0.000
+    Meaning Debt: 0.000
+    Health: strained
+    Conflicts: 7 raised, 1 resolved, 6 unresolved
+    Fairness Index: 0.000
+
+  OUTCOME:
+    >> BOTH FAILED: Nobody got it right
+    >> FLIP: Solo majority was ?, ARRIVAL chose None
+
+  Time: 311s (5.2 min)
+
+========================================================================
+  Q19 | GPQA_019 | Domain: chemistry | Correct: C
+========================================================================
+
+  SOLO (0/5 correct):
+    Alpha      -> A  [XX]
+    Beta       -> ?  [XX]
+    Gamma      -> ?  [XX]
+    Delta      -> ?  [XX]
+    Epsilon    -> A  [XX]
+    Distribution: ?:3, A:2
+    Entropy: 0.97 bits
+
+  MAJORITY VOTE: A  [XX]  (unanimous)
+
+  ARRIVAL: C  [OK]
+    Atoms: @CONFLICT=2, @CONSENSUS=3
+    Unique atoms: 6, Cost: $0.0375
+    Round answers:
+      R1: Alpha:D, Gamma:C
+      R4: Alpha:C
+
+  CRDT Metrics:
+    CARE Resolve: 0.877
+    Meaning Debt: 1.103
+    Health: strained
+    Conflicts: 2 raised, 2 resolved, 0 unresolved
+    Fairness Index: 0.353
+
+  OUTCOME:
+    >> ARRIVAL CREATED: Neither solo nor MV had it, protocol generated new insight!
+    >> FLIP: Solo majority was ?, ARRIVAL chose C
+
+  Time: 293s (4.9 min)
+
+========================================================================
+  Q20 | GPQA_020 | Domain: chemistry | Correct: B
+========================================================================
+
+  SOLO (0/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> C  [XX]
+    Gamma      -> ?  [XX]
+    Delta      -> D  [XX]
+    Epsilon    -> D  [XX]
+    Distribution: ?:2, D:2, C:1
+    Entropy: 1.52 bits
+
+  MAJORITY VOTE: D  [XX]  (split)
+
+  ARRIVAL: D  [XX]
+    Atoms: @CONFLICT=6, @CONSENSUS=9
+    Unique atoms: 6, Cost: $0.0329
+    Round answers:
+      R1: Alpha:A, Beta:A, Delta:D, Epsilon:B, Gamma:D
+      R2: Beta:D, Delta:B, Epsilon:D
+      R4: Alpha:D
+
+  CRDT Metrics:
+    CARE Resolve: 0.661
+    Meaning Debt: 9.078
+    Health: strained
+    Conflicts: 6 raised, 8 resolved, 0 unresolved
+    Fairness Index: 0.823
+
+  OUTCOME:
+    >> BOTH FAILED: Nobody got it right
+    >> FLIP: Solo majority was ?, ARRIVAL chose D
+
+  Time: 244s (4.1 min)
+
+========================================================================
+  Q21 | GPQA_021 | Domain: chemistry | Correct: B
+========================================================================
+
+  SOLO (4/5 correct):
+    Alpha      -> B  [OK]
+    Beta       -> B  [OK]
+    Gamma      -> B  [OK]
+    Delta      -> B  [OK]
+    Epsilon    -> A  [XX]
+    Distribution: B:4, A:1
+    Entropy: 0.72 bits
+
+  MAJORITY VOTE: B  [OK]  (split)
+
+  ARRIVAL: B  [OK]
+    Atoms: @CONFLICT=8, @CONSENSUS=11
+    Unique atoms: 7, Cost: $0.0305
+    Round answers:
+      R1: Alpha:B, Beta:B, Delta:B, Epsilon:B, Gamma:B
+      R2: Alpha:A, Beta:A, Delta:A, Epsilon:B, Gamma:B
+      R4: Alpha:B
+
+  CRDT Metrics:
+    CARE Resolve: 0.797
+    Meaning Debt: 1.684
+    Health: strained
+    Conflicts: 8 raised, 12 resolved, 0 unresolved
+    Fairness Index: 0.822
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 220s (3.7 min)
+
+========================================================================
+  Q22 | GPQA_022 | Domain: chemistry | Correct: B
+========================================================================
+
+  SOLO (2/5 correct):
+    Alpha      -> D  [XX]
+    Beta       -> ?  [XX]
+    Gamma      -> A  [XX]
+    Delta      -> B  [OK]
+    Epsilon    -> B  [OK]
+    Distribution: B:2, D:1, ?:1, A:1
+    Entropy: 1.92 bits
+
+  MAJORITY VOTE: B  [OK]  (split)
+
+  ARRIVAL: D  [XX]
+    Atoms: @CONFLICT=2, @CONSENSUS=8
+    Unique atoms: 6, Cost: $0.0361
+    Round answers:
+      R1: Alpha:B, Beta:C, Delta:B, Epsilon:B, Gamma:B
+      R2: Epsilon:B, Gamma:C
+      R4: Alpha:D
+
+  CRDT Metrics:
+    CARE Resolve: 0.872
+    Meaning Debt: 0.808
+    Health: healthy
+    Conflicts: 2 raised, 7 resolved, 0 unresolved
+    Fairness Index: 0.687
+
+  OUTCOME:
+    >> ARRIVAL REGRESSED: MV was right but ARRIVAL went wrong
+       ARRIVAL chose D instead of B
+    >> FLIP: Solo majority was B, ARRIVAL chose D
+
+  Time: 258s (4.3 min)
+
+========================================================================
+  Q23 | GPQA_023 | Domain: chemistry | Correct: C
+========================================================================
+
+  SOLO (1/5 correct):
+    Alpha      -> B  [XX]
+    Beta       -> A  [XX]
+    Gamma      -> C  [OK]
+    Delta      -> B  [XX]
+    Epsilon    -> A  [XX]
+    Distribution: B:2, A:2, C:1
+    Entropy: 1.52 bits
+
+  MAJORITY VOTE: B  [XX]  (split)
+
+  ARRIVAL: A  [XX]
+    Atoms: @CONFLICT=9, @CONSENSUS=10
+    Unique atoms: 6, Cost: $0.0351
+    Round answers:
+      R1: Alpha:C, Beta:B, Delta:B, Epsilon:C, Gamma:D
+      R2: Beta:B, Delta:B, Epsilon:B
+      R4: Alpha:A
+
+  CRDT Metrics:
+    CARE Resolve: 0.805
+    Meaning Debt: 2.523
+    Health: strained
+    Conflicts: 9 raised, 9 resolved, 0 unresolved
+    Fairness Index: 0.810
+
+  OUTCOME:
+    >> BOTH FAILED (minority lost): 1/5 solo agents had it right
+    >> FLIP: Solo majority was B, ARRIVAL chose A
+
+  Time: 304s (5.1 min)
+
+========================================================================
+  Q24 | GPQA_024 | Domain: chemistry | Correct: C
+========================================================================
+
+  SOLO (2/5 correct):
+    Alpha      -> C  [OK]
+    Beta       -> ?  [XX]
+    Gamma      -> A  [XX]
+    Delta      -> D  [XX]
+    Epsilon    -> C  [OK]
+    Distribution: C:2, ?:1, A:1, D:1
+    Entropy: 1.92 bits
+
+  MAJORITY VOTE: C  [OK]  (split)
+
+  ARRIVAL: D  [XX]
+    Atoms: @CONFLICT=9, @CONSENSUS=10
+    Unique atoms: 6, Cost: $0.0338
+    Round answers:
+      R1: Alpha:D, Beta:C, Delta:A, Epsilon:A, Gamma:C
+      R2: Beta:D, Delta:C, Epsilon:D, Gamma:D
+      R4: Alpha:D
+
+  CRDT Metrics:
+    CARE Resolve: 0.934
+    Meaning Debt: 8.301
+    Health: strained
+    Conflicts: 7 raised, 9 resolved, 0 unresolved
+    Fairness Index: 0.835
+
+  OUTCOME:
+    >> ARRIVAL REGRESSED: MV was right but ARRIVAL went wrong
+       ARRIVAL chose D instead of C
+    >> FLIP: Solo majority was C, ARRIVAL chose D
+
+  Time: 300s (5.0 min)
+
+========================================================================
+  Q25 | GPQA_025 | Domain: chemistry | Correct: D
+========================================================================
+
+  SOLO (0/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> ?  [XX]
+    Gamma      -> ?  [XX]
+    Delta      -> ?  [XX]
+    Epsilon    -> ?  [XX]
+    Distribution: ?:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: None  [XX]  (split)
+
+  ARRIVAL: A  [XX]
+    Atoms: @CONFLICT=1, @CONSENSUS=3
+    Unique atoms: 6, Cost: $0.0386
+    Round answers:
+      R1: Alpha:A, Gamma:A
+      R2: Delta:A
+
+  CRDT Metrics:
+    CARE Resolve: 0.686
+    Meaning Debt: 10.259
+    Health: strained
+    Conflicts: 1 raised, 3 resolved, 0 unresolved
+    Fairness Index: 0.869
+
+  OUTCOME:
+    >> BOTH FAILED: Nobody got it right
+    >> FLIP: Solo majority was ?, ARRIVAL chose A
+
+  Time: 289s (4.8 min)
+
+========================================================================
+  Q26 | GPQA_026 | Domain: chemistry | Correct: D
+========================================================================
+
+  SOLO (1/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> B  [XX]
+    Gamma      -> B  [XX]
+    Delta      -> A  [XX]
+    Epsilon    -> D  [OK]
+    Distribution: B:2, ?:1, A:1, D:1
+    Entropy: 1.92 bits
+
+  MAJORITY VOTE: B  [XX]  (split)
+
+  ARRIVAL: D  [OK]
+    Atoms: @CONFLICT=7, @CONSENSUS=8
+    Unique atoms: 6, Cost: $0.0360
+    Round answers:
+      R1: Alpha:D, Beta:D, Epsilon:B, Gamma:B
+      R2: Alpha:B, Beta:B, Delta:B
+      R4: Alpha:D
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 3.863
+    Health: strained
+    Conflicts: 7 raised, 7 resolved, 0 unresolved
+    Fairness Index: 0.866
+
+  OUTCOME:
+    >> ARRIVAL RESCUED: MV failed, but ARRIVAL found the right answer
+       Solo had correct (1/5), protocol amplified minority
+    >> FLIP: Solo majority was B, ARRIVAL chose D
+
+  Time: 272s (4.5 min)
+
+========================================================================
+  Q27 | GPQA_027 | Domain: chemistry | Correct: A
+========================================================================
+
+  SOLO (0/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> ?  [XX]
+    Gamma      -> C  [XX]
+    Delta      -> ?  [XX]
+    Epsilon    -> C  [XX]
+    Distribution: ?:3, C:2
+    Entropy: 0.97 bits
+
+  MAJORITY VOTE: C  [XX]  (unanimous)
+
+  ARRIVAL: C  [XX]
+    Atoms: @CONFLICT=5, @CONSENSUS=7
+    Unique atoms: 6, Cost: $0.0346
+    Round answers:
+      R1: Alpha:A, Beta:A, Delta:A, Epsilon:A, Gamma:B
+      R2: Delta:C
+      R4: Alpha:C
+
+  CRDT Metrics:
+    CARE Resolve: 0.584
+    Meaning Debt: 2.614
+    Health: strained
+    Conflicts: 5 raised, 6 resolved, 0 unresolved
+    Fairness Index: 0.545
+
+  OUTCOME:
+    >> BOTH FAILED: Nobody got it right
+    >> FLIP: Solo majority was ?, ARRIVAL chose C
+
+  Time: 873s (14.6 min)
+
+========================================================================
+  Q28 | GPQA_028 | Domain: chemistry | Correct: B
+========================================================================
+
+  SOLO (1/5 correct):
+    Alpha      -> D  [XX]
+    Beta       -> ?  [XX]
+    Gamma      -> B  [OK]
+    Delta      -> ?  [XX]
+    Epsilon    -> D  [XX]
+    Distribution: D:2, ?:2, B:1
+    Entropy: 1.52 bits
+
+  MAJORITY VOTE: D  [XX]  (split)
+
+  ARRIVAL: B  [OK]
+    Atoms: @CONFLICT=6, @CONSENSUS=3
+    Unique atoms: 7, Cost: $0.0389
+    Round answers:
+      R1: Alpha:D, Beta:B, Gamma:B
+
+  CRDT Metrics:
+    CARE Resolve: 0.773
+    Meaning Debt: 1.136
+    Health: strained
+    Conflicts: 6 raised, 3 resolved, 3 unresolved
+    Fairness Index: 0.588
+
+  OUTCOME:
+    >> ARRIVAL RESCUED: MV failed, but ARRIVAL found the right answer
+       Solo had correct (1/5), protocol amplified minority
+    >> FLIP: Solo majority was D, ARRIVAL chose B
+
+  Time: 314s (5.2 min)
+
+========================================================================
+  Q29 | GPQA_029 | Domain: biology | Correct: D
+========================================================================
+
+  SOLO (2/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> B  [XX]
+    Gamma      -> A  [XX]
+    Delta      -> D  [OK]
+    Epsilon    -> D  [OK]
+    Distribution: D:2, ?:1, B:1, A:1
+    Entropy: 1.92 bits
+
+  MAJORITY VOTE: D  [OK]  (split)
+
+  ARRIVAL: D  [OK]
+    Atoms: @CONFLICT=5, @CONSENSUS=15
+    Unique atoms: 6, Cost: $0.0326
+    Round answers:
+      R1: Alpha:B, Beta:B, Delta:D, Epsilon:B, Gamma:D
+      R2: Alpha:B, Beta:B, Delta:B, Epsilon:D, Gamma:D
+      R4: Alpha:D
+
+  CRDT Metrics:
+    CARE Resolve: 0.595
+    Meaning Debt: 5.949
+    Health: strained
+    Conflicts: 5 raised, 14 resolved, 0 unresolved
+    Fairness Index: 0.755
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 260s (4.3 min)
+
+========================================================================
+  Q30 | GPQA_030 | Domain: biology | Correct: B
+========================================================================
+
+  SOLO (0/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> D  [XX]
+    Gamma      -> ?  [XX]
+    Delta      -> ?  [XX]
+    Epsilon    -> ?  [XX]
+    Distribution: ?:4, D:1
+    Entropy: 0.72 bits
+
+  MAJORITY VOTE: D  [XX]  (unanimous)
+
+  ARRIVAL: A  [XX]
+    Atoms: @CONFLICT=4, @CONSENSUS=7
+    Unique atoms: 7, Cost: $0.0541
+    Round answers:
+      R1: Alpha:A, Beta:A, Delta:A, Gamma:A
+      R2: Alpha:A, Epsilon:A
+      R4: Alpha:A
+
+  CRDT Metrics:
+    CARE Resolve: 0.876
+    Meaning Debt: 2.483
+    Health: strained
+    Conflicts: 4 raised, 6 resolved, 0 unresolved
+    Fairness Index: 0.079
+
+  OUTCOME:
+    >> BOTH FAILED: Nobody got it right
+    >> FLIP: Solo majority was ?, ARRIVAL chose A
+
+  Time: 308s (5.1 min)
+
+========================================================================
+  Q31 | GPQA_031 | Domain: biology | Correct: B
+========================================================================
+
+  SOLO (5/5 correct):
+    Alpha      -> B  [OK]
+    Beta       -> B  [OK]
+    Gamma      -> B  [OK]
+    Delta      -> B  [OK]
+    Epsilon    -> B  [OK]
+    Distribution: B:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: B  [OK]  (unanimous)
+
+  ARRIVAL: B  [OK]
+    Atoms: @CONFLICT=7, @CONSENSUS=10
+    Unique atoms: 8, Cost: $0.0291
+    Round answers:
+      R1: Alpha:B, Beta:B, Delta:B, Epsilon:B, Gamma:B
+      R2: Alpha:B, Beta:B, Delta:B, Epsilon:B
+      R4: Alpha:B
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 7 raised, 10 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 292s (4.9 min)
+
+========================================================================
+  Q32 | GPQA_032 | Domain: biology | Correct: A
+========================================================================
+
+  SOLO (4/5 correct):
+    Alpha      -> A  [OK]
+    Beta       -> ?  [XX]
+    Gamma      -> A  [OK]
+    Delta      -> A  [OK]
+    Epsilon    -> A  [OK]
+    Distribution: A:4, ?:1
+    Entropy: 0.72 bits
+
+  MAJORITY VOTE: A  [OK]  (unanimous)
+
+  ARRIVAL: A  [OK]
+    Atoms: @CONFLICT=5, @CONSENSUS=8
+    Unique atoms: 6, Cost: $0.0347
+    Round answers:
+      R1: Alpha:A, Beta:A, Delta:A, Epsilon:A, Gamma:A
+      R2: Epsilon:A, Gamma:A
+      R4: Alpha:A
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 5 raised, 7 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 221s (3.7 min)
+
+========================================================================
+  Q33 | GPQA_033 | Domain: biology | Correct: A
+========================================================================
+
+  SOLO (1/5 correct):
+    Alpha      -> C  [XX]
+    Beta       -> C  [XX]
+    Gamma      -> C  [XX]
+    Delta      -> A  [OK]
+    Epsilon    -> C  [XX]
+    Distribution: C:4, A:1
+    Entropy: 0.72 bits
+
+  MAJORITY VOTE: C  [XX]  (split)
+
+  ARRIVAL: A  [OK]
+    Atoms: @CONFLICT=11, @CONSENSUS=9
+    Unique atoms: 7, Cost: $0.0329
+    Round answers:
+      R1: Alpha:C, Beta:C, Delta:C, Epsilon:C, Gamma:C
+      R2: Alpha:A, Beta:C, Gamma:B
+      R4: Alpha:A
+
+  CRDT Metrics:
+    CARE Resolve: 0.888
+    Meaning Debt: 2.339
+    Health: unhealthy
+    Conflicts: 11 raised, 9 resolved, 2 unresolved
+    Fairness Index: 0.327
+
+  OUTCOME:
+    >> ARRIVAL RESCUED: MV failed, but ARRIVAL found the right answer
+       Solo had correct (1/5), protocol amplified minority
+    >> FLIP: Solo majority was C, ARRIVAL chose A
+
+  Time: 236s (3.9 min)
+
+========================================================================
+  Q34 | GPQA_034 | Domain: biology | Correct: C
+========================================================================
+
+  SOLO (5/5 correct):
+    Alpha      -> C  [OK]
+    Beta       -> C  [OK]
+    Gamma      -> C  [OK]
+    Delta      -> C  [OK]
+    Epsilon    -> C  [OK]
+    Distribution: C:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: C  [OK]  (unanimous)
+
+  ARRIVAL: C  [OK]
+    Atoms: @CONFLICT=6, @CONSENSUS=9
+    Unique atoms: 7, Cost: $0.0313
+    Round answers:
+      R1: Alpha:C, Beta:C, Epsilon:C, Gamma:C
+      R2: Alpha:C, Beta:C, Epsilon:C
+      R4: Alpha:C
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 6 raised, 9 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 280s (4.7 min)
+
+========================================================================
+  Q35 | GPQA_035 | Domain: interdisciplinary | Correct: A
+========================================================================
+
+  SOLO (5/5 correct):
+    Alpha      -> A  [OK]
+    Beta       -> A  [OK]
+    Gamma      -> A  [OK]
+    Delta      -> A  [OK]
+    Epsilon    -> A  [OK]
+    Distribution: A:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: A  [OK]  (unanimous)
+
+  ARRIVAL: A  [OK]
+    Atoms: @CONFLICT=7, @CONSENSUS=12
+    Unique atoms: 6, Cost: $0.0300
+    Round answers:
+      R1: Alpha:A, Beta:A, Delta:A, Epsilon:A, Gamma:A
+      R2: Alpha:A, Beta:A, Delta:A, Epsilon:A, Gamma:A
+      R4: Alpha:A
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 7 raised, 11 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 194s (3.2 min)
+
+========================================================================
+  Q36 | GPQA_036 | Domain: interdisciplinary | Correct: C
+========================================================================
+
+  SOLO (0/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> ?  [XX]
+    Gamma      -> ?  [XX]
+    Delta      -> ?  [XX]
+    Epsilon    -> ?  [XX]
+    Distribution: ?:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: None  [XX]  (split)
+
+  ARRIVAL: A  [XX]
+    Atoms: @CONFLICT=5, @CONSENSUS=3
+    Unique atoms: 6, Cost: $0.0394
+    Round answers:
+      R1: Epsilon:C, Gamma:C
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: strained
+    Conflicts: 3 raised, 2 resolved, 1 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH FAILED: Nobody got it right
+    >> FLIP: Solo majority was ?, ARRIVAL chose A
+
+  Time: 269s (4.5 min)
+
+========================================================================
+  Q37 | GPQA_037 | Domain: interdisciplinary | Correct: C
+========================================================================
+
+  SOLO (5/5 correct):
+    Alpha      -> C  [OK]
+    Beta       -> C  [OK]
+    Gamma      -> C  [OK]
+    Delta      -> C  [OK]
+    Epsilon    -> C  [OK]
+    Distribution: C:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: C  [OK]  (unanimous)
+
+  ARRIVAL: C  [OK]
+    Atoms: @CONFLICT=5, @CONSENSUS=8
+    Unique atoms: 6, Cost: $0.0317
+    Round answers:
+      R1: Alpha:C, Beta:C, Epsilon:C, Gamma:C
+      R2: Delta:C, Epsilon:C, Gamma:C
+      R4: Alpha:C
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 5 raised, 7 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 224s (3.7 min)
+
+========================================================================
+  Q38 | GPQA_038 | Domain: interdisciplinary | Correct: B
+========================================================================
+
+  SOLO (2/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> ?  [XX]
+    Gamma      -> ?  [XX]
+    Delta      -> B  [OK]
+    Epsilon    -> B  [OK]
+    Distribution: ?:3, B:2
+    Entropy: 0.97 bits
+
+  MAJORITY VOTE: B  [OK]  (unanimous)
+
+  ARRIVAL: B  [OK]
+    Atoms: @CONFLICT=2, @CONSENSUS=4
+    Unique atoms: 6, Cost: $0.0375
+    Round answers:
+      R1: Beta:B, Delta:B, Epsilon:B, Gamma:B
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 2 raised, 4 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+    >> FLIP: Solo majority was ?, ARRIVAL chose B
+
+  Time: 263s (4.4 min)
+
+========================================================================
+  Q39 | GPQA_039 | Domain: interdisciplinary | Correct: C
+========================================================================
+
+  SOLO (2/5 correct):
+    Alpha      -> ?  [XX]
+    Beta       -> C  [OK]
+    Gamma      -> C  [OK]
+    Delta      -> ?  [XX]
+    Epsilon    -> ?  [XX]
+    Distribution: ?:3, C:2
+    Entropy: 0.97 bits
+
+  MAJORITY VOTE: C  [OK]  (unanimous)
+
+  ARRIVAL: C  [OK]
+    Atoms: @CONFLICT=3, @CONSENSUS=9
+    Unique atoms: 6, Cost: $0.0335
+    Round answers:
+      R1: Alpha:C, Beta:C, Delta:C, Epsilon:C, Gamma:C
+      R2: Beta:C, Delta:C, Epsilon:C
+      R4: Alpha:C
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 3 raised, 8 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+    >> FLIP: Solo majority was ?, ARRIVAL chose C
+
+  Time: 220s (3.7 min)
+
+========================================================================
+  Q40 | GPQA_040 | Domain: interdisciplinary | Correct: B
+========================================================================
+
+  SOLO (5/5 correct):
+    Alpha      -> B  [OK]
+    Beta       -> B  [OK]
+    Gamma      -> B  [OK]
+    Delta      -> B  [OK]
+    Epsilon    -> B  [OK]
+    Distribution: B:5
+    Entropy: -0.00 bits
+
+  MAJORITY VOTE: B  [OK]  (unanimous)
+
+  ARRIVAL: B  [OK]
+    Atoms: @CONFLICT=2, @CONSENSUS=14
+    Unique atoms: 6, Cost: $0.0268
+    Round answers:
+      R1: Alpha:B, Beta:B, Delta:B, Epsilon:B, Gamma:B
+      R2: Alpha:B, Beta:B, Delta:B, Epsilon:B, Gamma:B
+      R4: Alpha:B
+
+  CRDT Metrics:
+    CARE Resolve: 1.000
+    Meaning Debt: 0.000
+    Health: healthy
+    Conflicts: 2 raised, 13 resolved, 0 unresolved
+    Fairness Index: 1.000
+
+  OUTCOME:
+    >> BOTH CORRECT: MV and ARRIVAL both right
+
+  Time: 185s (3.1 min)
+
+========================================================================
+  END OF REPORT
+========================================================================

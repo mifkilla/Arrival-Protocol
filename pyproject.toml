@@ -1,0 +1,67 @@
+# ARRIVAL Protocol -- AI-to-AI Coordination Through Structured Semantic Atoms
+# Copyright (C) 2025-2026 Mefodiy Kelevra
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arrival-protocol"
+version = "1.0.0"
+description = "ARRIVAL Protocol: Cross-architecture AI-to-AI coordination through structured semantic atoms"
+readme = "README.md"
+license = "AGPL-3.0-or-later"
+requires-python = ">=3.10"
+authors = [
+    {name = "Mefodiy Kelevra", email = "mefodiy.kelevra@proton.me"},
+]
+keywords = [
+    "multi-agent systems",
+    "LLM coordination",
+    "CRDT",
+    "semantic atoms",
+    "debate protocol",
+    "GPQA",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "requests>=2.31.0",
+    "openai>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+autogen = [
+    "pyautogen>=0.2.0",
+]
+viz = [
+    "matplotlib>=3.7",
+    "seaborn>=0.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/mefodiy-kelevra/arrival-protocol"
+Documentation = "https://github.com/mefodiy-kelevra/arrival-protocol/tree/main/docs"
+Repository = "https://github.com/mefodiy-kelevra/arrival-protocol"
+Issues = "https://github.com/mefodiy-kelevra/arrival-protocol/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

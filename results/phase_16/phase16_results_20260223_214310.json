@@ -1,0 +1,4864 @@
+{
+  "experiment": "ARRIVAL CRDT - Phase 16: Homogeneous Ensemble (Echo-Chamber Test)",
+  "started": "2026-02-23T21:43:10.886120",
+  "completed": "2026-02-23T21:43:10.896069",
+  "duration_minutes": 0.0,
+  "total_questions": 40,
+  "total_api_calls": 0,
+  "total_cost_usd": 0.0,
+  "model": "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8",
+  "agents": [
+    "Alpha",
+    "Beta",
+    "Gamma",
+    "Delta",
+    "Epsilon"
+  ],
+  "parameters": {
+    "temperature": 0.7,
+    "max_tokens_dialogue": 1024,
+    "max_tokens_solo": 512,
+    "enable_thinking": false,
+    "dataset": "GPQA Diamond",
+    "dataset_citation": "Rein et al. (2024) arXiv:2311.12022",
+    "ensemble_type": "homogeneous (5 × same model, different personas)"
+  },
+  "summary": {
+    "solo": {
+      "correct": 45,
+      "total": 200,
+      "accuracy": 0.225,
+      "per_agent": {
+        "Alpha": {
+          "correct": 9,
+          "total": 40,
+          "accuracy": 0.225
+        },
+        "Beta": {
+          "correct": 9,
+          "total": 40,
+          "accuracy": 0.225
+        },
+        "Gamma": {
+          "correct": 9,
+          "total": 40,
+          "accuracy": 0.225
+        },
+        "Delta": {
+          "correct": 9,
+          "total": 40,
+          "accuracy": 0.225
+        },
+        "Epsilon": {
+          "correct": 9,
+          "total": 40,
+          "accuracy": 0.225
+        }
+      }
+    },
+    "majority_vote": {
+      "correct": 9,
+      "total": 40,
+      "accuracy": 0.225
+    },
+    "arrival": {
+      "correct": 9,
+      "total": 40,
+      "accuracy": 0.225
+    },
+    "gain_vs_solo_pp": 0.0,
+    "gain_vs_mv_pp": 0.0,
+    "crdt": {
+      "avg_care_resolve": null,
+      "avg_meaning_debt": null,
+      "health_counts": {
+        "healthy": 40,
+        "strained": 0,
+        "unhealthy": 0
+      }
+    },
+    "per_domain": {
+      "physics": {
+        "n_questions": 14,
+        "solo_accuracy": 0.2857,
+        "mv_accuracy": 0.2857,
+        "arrival_accuracy": 0.2857
+      },
+      "chemistry": {
+        "n_questions": 14,
+        "solo_accuracy": 0.1429,
+        "mv_accuracy": 0.1429,
+        "arrival_accuracy": 0.1429
+      },
+      "biology": {
+        "n_questions": 6,
+        "solo_accuracy": 0.3333,
+        "mv_accuracy": 0.3333,
+        "arrival_accuracy": 0.3333
+      },
+      "interdisciplinary": {
+        "n_questions": 6,
+        "solo_accuracy": 0.1667,
+        "mv_accuracy": 0.1667,
+        "arrival_accuracy": 0.1667
+      }
+    },
+    "r1_unanimity_rate": 1.0
+  },
+  "echo_chamber_metrics": {
+    "r1_agreement": {
+      "r1_agreement_rate": 1.0,
+      "unanimous_count": 40,
+      "total_questions": 40,
+      "details": [
+        {
+          "question_id": "GPQA_001",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_002",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_003",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_004",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_005",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_006",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_007",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_008",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_009",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_010",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_011",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_012",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_013",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_014",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_015",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_016",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_017",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_018",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_019",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_020",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_021",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_022",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_023",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_024",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_025",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_026",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_027",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_028",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_029",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_030",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_031",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_032",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_033",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_034",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_035",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_036",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_037",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_038",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_039",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        },
+        {
+          "question_id": "GPQA_040",
+          "r1_answers": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          "unanimous": true
+        }
+      ]
+    },
+    "answer_entropy": {
+      "avg_entropy_bits": 0.0,
+      "max_possible_bits": 2.0,
+      "normalized_entropy": 0.0,
+      "n_questions": 40,
+      "details": [
+        {
+          "question_id": "GPQA_001",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_002",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_003",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_004",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_005",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_006",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_007",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_008",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_009",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_010",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_011",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_012",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_013",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_014",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_015",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_016",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_017",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_018",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_019",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_020",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_021",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_022",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_023",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_024",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_025",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_026",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_027",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_028",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_029",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_030",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_031",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_032",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_033",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_034",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_035",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_036",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_037",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_038",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_039",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        },
+        {
+          "question_id": "GPQA_040",
+          "distribution": {
+            "A": 5
+          },
+          "entropy_bits": -0.0
+        }
+      ]
+    },
+    "flip_rate": {
+      "flip_rate": 0.0,
+      "total_flips": 0,
+      "total_agents_compared": 0,
+      "details": [
+        {
+          "question_id": "GPQA_001",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_002",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_003",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_004",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_005",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_006",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_007",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_008",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_009",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_010",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_011",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_012",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_013",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_014",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_015",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_016",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_017",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_018",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_019",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_020",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_021",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_022",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_023",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_024",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_025",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_026",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_027",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_028",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_029",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_030",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_031",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_032",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_033",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_034",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_035",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_036",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_037",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_038",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_039",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        },
+        {
+          "question_id": "GPQA_040",
+          "r1_answers": {
+            "Alpha": "A",
+            "Beta": "A",
+            "Gamma": "A",
+            "Delta": "A",
+            "Epsilon": "A"
+          },
+          "r2_answers": {},
+          "flips": 0,
+          "agents_compared": 0
+        }
+      ]
+    },
+    "false_consensus": {
+      "false_consensus_rate": 0.775,
+      "false_consensus_count": 31,
+      "total_questions": 40,
+      "details": [
+        {
+          "question_id": "GPQA_001",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_002",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "A",
+          "is_false_consensus": false
+        },
+        {
+          "question_id": "GPQA_003",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "C",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_004",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_005",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "D",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_006",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_007",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_008",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_009",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "A",
+          "is_false_consensus": false
+        },
+        {
+          "question_id": "GPQA_010",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "A",
+          "is_false_consensus": false
+        },
+        {
+          "question_id": "GPQA_011",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "D",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_012",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "C",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_013",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "A",
+          "is_false_consensus": false
+        },
+        {
+          "question_id": "GPQA_014",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_015",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_016",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "A",
+          "is_false_consensus": false
+        },
+        {
+          "question_id": "GPQA_017",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "D",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_018",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "D",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_019",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "C",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_020",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_021",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_022",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_023",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "C",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_024",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "C",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_025",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "D",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_026",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "D",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_027",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "A",
+          "is_false_consensus": false
+        },
+        {
+          "question_id": "GPQA_028",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_029",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "D",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_030",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_031",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_032",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "A",
+          "is_false_consensus": false
+        },
+        {
+          "question_id": "GPQA_033",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "A",
+          "is_false_consensus": false
+        },
+        {
+          "question_id": "GPQA_034",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "C",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_035",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "A",
+          "is_false_consensus": false
+        },
+        {
+          "question_id": "GPQA_036",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "C",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_037",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "C",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_038",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_039",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "C",
+          "is_false_consensus": true
+        },
+        {
+          "question_id": "GPQA_040",
+          "r1_unanimous": true,
+          "final_answer": "A",
+          "correct_answer": "B",
+          "is_false_consensus": true
+        }
+      ]
+    },
+    "minority_suppression": {
+      "minority_suppression_rate": 0.0,
+      "suppressed_count": 0,
+      "total_questions": 40,
+      "minority_correct_questions": 0,
+      "details": [
+        {
+          "question_id": "GPQA_001",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_002",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "A",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_003",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "C",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_004",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_005",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "D",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_006",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_007",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_008",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_009",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "A",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_010",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "A",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_011",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "D",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_012",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "C",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_013",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "A",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_014",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_015",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_016",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "A",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_017",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "D",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_018",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "D",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_019",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "C",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_020",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_021",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_022",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_023",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "C",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_024",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "C",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_025",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "D",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_026",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "D",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_027",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "A",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_028",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_029",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "D",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_030",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_031",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_032",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "A",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_033",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "A",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_034",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "C",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_035",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "A",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_036",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "C",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_037",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "C",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_038",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_039",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "C",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        },
+        {
+          "question_id": "GPQA_040",
+          "r1_distribution": {
+            "A": 5
+          },
+          "majority_answer": "A",
+          "correct_answer": "B",
+          "minority_had_correct": false,
+          "final_answer": "A",
+          "suppressed": false
+        }
+      ]
+    },
+    "confidence_inflation": {
+      "confidence_inflation_ratio": 1.0,
+      "avg_confidence_agreement": 0.0,
+      "avg_confidence_disagreement": 0.0,
+      "n_agreement_samples": 0,
+      "n_disagreement_samples": 0
+    },
+    "diversity_tax": {
+      "diversity_tax": 0.5714,
+      "diversity_tax_pct": 57.1,
+      "phase16_accuracy": 0.225,
+      "phase13_accuracy": 0.525,
+      "interpretation": "Homogeneous ensemble loses 57.1% accuracy vs heterogeneous"
+    },
+    "per_agent_solo": {
+      "per_agent": {
+        "Alpha": {
+          "correct": 9,
+          "total": 40,
+          "accuracy": 0.225
+        },
+        "Beta": {
+          "correct": 9,
+          "total": 40,
+          "accuracy": 0.225
+        },
+        "Gamma": {
+          "correct": 9,
+          "total": 40,
+          "accuracy": 0.225
+        },
+        "Delta": {
+          "correct": 9,
+          "total": 40,
+          "accuracy": 0.225
+        },
+        "Epsilon": {
+          "correct": 9,
+          "total": 40,
+          "accuracy": 0.225
+        }
+      },
+      "per_agent_domain": {
+        "Alpha": {
+          "physics": {
+            "correct": 4,
+            "total": 14,
+            "accuracy": 0.2857
+          },
+          "chemistry": {
+            "correct": 2,
+            "total": 14,
+            "accuracy": 0.1429
+          },
+          "biology": {
+            "correct": 2,
+            "total": 6,
+            "accuracy": 0.3333
+          },
+          "interdisciplinary": {
+            "correct": 1,
+            "total": 6,
+            "accuracy": 0.1667
+          }
+        },
+        "Beta": {
+          "physics": {
+            "correct": 4,
+            "total": 14,
+            "accuracy": 0.2857
+          },
+          "chemistry": {
+            "correct": 2,
+            "total": 14,
+            "accuracy": 0.1429
+          },
+          "biology": {
+            "correct": 2,
+            "total": 6,
+            "accuracy": 0.3333
+          },
+          "interdisciplinary": {
+            "correct": 1,
+            "total": 6,
+            "accuracy": 0.1667
+          }
+        },
+        "Gamma": {
+          "physics": {
+            "correct": 4,
+            "total": 14,
+            "accuracy": 0.2857
+          },
+          "chemistry": {
+            "correct": 2,
+            "total": 14,
+            "accuracy": 0.1429
+          },
+          "biology": {
+            "correct": 2,
+            "total": 6,
+            "accuracy": 0.3333
+          },
+          "interdisciplinary": {
+            "correct": 1,
+            "total": 6,
+            "accuracy": 0.1667
+          }
+        },
+        "Delta": {
+          "physics": {
+            "correct": 4,
+            "total": 14,
+            "accuracy": 0.2857
+          },
+          "chemistry": {
+            "correct": 2,
+            "total": 14,
+            "accuracy": 0.1429
+          },
+          "biology": {
+            "correct": 2,
+            "total": 6,
+            "accuracy": 0.3333
+          },
+          "interdisciplinary": {
+            "correct": 1,
+            "total": 6,
+            "accuracy": 0.1667
+          }
+        },
+        "Epsilon": {
+          "physics": {
+            "correct": 4,
+            "total": 14,
+            "accuracy": 0.2857
+          },
+          "chemistry": {
+            "correct": 2,
+            "total": 14,
+            "accuracy": 0.1429
+          },
+          "biology": {
+            "correct": 2,
+            "total": 6,
+            "accuracy": 0.3333
+          },
+          "interdisciplinary": {
+            "correct": 1,
+            "total": 6,
+            "accuracy": 0.1667
+          }
+        }
+      }
+    }
+  },
+  "results": [
+    {
+      "question_id": "GPQA_001",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.886259"
+    },
+    {
+      "question_id": "GPQA_002",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "A",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": true,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.888667"
+    },
+    {
+      "question_id": "GPQA_003",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "C",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.889060"
+    },
+    {
+      "question_id": "GPQA_004",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.889318"
+    },
+    {
+      "question_id": "GPQA_005",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "D",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.889513"
+    },
+    {
+      "question_id": "GPQA_006",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.889688"
+    },
+    {
+      "question_id": "GPQA_007",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.889870"
+    },
+    {
+      "question_id": "GPQA_008",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.890030"
+    },
+    {
+      "question_id": "GPQA_009",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "A",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": true,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.890225"
+    },
+    {
+      "question_id": "GPQA_010",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "A",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": true,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.890444"
+    },
+    {
+      "question_id": "GPQA_011",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "D",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.890620"
+    },
+    {
+      "question_id": "GPQA_012",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "C",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.890793"
+    },
+    {
+      "question_id": "GPQA_013",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "A",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": true,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.890956"
+    },
+    {
+      "question_id": "GPQA_014",
+      "domain": "physics",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.891111"
+    },
+    {
+      "question_id": "GPQA_015",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.891274"
+    },
+    {
+      "question_id": "GPQA_016",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "A",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": true,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.891435"
+    },
+    {
+      "question_id": "GPQA_017",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "D",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.891610"
+    },
+    {
+      "question_id": "GPQA_018",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "D",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.891783"
+    },
+    {
+      "question_id": "GPQA_019",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "C",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.891945"
+    },
+    {
+      "question_id": "GPQA_020",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.892118"
+    },
+    {
+      "question_id": "GPQA_021",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.892309"
+    },
+    {
+      "question_id": "GPQA_022",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.892464"
+    },
+    {
+      "question_id": "GPQA_023",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "C",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.892634"
+    },
+    {
+      "question_id": "GPQA_024",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "C",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.892802"
+    },
+    {
+      "question_id": "GPQA_025",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "D",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.892956"
+    },
+    {
+      "question_id": "GPQA_026",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "D",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.893117"
+    },
+    {
+      "question_id": "GPQA_027",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "A",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": true,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.893271"
+    },
+    {
+      "question_id": "GPQA_028",
+      "domain": "chemistry",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.893432"
+    },
+    {
+      "question_id": "GPQA_029",
+      "domain": "biology",
+      "difficulty": "graduate",
+      "correct_answer": "D",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.893585"
+    },
+    {
+      "question_id": "GPQA_030",
+      "domain": "biology",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.893751"
+    },
+    {
+      "question_id": "GPQA_031",
+      "domain": "biology",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.893910"
+    },
+    {
+      "question_id": "GPQA_032",
+      "domain": "biology",
+      "difficulty": "graduate",
+      "correct_answer": "A",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": true,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.894062"
+    },
+    {
+      "question_id": "GPQA_033",
+      "domain": "biology",
+      "difficulty": "graduate",
+      "correct_answer": "A",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": true,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.894252"
+    },
+    {
+      "question_id": "GPQA_034",
+      "domain": "biology",
+      "difficulty": "graduate",
+      "correct_answer": "C",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.894410"
+    },
+    {
+      "question_id": "GPQA_035",
+      "domain": "interdisciplinary",
+      "difficulty": "graduate",
+      "correct_answer": "A",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": true,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": true,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.894563"
+    },
+    {
+      "question_id": "GPQA_036",
+      "domain": "interdisciplinary",
+      "difficulty": "graduate",
+      "correct_answer": "C",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.894731"
+    },
+    {
+      "question_id": "GPQA_037",
+      "domain": "interdisciplinary",
+      "difficulty": "graduate",
+      "correct_answer": "C",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.894905"
+    },
+    {
+      "question_id": "GPQA_038",
+      "domain": "interdisciplinary",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.895059"
+    },
+    {
+      "question_id": "GPQA_039",
+      "domain": "interdisciplinary",
+      "difficulty": "graduate",
+      "correct_answer": "C",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.895210"
+    },
+    {
+      "question_id": "GPQA_040",
+      "domain": "interdisciplinary",
+      "difficulty": "graduate",
+      "correct_answer": "B",
+      "solo": [
+        {
+          "agent_name": "Alpha",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Beta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Gamma",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Delta",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        },
+        {
+          "agent_name": "Epsilon",
+          "model": "Qwen3-235B",
+          "answer": "A",
+          "correct": false,
+          "response_text": "[DRY RUN]"
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false,
+        "unanimous": true,
+        "cost_usd": 0.0
+      },
+      "arrival": {
+        "answer": "A",
+        "correct": false,
+        "atoms_used": {},
+        "unique_atoms": 0,
+        "emergent_atoms": [],
+        "cost_usd": 0.0,
+        "total_tokens": 0,
+        "dialogue": []
+      },
+      "crdt": {
+        "care_resolve": {},
+        "meaning_debt": {}
+      },
+      "question_time_s": 0.0,
+      "timestamp": "2026-02-23T21:43:10.895379"
+    }
+  ]
+}

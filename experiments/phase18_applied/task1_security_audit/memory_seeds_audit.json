@@ -1,0 +1,52 @@
+{
+  "description": "Pre-seeded ARRIVAL-MNEMO memories for Phase 18 Task 1 (Security Audit). Used in Condition C only. These simulate prior audit experience that CARE-ALERT can inject when consensus drops.",
+  "memories": [
+    {
+      "layer": "procedural",
+      "strategy_name": "sql_injection_audit",
+      "task_type": "security_audit",
+      "description": "When auditing database queries, check for string concatenation/interpolation in SQL statements. The fix is ALWAYS parameterized queries with ? or %s placeholders — never f-strings or .format().",
+      "success_rate": 0.95,
+      "n_trials": 12
+    },
+    {
+      "layer": "procedural",
+      "strategy_name": "auth_boundary_check",
+      "task_type": "security_audit",
+      "description": "For every endpoint that accesses user data, verify that session/auth is checked AND that the authenticated user is authorized for the specific resource (not just authenticated). IDOR vulnerabilities are common when auth check exists but doesn't verify ownership.",
+      "success_rate": 0.88,
+      "n_trials": 8
+    },
+    {
+      "layer": "procedural",
+      "strategy_name": "concurrency_audit",
+      "task_type": "security_audit",
+      "description": "Financial operations (transfers, purchases, balance updates) must be atomic. Look for read-then-write patterns without transaction locks — they indicate TOCTOU race conditions that enable double-spend attacks.",
+      "success_rate": 0.82,
+      "n_trials": 6
+    },
+    {
+      "layer": "semantic",
+      "domain": "web_security",
+      "rule": "Any user-supplied content rendered as HTML without escaping is a stored XSS vulnerability. Check for f-string HTML templates, innerHTML assignments, and missing html.escape() calls.",
+      "confidence": 0.95,
+      "evidence_count": 15
+    },
+    {
+      "layer": "semantic",
+      "domain": "error_handling",
+      "rule": "Bare except clauses (except: without specifying exception type) catch SystemExit and KeyboardInterrupt, making the program unkillable and hiding real errors. Always catch specific exception types.",
+      "confidence": 0.92,
+      "evidence_count": 10
+    },
+    {
+      "layer": "episodic",
+      "session_id": "synthetic_past_audit_001",
+      "task": "Flask application security audit",
+      "outcome": {"bugs_found": 8, "missed": ["unicode handling", "integer overflow"]},
+      "care_resolve": 0.72,
+      "meaning_debt": 0.15,
+      "key_insight": "Non-obvious bugs like encoding chains and numeric truncation are often missed when focus is on classic web vulnerabilities. Allocate specific attention to data transformation paths."
+    }
+  ]
+}
