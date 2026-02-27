@@ -7,18 +7,7 @@ Shared pytest fixtures for Arrival CRDT test suite.
 Provides sample dialogues, mock results, and common helpers.
 """
 
-import sys
-import os
-from pathlib import Path
-
 import pytest
-
-# ---------------------------------------------------------------------------
-# Path setup: make src/ importable without installing the package
-# ---------------------------------------------------------------------------
-SRC_DIR = str(Path(__file__).resolve().parent.parent / "src")
-if SRC_DIR not in sys.path:
-    sys.path.insert(0, SRC_DIR)
 
 
 # ===========================================================================

@@ -14,7 +14,7 @@
 import re
 from typing import Dict, List, Tuple, Optional, Any
 
-from crdt_metrics import (
+from arrival.crdt_metrics import (
     extract_position_mcq,
     compute_care_optimum,
     compute_dissatisfaction,

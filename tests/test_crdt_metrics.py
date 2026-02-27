@@ -15,15 +15,10 @@ Covers:
   - Adversarial detection (malicious atom adoption, false consensus)
 """
 
-import sys
-from pathlib import Path
-
 import pytest
 
-# Ensure src/ is importable
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
-
-from crdt_metrics import (
+# Package is installed via pip install -e .
+from arrival.crdt_metrics import (
     extract_position_mcq,
     extract_position_open,
     extract_weight_coherence,

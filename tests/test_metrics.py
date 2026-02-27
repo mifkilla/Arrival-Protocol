@@ -20,14 +20,12 @@ from unittest.mock import patch
 
 import pytest
 
-# Ensure src/ is importable
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
-
 # Patch out the OPENROUTER_API_KEY requirement before importing config
 import os
 os.environ.setdefault("OPENROUTER_API_KEY", "test-key-for-unit-tests")
 
-from metrics import (
+# Package is installed via pip install -e .
+from arrival.metrics import (
     find_all_atoms,
     count_protocol_atoms,
     detect_emergent_atoms,
@@ -39,7 +37,7 @@ from metrics import (
     REJECTION_MARKERS,
     DEFAULT_EXPECTED_ATOMS,
 )
-from config import KNOWN_ATOMS
+from arrival.config import KNOWN_ATOMS
 
 
 # ===================================================================

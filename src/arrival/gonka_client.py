@@ -34,14 +34,19 @@ logging.getLogger("gonka").setLevel(logging.WARNING)
 
 from openai import OpenAI, APIError, APITimeoutError, RateLimitError
 
-from config_phase16 import (
-    PHASE16_BACKEND,
-    GONKA_PRIVATE_KEY, GONKA_SOURCE_URL, GONKA_MODEL_ID,
-    OPENROUTER_API_KEY, OPENROUTER_BASE_URL, OPENROUTER_MODEL_ID,
-    GONKA_MODEL_COSTS, GONKA_MODEL_SHORT,
-    PHASE16_BUDGET_USD, PHASE16_ENABLE_THINKING,
-    get_model_id,
-)
+try:
+    from config_phase16 import (
+        PHASE16_BACKEND,
+        GONKA_PRIVATE_KEY, GONKA_SOURCE_URL, GONKA_MODEL_ID,
+        OPENROUTER_API_KEY, OPENROUTER_BASE_URL, OPENROUTER_MODEL_ID,
+        GONKA_MODEL_COSTS, GONKA_MODEL_SHORT,
+        PHASE16_BUDGET_USD, PHASE16_ENABLE_THINKING,
+        get_model_id,
+    )
+except ImportError:
+    # gonka_client requires config_phase16 at runtime;
+    # allow import for package discovery / static analysis
+    pass
 
 
 @dataclass

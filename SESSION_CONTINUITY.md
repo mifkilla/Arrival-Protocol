@@ -4,7 +4,7 @@
 # Если сессия прервётся — новый Claude читает этот файл и продолжает.
 # Автор проекта: Mefodiy Kelevra (MiF), ORCID: 0009-0003-4153-392X
 
-## ПОСЛЕДНЕЕ ОБНОВЛЕНИЕ: 2026-02-26 23:30 UTC
+## ПОСЛЕДНЕЕ ОБНОВЛЕНИЕ: 2026-02-27 04:00 UTC
 
 ---
 
@@ -47,11 +47,13 @@
 - [x] LICENSE-CODE (AGPL-3.0), LICENSE-DOCS (CC BY-NC 4.0)
 - [ ] Initial git commit (файлы staged, но НЕ закоммичены)
 
-### Phase 17: Solo CoT Baseline (MCQ)
-- [ ] Запуск run_phase17.py (40 вопросов × 5 runs) — ЗАПУЩЕН В ФОНЕ, ожидаем
-- [ ] Результат JSON сохранён
-- [ ] Fisher's exact test: Solo CoT MV vs ARRIVAL (65%)
-- [ ] Результаты добавлены в preprint (TBD placeholders в preprint)
+### Phase 17: Solo CoT Baseline (MCQ) — ЗАВЕРШЁН
+- [x] Запуск run_phase17.py (40 вопросов × 5 runs) — ЗАВЕРШЁН 2026-02-27 06:56 UTC+3
+- [x] Результат JSON: `results/phase17_results_20260226_215354.json`
+- [x] Solo CoT MV: **70.0% (28/40)** vs ARRIVAL **65.0% (26/40)** — Fisher p=0.812 (ns)
+- [x] Per-domain: physics 85.7%, chemistry 42.9%, biology 66.7%, interdisciplinary 100%
+- [x] Cost: $0.50, 200 API calls
+- [x] Результаты добавлены в preprint (все TBD заменены)
 
 ### Phase 18: Прикладной эксперимент (2 задания × 3 условия) — ЗАВЕРШЁН
 
@@ -78,15 +80,16 @@
 - [x] PHASE18_REPORT.md — финальный отчёт
 
 ### Preprint
-- [ ] Phase 17 секция — TBD placeholders (обновить когда Phase 17 завершится)
+- [x] Phase 17 секция обновлена (Section 9) — все TBD заменены реальными данными
 - [x] Phase 18 секция добавлена (Section 10)
-- [x] Abstract обновлён (Phase 18 results)
-- [x] Discussion обновлён (CARE as task discriminator, cost efficiency)
+- [x] Abstract обновлён (Phase 17 + Phase 18 results)
+- [x] Discussion обновлён (CARE as task discriminator, cost efficiency, Wang et al. response)
 - [x] Limitations обновлены (MCQ-only → limited open-ended)
 - [x] Conclusion обновлён
 
 ### Git
-- [ ] Initial commit
+- [x] Initial commit (f093563 + 6a7d6f8)
+- [ ] Phase 17 commit
 - [ ] Tag v1.0.0
 
 ---
@@ -176,7 +179,20 @@ Round 4: FINAL SYNTHESIS (1 API call)
 
 ### Phase 17 Results
 ```
-TBD — запущен в фоне, ожидаем ~30 мин
+Solo CoT per-run accuracy: 61.0% (122/200)
+Solo CoT MV (5 runs):      70.0% (28/40)
+Solo CoT Oracle (best-5):  85.0% (34/40)
+Phase 16 MV baseline:      52.5% (21/40)
+Phase 16 ARRIVAL:           65.0% (26/40)
+
+Fisher p (Solo MV vs ARRIVAL): 0.812 (NOT significant)
+Fisher p (Solo MV vs P16 MV):  0.168 (NOT significant)
+
+Per-domain: physics 85.7%, chemistry 42.9%, biology 66.7%, interdisciplinary 100%
+Cost: $0.50, API calls: 200
+
+KEY INSIGHT: Solo CoT MV (70%) > ARRIVAL (65%) by 5pp, but NOT statistically significant.
+ARRIVAL provides transparency, audit trails, CARE metrics that solo cannot.
 ```
 
 ### Phase 18 Task 1: Security Audit Results

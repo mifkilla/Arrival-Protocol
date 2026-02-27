@@ -28,16 +28,21 @@ from typing import Dict, List, Optional, Tuple
 
 from openai import OpenAI
 
-from config import (
-    ARRIVAL_SYSTEM_PROMPT,
-    MCQ_SYSTEM_PROMPT_TEMPLATE,
-    MODELS,
-    OPENROUTER_API_KEY,
-    OPENROUTER_BASE_URL,
-    SABOTEUR_STRATEGIES,
-    SABOTEUR_SYSTEM_PROMPT,
-    get_llm_config,
-)
+try:
+    from arrival.config import (
+        ARRIVAL_SYSTEM_PROMPT,
+        MCQ_SYSTEM_PROMPT_TEMPLATE,
+        MODELS,
+        OPENROUTER_API_KEY,
+        OPENROUTER_BASE_URL,
+        SABOTEUR_STRATEGIES,
+        SABOTEUR_SYSTEM_PROMPT,
+        get_llm_config,
+    )
+except ImportError:
+    # AutoGen agents require Phase 4-era config names;
+    # allow import for package discovery
+    pass
 
 
 class ARRIVALAgent:

@@ -22,7 +22,7 @@ Atom counting, consensus detection, protocol compliance, emergence detection.
 import re
 from typing import Dict, List, Tuple, Set, Optional
 
-from config import KNOWN_ATOMS
+from arrival.config import KNOWN_ATOMS
 
 
 # ============================================================

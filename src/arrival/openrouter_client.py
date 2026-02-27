@@ -32,7 +32,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 if hasattr(sys.stderr, 'reconfigure'):
     sys.stderr.reconfigure(errors='replace')
 
-from config import (
+from arrival.config import (
     OPENROUTER_API_KEY, OPENROUTER_BASE_URL,
     MODEL_COSTS, MODEL_SHORT, MAX_COST_USD,
     DEFAULT_MAX_TOKENS, DEFAULT_TEMPERATURE,

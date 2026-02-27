@@ -1,0 +1,2467 @@
+{
+  "summary": {
+    "phase": 17,
+    "experiment": "Solo CoT Baseline",
+    "model": "qwen/qwen3-235b-a22b",
+    "model_short": "Qwen3-235B",
+    "n_questions": 40,
+    "n_runs_per_question": 5,
+    "temperature": 0.7,
+    "solo": {
+      "accuracy": 0.595,
+      "correct": 119,
+      "total": 200
+    },
+    "majority_vote": {
+      "accuracy": 0.675,
+      "correct": 27,
+      "total": 40
+    },
+    "oracle": {
+      "accuracy": 0.85,
+      "correct": 34,
+      "total": 40
+    },
+    "comparison_with_phase16": {
+      "phase16_arrival_accuracy": 0.65,
+      "phase16_mv_accuracy": 0.525,
+      "solo_cot_mv_vs_arrival": {
+        "fisher_p": 1.0,
+        "significance": "ns",
+        "delta_pp": 2.500000000000002
+      },
+      "solo_cot_mv_vs_phase16_mv": {
+        "fisher_p": 0.2537105310399159,
+        "significance": "ns",
+        "delta_pp": 15.000000000000002
+      }
+    },
+    "cost_usd": 0.4938603000000002,
+    "api_calls": 200,
+    "timestamp": "20260226_204347",
+    "per_domain": {
+      "physics": {
+        "accuracy": 0.6428571428571429,
+        "correct": 9,
+        "total": 14
+      },
+      "chemistry": {
+        "accuracy": 0.5714285714285714,
+        "correct": 8,
+        "total": 14
+      },
+      "biology": {
+        "accuracy": 0.6666666666666666,
+        "correct": 4,
+        "total": 6
+      },
+      "interdisciplinary": {
+        "accuracy": 1.0,
+        "correct": 6,
+        "total": 6
+      }
+    }
+  },
+  "questions": [
+    {
+      "question_id": "GPQA_001",
+      "domain": "physics",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 316,
+          "tokens_completion": 9724,
+          "cost": 0.003012,
+          "reasoning_length": 3933
+        },
+        {
+          "run_idx": 1,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 316,
+          "tokens_completion": 4276,
+          "cost": 0.0013775999999999999,
+          "reasoning_length": 1800
+        },
+        {
+          "run_idx": 2,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 316,
+          "tokens_completion": 5724,
+          "cost": 0.0018119999999999998,
+          "reasoning_length": 3598
+        },
+        {
+          "run_idx": 3,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 316,
+          "tokens_completion": 3755,
+          "cost": 0.0012212999999999998,
+          "reasoning_length": 3326
+        },
+        {
+          "run_idx": 4,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 316,
+          "tokens_completion": 6645,
+          "cost": 0.0020883,
+          "reasoning_length": 2928
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    },
+    {
+      "question_id": "GPQA_002",
+      "domain": "physics",
+      "correct_answer": "A",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 611,
+          "tokens_completion": 3387,
+          "cost": 0.0011994,
+          "reasoning_length": 2940
+        },
+        {
+          "run_idx": 1,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 611,
+          "tokens_completion": 2848,
+          "cost": 0.0010377,
+          "reasoning_length": 3023
+        },
+        {
+          "run_idx": 2,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 611,
+          "tokens_completion": 3831,
+          "cost": 0.0013326,
+          "reasoning_length": 2751
+        },
+        {
+          "run_idx": 3,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 611,
+          "tokens_completion": 4362,
+          "cost": 0.0014919,
+          "reasoning_length": 2543
+        },
+        {
+          "run_idx": 4,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 611,
+          "tokens_completion": 5309,
+          "cost": 0.0017759999999999998,
+          "reasoning_length": 2518
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": false
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.4
+    },
+    {
+      "question_id": "GPQA_003",
+      "domain": "physics",
+      "correct_answer": "C",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 350,
+          "tokens_completion": 6944,
+          "cost": 0.0021882,
+          "reasoning_length": 2877
+        },
+        {
+          "run_idx": 1,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 350,
+          "tokens_completion": 6794,
+          "cost": 0.0021432,
+          "reasoning_length": 2536
+        },
+        {
+          "run_idx": 2,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 350,
+          "tokens_completion": 7178,
+          "cost": 0.0022584,
+          "reasoning_length": 2667
+        },
+        {
+          "run_idx": 3,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 350,
+          "tokens_completion": 5703,
+          "cost": 0.0018159,
+          "reasoning_length": 2490
+        },
+        {
+          "run_idx": 4,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 350,
+          "tokens_completion": 5848,
+          "cost": 0.0018594,
+          "reasoning_length": 2768
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.4
+    },
+    {
+      "question_id": "GPQA_004",
+      "domain": "physics",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 399,
+          "tokens_completion": 3053,
+          "cost": 0.0010356,
+          "reasoning_length": 1983
+        },
+        {
+          "run_idx": 1,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 399,
+          "tokens_completion": 2402,
+          "cost": 0.0008403,
+          "reasoning_length": 2452
+        },
+        {
+          "run_idx": 2,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 399,
+          "tokens_completion": 1791,
+          "cost": 0.000657,
+          "reasoning_length": 1342
+        },
+        {
+          "run_idx": 3,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 399,
+          "tokens_completion": 1933,
+          "cost": 0.0006996,
+          "reasoning_length": 1153
+        },
+        {
+          "run_idx": 4,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 399,
+          "tokens_completion": 2601,
+          "cost": 0.0009,
+          "reasoning_length": 2006
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    },
+    {
+      "question_id": "GPQA_005",
+      "domain": "physics",
+      "correct_answer": "D",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "A",
+          "correct": false,
+          "tokens_prompt": 296,
+          "tokens_completion": 10673,
+          "cost": 0.0032906999999999997,
+          "reasoning_length": 3455
+        },
+        {
+          "run_idx": 1,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 296,
+          "tokens_completion": 10182,
+          "cost": 0.0031433999999999998,
+          "reasoning_length": 3556
+        },
+        {
+          "run_idx": 2,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 296,
+          "tokens_completion": 9793,
+          "cost": 0.0030267,
+          "reasoning_length": 3633
+        },
+        {
+          "run_idx": 3,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 296,
+          "tokens_completion": 12867,
+          "cost": 0.0039489,
+          "reasoning_length": 3455
+        },
+        {
+          "run_idx": 4,
+          "answer": "B",
+          "correct": false,
+          "tokens_prompt": 296,
+          "tokens_completion": 10209,
+          "cost": 0.0031515,
+          "reasoning_length": 3140
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": false
+      },
+      "oracle": {
+        "correct": false
+      },
+      "per_run_accuracy": 0.0
+    },
+    {
+      "question_id": "GPQA_006",
+      "domain": "physics",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 283,
+          "tokens_completion": 8057,
+          "cost": 0.002502,
+          "reasoning_length": 3404
+        },
+        {
+          "run_idx": 1,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 283,
+          "tokens_completion": 15672,
+          "cost": 0.004786499999999999,
+          "reasoning_length": 2684
+        },
+        {
+          "run_idx": 2,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 283,
+          "tokens_completion": 10029,
+          "cost": 0.0030936,
+          "reasoning_length": 3629
+        },
+        {
+          "run_idx": 3,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 283,
+          "tokens_completion": 10159,
+          "cost": 0.0031326,
+          "reasoning_length": 3524
+        },
+        {
+          "run_idx": 4,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 283,
+          "tokens_completion": 11096,
+          "cost": 0.0034137,
+          "reasoning_length": 3190
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": false
+      },
+      "oracle": {
+        "correct": false
+      },
+      "per_run_accuracy": 0.0
+    },
+    {
+      "question_id": "GPQA_007",
+      "domain": "physics",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 313,
+          "tokens_completion": 2664,
+          "cost": 0.0008930999999999999,
+          "reasoning_length": 2615
+        },
+        {
+          "run_idx": 1,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 313,
+          "tokens_completion": 5105,
+          "cost": 0.0016254,
+          "reasoning_length": 2167
+        },
+        {
+          "run_idx": 2,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 313,
+          "tokens_completion": 3802,
+          "cost": 0.0012345,
+          "reasoning_length": 2177
+        },
+        {
+          "run_idx": 3,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 313,
+          "tokens_completion": 2480,
+          "cost": 0.0008378999999999999,
+          "reasoning_length": 2631
+        },
+        {
+          "run_idx": 4,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 313,
+          "tokens_completion": 3653,
+          "cost": 0.0011898,
+          "reasoning_length": 2582
+        }
+      ],
+      "majority_vote": {
+        "answer": "D",
+        "correct": false
+      },
+      "oracle": {
+        "correct": false
+      },
+      "per_run_accuracy": 0.0
+    },
+    {
+      "question_id": "GPQA_008",
+      "domain": "physics",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 302,
+          "tokens_completion": 3933,
+          "cost": 0.0012705,
+          "reasoning_length": 1233
+        },
+        {
+          "run_idx": 1,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 302,
+          "tokens_completion": 4245,
+          "cost": 0.0013640999999999998,
+          "reasoning_length": 1679
+        },
+        {
+          "run_idx": 2,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 302,
+          "tokens_completion": 6495,
+          "cost": 0.0020391,
+          "reasoning_length": 2145
+        },
+        {
+          "run_idx": 3,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 302,
+          "tokens_completion": 7006,
+          "cost": 0.0021924,
+          "reasoning_length": 2951
+        },
+        {
+          "run_idx": 4,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 302,
+          "tokens_completion": 9133,
+          "cost": 0.0028305,
+          "reasoning_length": 2898
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.8
+    },
+    {
+      "question_id": "GPQA_009",
+      "domain": "physics",
+      "correct_answer": "A",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 339,
+          "tokens_completion": 6156,
+          "cost": 0.0019485,
+          "reasoning_length": 2298
+        },
+        {
+          "run_idx": 1,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 339,
+          "tokens_completion": 6622,
+          "cost": 0.0020883,
+          "reasoning_length": 2532
+        },
+        {
+          "run_idx": 2,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 339,
+          "tokens_completion": 8175,
+          "cost": 0.0025542,
+          "reasoning_length": 2546
+        },
+        {
+          "run_idx": 3,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 339,
+          "tokens_completion": 7157,
+          "cost": 0.0022488,
+          "reasoning_length": 2129
+        },
+        {
+          "run_idx": 4,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 339,
+          "tokens_completion": 3904,
+          "cost": 0.0012728999999999998,
+          "reasoning_length": 2593
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    },
+    {
+      "question_id": "GPQA_010",
+      "domain": "physics",
+      "correct_answer": "A",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 312,
+          "tokens_completion": 9685,
+          "cost": 0.0029990999999999998,
+          "reasoning_length": 1814
+        },
+        {
+          "run_idx": 1,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 312,
+          "tokens_completion": 12083,
+          "cost": 0.0037185,
+          "reasoning_length": 2172
+        },
+        {
+          "run_idx": 2,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 312,
+          "tokens_completion": 6643,
+          "cost": 0.0020865,
+          "reasoning_length": 2053
+        },
+        {
+          "run_idx": 3,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 312,
+          "tokens_completion": 10221,
+          "cost": 0.0031598999999999998,
+          "reasoning_length": 2126
+        },
+        {
+          "run_idx": 4,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 312,
+          "tokens_completion": 5789,
+          "cost": 0.0018303,
+          "reasoning_length": 2143
+        }
+      ],
+      "majority_vote": {
+        "answer": "D",
+        "correct": false
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.4
+    },
+    {
+      "question_id": "GPQA_011",
+      "domain": "physics",
+      "correct_answer": "D",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 324,
+          "tokens_completion": 8875,
+          "cost": 0.0027597,
+          "reasoning_length": 2968
+        },
+        {
+          "run_idx": 1,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 324,
+          "tokens_completion": 7176,
+          "cost": 0.00225,
+          "reasoning_length": 2584
+        },
+        {
+          "run_idx": 2,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 324,
+          "tokens_completion": 6654,
+          "cost": 0.0020934,
+          "reasoning_length": 2648
+        },
+        {
+          "run_idx": 3,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 324,
+          "tokens_completion": 5421,
+          "cost": 0.0017235,
+          "reasoning_length": 2365
+        },
+        {
+          "run_idx": 4,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 324,
+          "tokens_completion": 8187,
+          "cost": 0.0025532999999999997,
+          "reasoning_length": 2613
+        }
+      ],
+      "majority_vote": {
+        "answer": "D",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.6
+    },
+    {
+      "question_id": "GPQA_012",
+      "domain": "physics",
+      "correct_answer": "C",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 385,
+          "tokens_completion": 8843,
+          "cost": 0.0027684,
+          "reasoning_length": 2661
+        },
+        {
+          "run_idx": 1,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 385,
+          "tokens_completion": 6284,
+          "cost": 0.0020007,
+          "reasoning_length": 2785
+        },
+        {
+          "run_idx": 2,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 385,
+          "tokens_completion": 8571,
+          "cost": 0.0026868,
+          "reasoning_length": 2170
+        },
+        {
+          "run_idx": 3,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 385,
+          "tokens_completion": 8431,
+          "cost": 0.0026448,
+          "reasoning_length": 2204
+        },
+        {
+          "run_idx": 4,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 385,
+          "tokens_completion": 7241,
+          "cost": 0.0022878,
+          "reasoning_length": 2704
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.4
+    },
+    {
+      "question_id": "GPQA_013",
+      "domain": "physics",
+      "correct_answer": "A",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 281,
+          "tokens_completion": 3647,
+          "cost": 0.0011784,
+          "reasoning_length": 2576
+        },
+        {
+          "run_idx": 1,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 281,
+          "tokens_completion": 2648,
+          "cost": 0.0008787,
+          "reasoning_length": 2706
+        },
+        {
+          "run_idx": 2,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 281,
+          "tokens_completion": 2089,
+          "cost": 0.000711,
+          "reasoning_length": 2603
+        },
+        {
+          "run_idx": 3,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 281,
+          "tokens_completion": 2104,
+          "cost": 0.0007155,
+          "reasoning_length": 2588
+        },
+        {
+          "run_idx": 4,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 281,
+          "tokens_completion": 2348,
+          "cost": 0.0007887,
+          "reasoning_length": 2351
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    },
+    {
+      "question_id": "GPQA_014",
+      "domain": "physics",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 257,
+          "tokens_completion": 4041,
+          "cost": 0.0012894,
+          "reasoning_length": 2680
+        },
+        {
+          "run_idx": 1,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 257,
+          "tokens_completion": 5114,
+          "cost": 0.0016113,
+          "reasoning_length": 2697
+        },
+        {
+          "run_idx": 2,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 257,
+          "tokens_completion": 5925,
+          "cost": 0.0018546,
+          "reasoning_length": 2685
+        },
+        {
+          "run_idx": 3,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 257,
+          "tokens_completion": 5717,
+          "cost": 0.0017922,
+          "reasoning_length": 2667
+        },
+        {
+          "run_idx": 4,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 257,
+          "tokens_completion": 7095,
+          "cost": 0.0022056,
+          "reasoning_length": 3278
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.8
+    },
+    {
+      "question_id": "GPQA_015",
+      "domain": "chemistry",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 377,
+          "tokens_completion": 1837,
+          "cost": 0.0006642,
+          "reasoning_length": 3516
+        },
+        {
+          "run_idx": 1,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 377,
+          "tokens_completion": 1459,
+          "cost": 0.0005507999999999999,
+          "reasoning_length": 2597
+        },
+        {
+          "run_idx": 2,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 377,
+          "tokens_completion": 1346,
+          "cost": 0.0005169,
+          "reasoning_length": 2628
+        },
+        {
+          "run_idx": 3,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 377,
+          "tokens_completion": 1738,
+          "cost": 0.0006345,
+          "reasoning_length": 3510
+        },
+        {
+          "run_idx": 4,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 377,
+          "tokens_completion": 1863,
+          "cost": 0.000672,
+          "reasoning_length": 3638
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": false
+      },
+      "oracle": {
+        "correct": false
+      },
+      "per_run_accuracy": 0.0
+    },
+    {
+      "question_id": "GPQA_016",
+      "domain": "chemistry",
+      "correct_answer": "A",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 359,
+          "tokens_completion": 6022,
+          "cost": 0.0019143,
+          "reasoning_length": 3298
+        },
+        {
+          "run_idx": 1,
+          "answer": "B",
+          "correct": false,
+          "tokens_prompt": 359,
+          "tokens_completion": 9466,
+          "cost": 0.0029475,
+          "reasoning_length": 3185
+        },
+        {
+          "run_idx": 2,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 359,
+          "tokens_completion": 8992,
+          "cost": 0.0028053,
+          "reasoning_length": 3639
+        },
+        {
+          "run_idx": 3,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 359,
+          "tokens_completion": 6960,
+          "cost": 0.0021957,
+          "reasoning_length": 3274
+        },
+        {
+          "run_idx": 4,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 359,
+          "tokens_completion": 6035,
+          "cost": 0.0019182,
+          "reasoning_length": 3601
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.6
+    },
+    {
+      "question_id": "GPQA_017",
+      "domain": "chemistry",
+      "correct_answer": "D",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 319,
+          "tokens_completion": 10629,
+          "cost": 0.0032844,
+          "reasoning_length": 3727
+        },
+        {
+          "run_idx": 1,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 319,
+          "tokens_completion": 7083,
+          "cost": 0.0022205999999999997,
+          "reasoning_length": 3410
+        },
+        {
+          "run_idx": 2,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 319,
+          "tokens_completion": 8141,
+          "cost": 0.0025379999999999995,
+          "reasoning_length": 3000
+        },
+        {
+          "run_idx": 3,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 319,
+          "tokens_completion": 9522,
+          "cost": 0.0029522999999999997,
+          "reasoning_length": 3300
+        },
+        {
+          "run_idx": 4,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 319,
+          "tokens_completion": 6906,
+          "cost": 0.0021675,
+          "reasoning_length": 2820
+        }
+      ],
+      "majority_vote": {
+        "answer": "D",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.8
+    },
+    {
+      "question_id": "GPQA_018",
+      "domain": "chemistry",
+      "correct_answer": "D",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "A",
+          "correct": false,
+          "tokens_prompt": 456,
+          "tokens_completion": 10110,
+          "cost": 0.0031697999999999995,
+          "reasoning_length": 2611
+        },
+        {
+          "run_idx": 1,
+          "answer": "A",
+          "correct": false,
+          "tokens_prompt": 456,
+          "tokens_completion": 16932,
+          "cost": 0.0052164,
+          "reasoning_length": 3407
+        },
+        {
+          "run_idx": 2,
+          "answer": "A",
+          "correct": false,
+          "tokens_prompt": 456,
+          "tokens_completion": 14176,
+          "cost": 0.0043896000000000004,
+          "reasoning_length": 2294
+        },
+        {
+          "run_idx": 3,
+          "answer": "A",
+          "correct": false,
+          "tokens_prompt": 456,
+          "tokens_completion": 10589,
+          "cost": 0.0033134999999999996,
+          "reasoning_length": 3300
+        },
+        {
+          "run_idx": 4,
+          "answer": "A",
+          "correct": false,
+          "tokens_prompt": 456,
+          "tokens_completion": 11886,
+          "cost": 0.0037026,
+          "reasoning_length": 3616
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false
+      },
+      "oracle": {
+        "correct": false
+      },
+      "per_run_accuracy": 0.0
+    },
+    {
+      "question_id": "GPQA_019",
+      "domain": "chemistry",
+      "correct_answer": "C",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 328,
+          "tokens_completion": 10412,
+          "cost": 0.0032219999999999996,
+          "reasoning_length": 3327
+        },
+        {
+          "run_idx": 1,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 328,
+          "tokens_completion": 10385,
+          "cost": 0.0032138999999999996,
+          "reasoning_length": 3393
+        },
+        {
+          "run_idx": 2,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 328,
+          "tokens_completion": 12857,
+          "cost": 0.0039555,
+          "reasoning_length": 3161
+        },
+        {
+          "run_idx": 3,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 328,
+          "tokens_completion": 9147,
+          "cost": 0.0028424999999999995,
+          "reasoning_length": 2659
+        },
+        {
+          "run_idx": 4,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 328,
+          "tokens_completion": 13063,
+          "cost": 0.0040173,
+          "reasoning_length": 1947
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.6
+    },
+    {
+      "question_id": "GPQA_020",
+      "domain": "chemistry",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 269,
+          "tokens_completion": 13389,
+          "cost": 0.0040974,
+          "reasoning_length": 3489
+        },
+        {
+          "run_idx": 1,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 269,
+          "tokens_completion": 13048,
+          "cost": 0.0039951000000000006,
+          "reasoning_length": 3032
+        },
+        {
+          "run_idx": 2,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 269,
+          "tokens_completion": 12056,
+          "cost": 0.0036975,
+          "reasoning_length": 2794
+        },
+        {
+          "run_idx": 3,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 269,
+          "tokens_completion": 13150,
+          "cost": 0.0040257,
+          "reasoning_length": 1586
+        },
+        {
+          "run_idx": 4,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 269,
+          "tokens_completion": 12821,
+          "cost": 0.003927,
+          "reasoning_length": 2772
+        }
+      ],
+      "majority_vote": {
+        "answer": "D",
+        "correct": false
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.2
+    },
+    {
+      "question_id": "GPQA_021",
+      "domain": "chemistry",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 410,
+          "tokens_completion": 1679,
+          "cost": 0.0006266999999999999,
+          "reasoning_length": 2682
+        },
+        {
+          "run_idx": 1,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 410,
+          "tokens_completion": 1534,
+          "cost": 0.0005832,
+          "reasoning_length": 2886
+        },
+        {
+          "run_idx": 2,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 410,
+          "tokens_completion": 2058,
+          "cost": 0.0007403999999999999,
+          "reasoning_length": 3672
+        },
+        {
+          "run_idx": 3,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 410,
+          "tokens_completion": 1545,
+          "cost": 0.0005865,
+          "reasoning_length": 3479
+        },
+        {
+          "run_idx": 4,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 410,
+          "tokens_completion": 1448,
+          "cost": 0.0005574,
+          "reasoning_length": 3064
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    },
+    {
+      "question_id": "GPQA_022",
+      "domain": "chemistry",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 303,
+          "tokens_completion": 10573,
+          "cost": 0.0032628,
+          "reasoning_length": 3613
+        },
+        {
+          "run_idx": 1,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 303,
+          "tokens_completion": 10230,
+          "cost": 0.0031598999999999998,
+          "reasoning_length": 3693
+        },
+        {
+          "run_idx": 2,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 303,
+          "tokens_completion": 9972,
+          "cost": 0.0030825,
+          "reasoning_length": 3637
+        },
+        {
+          "run_idx": 3,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 303,
+          "tokens_completion": 10593,
+          "cost": 0.0032688,
+          "reasoning_length": 3089
+        },
+        {
+          "run_idx": 4,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 303,
+          "tokens_completion": 8157,
+          "cost": 0.002538,
+          "reasoning_length": 3543
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": false
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.4
+    },
+    {
+      "question_id": "GPQA_023",
+      "domain": "chemistry",
+      "correct_answer": "C",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 403,
+          "tokens_completion": 9687,
+          "cost": 0.003027,
+          "reasoning_length": 3430
+        },
+        {
+          "run_idx": 1,
+          "answer": "B",
+          "correct": false,
+          "tokens_prompt": 403,
+          "tokens_completion": 10532,
+          "cost": 0.0032805,
+          "reasoning_length": 2477
+        },
+        {
+          "run_idx": 2,
+          "answer": "B",
+          "correct": false,
+          "tokens_prompt": 403,
+          "tokens_completion": 8382,
+          "cost": 0.0026355000000000003,
+          "reasoning_length": 3588
+        },
+        {
+          "run_idx": 3,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 403,
+          "tokens_completion": 10335,
+          "cost": 0.0032214,
+          "reasoning_length": 3145
+        },
+        {
+          "run_idx": 4,
+          "answer": "B",
+          "correct": false,
+          "tokens_prompt": 403,
+          "tokens_completion": 9684,
+          "cost": 0.0030261,
+          "reasoning_length": 1824
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": false
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.4
+    },
+    {
+      "question_id": "GPQA_024",
+      "domain": "chemistry",
+      "correct_answer": "C",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 210,
+          "tokens_completion": 11139,
+          "cost": 0.0034047,
+          "reasoning_length": 2947
+        },
+        {
+          "run_idx": 1,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 210,
+          "tokens_completion": 10736,
+          "cost": 0.0032838,
+          "reasoning_length": 2981
+        },
+        {
+          "run_idx": 2,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 210,
+          "tokens_completion": 8255,
+          "cost": 0.0025395,
+          "reasoning_length": 2857
+        },
+        {
+          "run_idx": 3,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 210,
+          "tokens_completion": 9974,
+          "cost": 0.0030552,
+          "reasoning_length": 2879
+        },
+        {
+          "run_idx": 4,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 210,
+          "tokens_completion": 11084,
+          "cost": 0.0033882,
+          "reasoning_length": 3027
+        }
+      ],
+      "majority_vote": {
+        "answer": "D",
+        "correct": false
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.4
+    },
+    {
+      "question_id": "GPQA_025",
+      "domain": "chemistry",
+      "correct_answer": "D",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 365,
+          "tokens_completion": 13029,
+          "cost": 0.0040182,
+          "reasoning_length": 3049
+        },
+        {
+          "run_idx": 1,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 365,
+          "tokens_completion": 12630,
+          "cost": 0.0038984999999999996,
+          "reasoning_length": 3464
+        },
+        {
+          "run_idx": 2,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 365,
+          "tokens_completion": 13067,
+          "cost": 0.0040296,
+          "reasoning_length": 1962
+        },
+        {
+          "run_idx": 3,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 365,
+          "tokens_completion": 11638,
+          "cost": 0.0036008999999999998,
+          "reasoning_length": 3726
+        },
+        {
+          "run_idx": 4,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 365,
+          "tokens_completion": 12768,
+          "cost": 0.0039399,
+          "reasoning_length": 3452
+        }
+      ],
+      "majority_vote": {
+        "answer": "D",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    },
+    {
+      "question_id": "GPQA_026",
+      "domain": "chemistry",
+      "correct_answer": "D",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "B",
+          "correct": false,
+          "tokens_prompt": 389,
+          "tokens_completion": 10577,
+          "cost": 0.0032898,
+          "reasoning_length": 3532
+        },
+        {
+          "run_idx": 1,
+          "answer": "A",
+          "correct": false,
+          "tokens_prompt": 389,
+          "tokens_completion": 10583,
+          "cost": 0.0032916,
+          "reasoning_length": 3460
+        },
+        {
+          "run_idx": 2,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 389,
+          "tokens_completion": 10936,
+          "cost": 0.0033975,
+          "reasoning_length": 2765
+        },
+        {
+          "run_idx": 3,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 389,
+          "tokens_completion": 11260,
+          "cost": 0.0034947,
+          "reasoning_length": 1846
+        },
+        {
+          "run_idx": 4,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 389,
+          "tokens_completion": 10742,
+          "cost": 0.0033393,
+          "reasoning_length": 1597
+        }
+      ],
+      "majority_vote": {
+        "answer": "D",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.6
+    },
+    {
+      "question_id": "GPQA_027",
+      "domain": "chemistry",
+      "correct_answer": "A",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 252,
+          "tokens_completion": 15067,
+          "cost": 0.0045957,
+          "reasoning_length": 2083
+        },
+        {
+          "run_idx": 1,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 252,
+          "tokens_completion": 13763,
+          "cost": 0.0042045,
+          "reasoning_length": 1807
+        },
+        {
+          "run_idx": 2,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 252,
+          "tokens_completion": 10869,
+          "cost": 0.0033363,
+          "reasoning_length": 2082
+        },
+        {
+          "run_idx": 3,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 252,
+          "tokens_completion": 11166,
+          "cost": 0.0034254,
+          "reasoning_length": 2653
+        },
+        {
+          "run_idx": 4,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 252,
+          "tokens_completion": 13084,
+          "cost": 0.0040008000000000005,
+          "reasoning_length": 3050
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.6
+    },
+    {
+      "question_id": "GPQA_028",
+      "domain": "chemistry",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 346,
+          "tokens_completion": 12921,
+          "cost": 0.0039800999999999994,
+          "reasoning_length": 3605
+        },
+        {
+          "run_idx": 1,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 346,
+          "tokens_completion": 11397,
+          "cost": 0.0035229,
+          "reasoning_length": 3862
+        },
+        {
+          "run_idx": 2,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 346,
+          "tokens_completion": 12461,
+          "cost": 0.0038420999999999998,
+          "reasoning_length": 3523
+        },
+        {
+          "run_idx": 3,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 346,
+          "tokens_completion": 11761,
+          "cost": 0.0036320999999999997,
+          "reasoning_length": 3834
+        },
+        {
+          "run_idx": 4,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 346,
+          "tokens_completion": 10356,
+          "cost": 0.0032105999999999997,
+          "reasoning_length": 3434
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.2
+    },
+    {
+      "question_id": "GPQA_029",
+      "domain": "biology",
+      "correct_answer": "D",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 318,
+          "tokens_completion": 7747,
+          "cost": 0.0024194999999999998,
+          "reasoning_length": 3246
+        },
+        {
+          "run_idx": 1,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 318,
+          "tokens_completion": 9804,
+          "cost": 0.0030365999999999995,
+          "reasoning_length": 4410
+        },
+        {
+          "run_idx": 2,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 318,
+          "tokens_completion": 5749,
+          "cost": 0.0018201,
+          "reasoning_length": 3574
+        },
+        {
+          "run_idx": 3,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 318,
+          "tokens_completion": 10226,
+          "cost": 0.0031631999999999997,
+          "reasoning_length": 3565
+        },
+        {
+          "run_idx": 4,
+          "answer": "D",
+          "correct": true,
+          "tokens_prompt": 318,
+          "tokens_completion": 4676,
+          "cost": 0.0014981999999999999,
+          "reasoning_length": 3453
+        }
+      ],
+      "majority_vote": {
+        "answer": "D",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    },
+    {
+      "question_id": "GPQA_030",
+      "domain": "biology",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "A",
+          "correct": false,
+          "tokens_prompt": 2911,
+          "tokens_completion": 39036,
+          "cost": 0.012584099999999999,
+          "reasoning_length": 502
+        },
+        {
+          "run_idx": 1,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 2911,
+          "tokens_completion": 21631,
+          "cost": 0.0073625999999999995,
+          "reasoning_length": 2552
+        },
+        {
+          "run_idx": 2,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 2911,
+          "tokens_completion": 20045,
+          "cost": 0.006886799999999999,
+          "reasoning_length": 1492
+        },
+        {
+          "run_idx": 3,
+          "answer": "A",
+          "correct": false,
+          "tokens_prompt": 2911,
+          "tokens_completion": 27914,
+          "cost": 0.0092475,
+          "reasoning_length": 58666
+        },
+        {
+          "run_idx": 4,
+          "answer": "A",
+          "correct": false,
+          "tokens_prompt": 2911,
+          "tokens_completion": 19208,
+          "cost": 0.0066357,
+          "reasoning_length": 3177
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": false
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.2
+    },
+    {
+      "question_id": "GPQA_031",
+      "domain": "biology",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 292,
+          "tokens_completion": 2009,
+          "cost": 0.0006902999999999999,
+          "reasoning_length": 2018
+        },
+        {
+          "run_idx": 1,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 292,
+          "tokens_completion": 1412,
+          "cost": 0.0005112,
+          "reasoning_length": 2593
+        },
+        {
+          "run_idx": 2,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 292,
+          "tokens_completion": 2893,
+          "cost": 0.0009555,
+          "reasoning_length": 3857
+        },
+        {
+          "run_idx": 3,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 292,
+          "tokens_completion": 1976,
+          "cost": 0.0006804,
+          "reasoning_length": 3180
+        },
+        {
+          "run_idx": 4,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 292,
+          "tokens_completion": 1280,
+          "cost": 0.0004716,
+          "reasoning_length": 2736
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    },
+    {
+      "question_id": "GPQA_032",
+      "domain": "biology",
+      "correct_answer": "A",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 294,
+          "tokens_completion": 10235,
+          "cost": 0.0031587,
+          "reasoning_length": 2450
+        },
+        {
+          "run_idx": 1,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 294,
+          "tokens_completion": 10883,
+          "cost": 0.0033531,
+          "reasoning_length": 2450
+        },
+        {
+          "run_idx": 2,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 294,
+          "tokens_completion": 7931,
+          "cost": 0.0024675,
+          "reasoning_length": 2445
+        },
+        {
+          "run_idx": 3,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 294,
+          "tokens_completion": 10178,
+          "cost": 0.0031416,
+          "reasoning_length": 2505
+        },
+        {
+          "run_idx": 4,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 294,
+          "tokens_completion": 8287,
+          "cost": 0.0025743,
+          "reasoning_length": 2422
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.4
+    },
+    {
+      "question_id": "GPQA_033",
+      "domain": "biology",
+      "correct_answer": "A",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 307,
+          "tokens_completion": 5247,
+          "cost": 0.0016661999999999998,
+          "reasoning_length": 3621
+        },
+        {
+          "run_idx": 1,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 307,
+          "tokens_completion": 6290,
+          "cost": 0.0019791,
+          "reasoning_length": 3002
+        },
+        {
+          "run_idx": 2,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 307,
+          "tokens_completion": 8633,
+          "cost": 0.002682,
+          "reasoning_length": 3802
+        },
+        {
+          "run_idx": 3,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 307,
+          "tokens_completion": 5275,
+          "cost": 0.0016745999999999998,
+          "reasoning_length": 3028
+        },
+        {
+          "run_idx": 4,
+          "answer": "C",
+          "correct": false,
+          "tokens_prompt": 307,
+          "tokens_completion": 9053,
+          "cost": 0.0028079999999999997,
+          "reasoning_length": 3325
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": false
+      },
+      "oracle": {
+        "correct": false
+      },
+      "per_run_accuracy": 0.0
+    },
+    {
+      "question_id": "GPQA_034",
+      "domain": "biology",
+      "correct_answer": "C",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 260,
+          "tokens_completion": 1634,
+          "cost": 0.0005682,
+          "reasoning_length": 2187
+        },
+        {
+          "run_idx": 1,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 260,
+          "tokens_completion": 2052,
+          "cost": 0.0006935999999999999,
+          "reasoning_length": 1523
+        },
+        {
+          "run_idx": 2,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 260,
+          "tokens_completion": 1848,
+          "cost": 0.0006324,
+          "reasoning_length": 2016
+        },
+        {
+          "run_idx": 3,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 260,
+          "tokens_completion": 1770,
+          "cost": 0.000609,
+          "reasoning_length": 1632
+        },
+        {
+          "run_idx": 4,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 260,
+          "tokens_completion": 3009,
+          "cost": 0.0009807,
+          "reasoning_length": 3200
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    },
+    {
+      "question_id": "GPQA_035",
+      "domain": "interdisciplinary",
+      "correct_answer": "A",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 334,
+          "tokens_completion": 1903,
+          "cost": 0.0006711,
+          "reasoning_length": 1946
+        },
+        {
+          "run_idx": 1,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 334,
+          "tokens_completion": 4142,
+          "cost": 0.0013428,
+          "reasoning_length": 2926
+        },
+        {
+          "run_idx": 2,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 334,
+          "tokens_completion": 2257,
+          "cost": 0.0007772999999999999,
+          "reasoning_length": 2465
+        },
+        {
+          "run_idx": 3,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 334,
+          "tokens_completion": 1761,
+          "cost": 0.0006284999999999999,
+          "reasoning_length": 2259
+        },
+        {
+          "run_idx": 4,
+          "answer": "A",
+          "correct": true,
+          "tokens_prompt": 334,
+          "tokens_completion": 2721,
+          "cost": 0.0009165,
+          "reasoning_length": 2574
+        }
+      ],
+      "majority_vote": {
+        "answer": "A",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    },
+    {
+      "question_id": "GPQA_036",
+      "domain": "interdisciplinary",
+      "correct_answer": "C",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "D",
+          "correct": false,
+          "tokens_prompt": 455,
+          "tokens_completion": 4804,
+          "cost": 0.0015776999999999998,
+          "reasoning_length": 2697
+        },
+        {
+          "run_idx": 1,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 455,
+          "tokens_completion": 4595,
+          "cost": 0.0015149999999999999,
+          "reasoning_length": 1941
+        },
+        {
+          "run_idx": 2,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 455,
+          "tokens_completion": 4185,
+          "cost": 0.0013919999999999998,
+          "reasoning_length": 1518
+        },
+        {
+          "run_idx": 3,
+          "answer": "",
+          "correct": false,
+          "tokens_prompt": 455,
+          "tokens_completion": 5215,
+          "cost": 0.0017009999999999998,
+          "reasoning_length": 2631
+        },
+        {
+          "run_idx": 4,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 455,
+          "tokens_completion": 6494,
+          "cost": 0.0020847,
+          "reasoning_length": 2184
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 0.6
+    },
+    {
+      "question_id": "GPQA_037",
+      "domain": "interdisciplinary",
+      "correct_answer": "C",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 265,
+          "tokens_completion": 7484,
+          "cost": 0.0023247,
+          "reasoning_length": 2782
+        },
+        {
+          "run_idx": 1,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 265,
+          "tokens_completion": 8473,
+          "cost": 0.0026214,
+          "reasoning_length": 2992
+        },
+        {
+          "run_idx": 2,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 265,
+          "tokens_completion": 8188,
+          "cost": 0.0025359000000000002,
+          "reasoning_length": 2792
+        },
+        {
+          "run_idx": 3,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 265,
+          "tokens_completion": 7744,
+          "cost": 0.0024027000000000002,
+          "reasoning_length": 3250
+        },
+        {
+          "run_idx": 4,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 265,
+          "tokens_completion": 9001,
+          "cost": 0.0027798,
+          "reasoning_length": 2517
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    },
+    {
+      "question_id": "GPQA_038",
+      "domain": "interdisciplinary",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 253,
+          "tokens_completion": 10200,
+          "cost": 0.0031358999999999996,
+          "reasoning_length": 2011
+        },
+        {
+          "run_idx": 1,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 253,
+          "tokens_completion": 12216,
+          "cost": 0.0037406999999999996,
+          "reasoning_length": 2074
+        },
+        {
+          "run_idx": 2,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 253,
+          "tokens_completion": 14436,
+          "cost": 0.0044067,
+          "reasoning_length": 2260
+        },
+        {
+          "run_idx": 3,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 253,
+          "tokens_completion": 17095,
+          "cost": 0.0052044,
+          "reasoning_length": 2782
+        },
+        {
+          "run_idx": 4,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 253,
+          "tokens_completion": 14932,
+          "cost": 0.0045555,
+          "reasoning_length": 1794
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    },
+    {
+      "question_id": "GPQA_039",
+      "domain": "interdisciplinary",
+      "correct_answer": "C",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 260,
+          "tokens_completion": 4486,
+          "cost": 0.0014237999999999998,
+          "reasoning_length": 2408
+        },
+        {
+          "run_idx": 1,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 260,
+          "tokens_completion": 5056,
+          "cost": 0.0015948,
+          "reasoning_length": 2312
+        },
+        {
+          "run_idx": 2,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 260,
+          "tokens_completion": 6638,
+          "cost": 0.0020694,
+          "reasoning_length": 2676
+        },
+        {
+          "run_idx": 3,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 260,
+          "tokens_completion": 8043,
+          "cost": 0.0024909,
+          "reasoning_length": 2916
+        },
+        {
+          "run_idx": 4,
+          "answer": "C",
+          "correct": true,
+          "tokens_prompt": 260,
+          "tokens_completion": 4405,
+          "cost": 0.0013995,
+          "reasoning_length": 2486
+        }
+      ],
+      "majority_vote": {
+        "answer": "C",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    },
+    {
+      "question_id": "GPQA_040",
+      "domain": "interdisciplinary",
+      "correct_answer": "B",
+      "runs": [
+        {
+          "run_idx": 0,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 372,
+          "tokens_completion": 1450,
+          "cost": 0.0005466,
+          "reasoning_length": 2132
+        },
+        {
+          "run_idx": 1,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 372,
+          "tokens_completion": 1996,
+          "cost": 0.0007104,
+          "reasoning_length": 2998
+        },
+        {
+          "run_idx": 2,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 372,
+          "tokens_completion": 1497,
+          "cost": 0.0005606999999999999,
+          "reasoning_length": 2214
+        },
+        {
+          "run_idx": 3,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 372,
+          "tokens_completion": 1775,
+          "cost": 0.0006441,
+          "reasoning_length": 3326
+        },
+        {
+          "run_idx": 4,
+          "answer": "B",
+          "correct": true,
+          "tokens_prompt": 372,
+          "tokens_completion": 1804,
+          "cost": 0.0006527999999999999,
+          "reasoning_length": 3675
+        }
+      ],
+      "majority_vote": {
+        "answer": "B",
+        "correct": true
+      },
+      "oracle": {
+        "correct": true
+      },
+      "per_run_accuracy": 1.0
+    }
+  ]
+}
