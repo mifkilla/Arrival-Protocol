@@ -16,6 +16,8 @@ $^{1}$ Independent Researcher, ORCID: 0009-0003-4153-392X
 
 **License**: CC BY-NC 4.0 (text), AGPL-3.0 (code)
 
+**DOI**: [10.5281/zenodo.18893515](https://doi.org/10.5281/zenodo.18893515)
+
 **Code**: https://github.com/mefodiy-kelevra/arrival-memory
 
 **Companion to**: ARRIVAL Protocol v2.0 (MEANING-CRDT v1.1)

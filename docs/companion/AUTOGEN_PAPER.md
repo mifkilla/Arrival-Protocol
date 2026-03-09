@@ -8,6 +8,7 @@
 | Date | February 22, 2026 |
 | Version | 1.0 |
 | License | CC BY-NC 4.0 (Creative Commons Attribution-NonCommercial 4.0 International) |
+| DOI | [10.5281/zenodo.18893515](https://doi.org/10.5281/zenodo.18893515) |
 | Companion to | Kelevra, M. (2026). *ARRIVAL Protocol: Cross-Architecture AI Coordination through Structured Semantic Atoms.* |
 
 ---
