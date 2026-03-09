@@ -11,10 +11,9 @@ Key modules:
     crdt_metrics    - MEANING-CRDT v1.1: CARE Resolve, Meaning Debt
     metrics         - Answer extraction, atom detection, basic analysis
     openrouter_client - OpenRouter API client with retry logic
-    gonka_client    - Dual-backend client (Gonka decentralized + OpenRouter)
     echo_chamber    - 7 echo-chamber quantitative metrics
     enhanced_logger - JSONL structured logging
 """
 
-__version__ = "1.0.0"
+__version__ = "2.0.0"
 __author__ = "Mefodiy Kelevra"

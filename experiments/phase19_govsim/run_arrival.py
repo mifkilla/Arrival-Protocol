@@ -63,7 +63,7 @@ def call_openrouter(prompt, model, system_prompt="",
 
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "HTTP-Referer": "https://github.com/DreamOS-Network/Arrival-Protocol",
+        "HTTP-Referer": "https://github.com/mifkilla/Arrival-Protocol",
         "X-Title": "ARRIVAL Phase 19 GovSim",
         "Content-Type": "application/json",
     }

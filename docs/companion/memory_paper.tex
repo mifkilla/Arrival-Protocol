@@ -1,0 +1,849 @@
+% =====================================================================
+%  ARRIVAL-MNEMO: Persistent Memory Architecture
+%  Companion Paper to the ARRIVAL Protocol
+%  DOI: 10.5281/zenodo.18893515
+%  License: CC BY-NC 4.0 (text), AGPL-3.0-or-later (code)
+%  Author: Mefodiy Kelevra — ORCID 0009-0003-4153-392X
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+% ── Geometry ──────────────────────────────────────────────────────────
+\usepackage[margin=2.4cm,top=2.8cm,bottom=2.8cm]{geometry}
+
+% ── Fonts & Encoding ─────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ── Math ─────────────────────────────────────────────────────────────
+\usepackage{amsmath,amssymb,amsthm}
+
+% ── Tables & Figures ─────────────────────────────────────────────────
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{float}
+
+% ── Colours & Boxes ──────────────────────────────────────────────────
+\usepackage[dvipsnames]{xcolor}
+\usepackage[most]{tcolorbox}
+
+% ── Code listings ────────────────────────────────────────────────────
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  keywordstyle=\color{NavyBlue}\bfseries,
+  commentstyle=\color{OliveGreen},
+  stringstyle=\color{BrickRed},
+  breaklines=true,
+  frame=single,
+  framerule=0.4pt,
+  xleftmargin=6pt,
+  xrightmargin=6pt,
+  language=Python,
+  showstringspaces=false,
+}
+
+% ── Hyperlinks ───────────────────────────────────────────────────────
+\usepackage[colorlinks=true,linkcolor=NavyBlue,citecolor=OliveGreen,
+            urlcolor=BrickRed]{hyperref}
+\usepackage{url}
+
+% ── Bibliography ─────────────────────────────────────────────────────
+\usepackage[numbers,sort&compress]{natbib}
+
+% ── Section formatting ───────────────────────────────────────────────
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+
+% ── Theorem-like environments (tcolorbox style) ─────────────────────
+\newtcolorbox{theorembox}[1][]{
+  colback=blue!3, colframe=NavyBlue!70!black,
+  fonttitle=\bfseries, title={#1},
+  boxrule=0.6pt, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+\newtcolorbox{resultbox}[1][]{
+  colback=red!3, colframe=BrickRed!60!black,
+  fonttitle=\bfseries, title={#1},
+  boxrule=0.6pt, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+\newtcolorbox{definitionbox}[1][]{
+  colback=green!3, colframe=OliveGreen!70!black,
+  fonttitle=\bfseries, title={#1},
+  boxrule=0.6pt, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+\newtcolorbox{alertbox}[1][]{
+  colback=yellow!5, colframe=Dandelion!80!black,
+  fonttitle=\bfseries, title={#1},
+  boxrule=0.6pt, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+% ── Misc ─────────────────────────────────────────────────────────────
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\usepackage{xspace}
+\newcommand{\arrival}{\textsc{Arrival}\xspace}
+\newcommand{\mnemo}{\textsc{Arrival-Mnemo}\xspace}
+\newcommand{\care}{\textsc{Care}\xspace}
+\newcommand{\pp}{\,pp\xspace}
+
+% ── Header / Footer ──────────────────────────────────────────────────
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textit{ARRIVAL-MNEMO — Memory Architecture}}
+\fancyhead[R]{\small\textit{DOI: 10.5281/zenodo.18893515}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% =====================================================================
+\begin{document}
+
+% ── Title Page ───────────────────────────────────────────────────────
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\Huge\bfseries ARRIVAL-MNEMO}\\[0.6cm]
+{\Large Persistent Memory Architecture for\\
+Cross-Architecture AI Coordination}\\[2.5cm]
+
+{\large Mefodiy Kelevra}\\[0.3cm]
+{\small ORCID:
+  \href{https://orcid.org/0009-0003-4153-392X}{0009-0003-4153-392X}}\\[2cm]
+
+{\normalsize March 4, 2026 \enspace|\enspace Version 3.0}\\[0.5cm]
+{\small DOI: \href{https://doi.org/10.5281/zenodo.18893515}%
+  {10.5281/zenodo.18893515}}\\[0.3cm]
+{\small Mathematical Foundation: MEANING-CRDT v1.1
+  (DOI: \href{https://doi.org/10.5281/zenodo.18702383}%
+  {10.5281/zenodo.18702383})}\\[2cm]
+
+\rule{0.6\textwidth}{0.4pt}\\[0.8cm]
+
+{\footnotesize
+  \textbf{License} — Text: CC BY-NC 4.0 \enspace|\enspace
+  Code: AGPL-3.0-or-later\\[0.4cm]
+  Companion to: \arrival Protocol v2.0
+  (DOI: \href{https://doi.org/10.5281/zenodo.18893515}%
+  {10.5281/zenodo.18893515})\\[0.2cm]
+  Repository:
+  \url{https://github.com/mifkilla/Arrival-Protocol}
+}
+
+\vfill
+\end{titlepage}
+
+% ── Table of Contents ────────────────────────────────────────────────
+\tableofcontents
+\newpage
+
+% =====================================================================
+\section{Abstract}
+% =====================================================================
+
+The \arrival Protocol enables cross-architecture AI-to-AI coordination
+through structured semantic @-atoms (DEUS.PROTOCOL~v0.5), validated
+across 2,200+ experiments.  However, a critical limitation persists: all
+coordination knowledge is lost between sessions.  We present \mnemo, a
+persistent memory architecture extending the protocol with four memory
+layers (Episodic, Procedural, Semantic, Meta), a \texttt{@MEMORY.*} atom
+family, and MEMORY-CRDT~v1.1 --- a formal specification for
+cross-temporal memory synchronization using the same \care Resolve
+mathematics that powers real-time dialogue convergence.
+
+We conducted three experimental phases.  Phase~14 reveals a
+\textbf{negative result}: naive keyword-based global memory injection
+DEGRADES accuracy by $-5.7$\pp (McNemar $p = 0.724$) on GPQA Diamond,
+discovering the \textit{hypercorrection effect} in LLM ensembles --- a
+cognitive bias previously documented only in humans.  Phase~15 introduces
+\care-ALERT, a gated real-time intervention system that restores
+baseline accuracy while achieving the first statistically significant
+improvement in all \arrival experiments: \care Resolve is significantly
+higher than under global injection (Mann--Whitney $p = 0.042$).
+
+Key findings: (1)~memory creation via auto-logging is solved;
+(2)~global pre-session injection triggers hypercorrection;
+(3)~gated real-time intervention avoids hypercorrection while
+improving consensus quality; (4)~specific memory helps but generic
+memory hurts AI coordination.
+
+\textbf{Keywords:} AI coordination, persistent memory, CRDT, semantic
+atoms, multi-agent systems, hypercorrection, CARE-ALERT
+
+% =====================================================================
+\section{Introduction}\label{sec:intro}
+% =====================================================================
+
+\subsection{The Amnesia Problem}
+
+Modern AI coordination protocols operate in a fundamentally amnesiac
+mode.  When a multi-agent session ends, all accumulated knowledge
+vanishes.  The agents retain no recollection of which strategies worked,
+which information sources proved reliable, or how their peers typically
+behave.  Every new session starts from absolute zero.
+
+The \arrival Protocol~\cite{kelevra2026arrival} demonstrates that
+cross-architecture AI agents can achieve structured coordination through
+semantic @-atoms, with results validated across 2,200+ experiments,
+23~phases, and 17 LLM architectures.  But this coordination knowledge
+exists only in log files, inaccessible to future sessions.
+
+\subsection{Research Questions}
+
+\textbf{RQ1}: What memory architecture enables persistent learning
+across sessions while maintaining compatibility with the @-atom
+communication framework?
+
+\textbf{RQ2}: Can the CRDT mathematics used for real-time dialogue
+convergence (\care Resolve) be extended to cross-temporal memory
+synchronization?
+
+\textbf{RQ3}: Does memory injection improve coordination quality
+compared to memoryless baselines?
+
+\subsection{Contributions}
+
+\begin{enumerate}
+  \item \textbf{Four-layer memory taxonomy} (Episodic, Procedural,
+    Semantic, Meta) with \texttt{@MEMORY.*} atoms extending
+    DEUS.PROTOCOL~v0.5.
+  \item \textbf{MEMORY-CRDT v1.1}: Formal specification for memory
+    synchronization using utility-weighted LWW-Register CRDT with
+    convergence guarantees.
+  \item \textbf{Hypercorrection discovery}: Global pre-session memory
+    injection degrades LLM ensemble performance --- a cognitive bias
+    previously documented only in humans.
+  \item \textbf{CARE-ALERT system}: Gated real-time intervention
+    achieving the first statistically significant improvement across
+    all \arrival experiments (Mann--Whitney $p = 0.042$).
+\end{enumerate}
+
+% =====================================================================
+\section{Related Work}\label{sec:related}
+% =====================================================================
+
+\textbf{Retrieval-Augmented Generation} (Lewis et al.,
+2020)~\cite{lewis2020rag} retrieves relevant documents to augment
+generation but operates at the document level without structured memory
+layers or cross-agent synchronization.
+
+\textbf{MemGPT} (Packer et al., 2023)~\cite{packer2023memgpt}
+introduces hierarchical memory management for LLMs with main context
+and external storage but targets single-agent scenarios.
+
+\textbf{Generative Agents} (Park et al., 2023)~\cite{park2023agents}
+implement memory streams for simulated social agents with reflection
+and planning but focus on narrative coherence rather than structured
+coordination protocols.
+
+\textbf{MEANING-CRDT v1.1}~\cite{kelevra2026crdt} introduced \care
+Resolve for real-time dialogue synchronization.  MEMORY-CRDT extends
+this mathematical framework to the temporal dimension.
+
+\textbf{CRDTs} (Shapiro et al., 2011)~\cite{shapiro2011crdt} provide
+formal guarantees for distributed data convergence.  Our adaptation
+replaces physical timestamps with utility scores.
+
+% =====================================================================
+\section{Architecture}\label{sec:arch}
+% =====================================================================
+
+\subsection{Four Memory Layers}
+
+\mnemo organizes persistent knowledge into four layers:
+
+\begin{definitionbox}[Memory Layers]
+\begin{description}[style=nextline]
+  \item[Episodic] Session-level records: task, models, outcome, \care
+    score. TTL: 7--30 days. \textit{``What happened.''}
+  \item[Procedural] Validated strategies with success rates.
+    Persistence requires $n_{\text{trials}} \geq 3$.
+    \textit{``How to act.''}
+  \item[Semantic] Derived knowledge: rules, facts, calibration data.
+    Persistence requires $\text{evidence\_count} \geq 3$.
+    \textit{``What is true.''}
+  \item[Meta] Agent calibration: trust scores, domain-specific accuracy,
+    behavioral patterns. Updated via exponential moving average.
+    \textit{``Who to trust.''}
+\end{description}
+\end{definitionbox}
+
+\subsection{@MEMORY.* Atom Family}
+
+Nine new atoms extend DEUS.PROTOCOL~v0.5:
+
+\begin{table}[H]
+\centering\small
+\caption{\texttt{@MEMORY.*} atom family.}\label{tab:memoryatoms}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Atom} & \textbf{Function} \\
+\midrule
+\texttt{@MEMORY.EPISODIC}   & Reference/inject session-level memory \\
+\texttt{@MEMORY.PROCEDURAL} & Reference/inject strategy-level memory \\
+\texttt{@MEMORY.SEMANTIC}   & Reference/inject knowledge-level memory \\
+\texttt{@MEMORY.META}       & Reference/inject calibration data \\
+\texttt{@MEMORY.INJECT}     & Request memory injection during session \\
+\texttt{@MEMORY.STORE}      & Request memory persistence after session \\
+\texttt{@MEMORY.FORGET}     & Flag memory for eviction \\
+\texttt{@MEMORY.CONFLICT}   & Signal contradicting memories \\
+\texttt{@MEMORY.MERGE}      & Request memory consolidation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Injection Protocol}
+
+Memory injection follows a seven-step pipeline:
+\begin{enumerate}
+  \item \textbf{LOAD}: Read memory store from persistent storage (JSON).
+  \item \textbf{FILTER}: Select memories relevant to current
+    \texttt{@GOAL} using keyword matching (MVP) or embedding similarity.
+  \item \textbf{FORMAT}: Convert to \texttt{@MEMORY.*} atom notation.
+  \item \textbf{INJECT}: Append to agent system prompts as
+    \texttt{[MEMORY CONTEXT]} block.
+  \item \textbf{RUN}: Execute \arrival dialogue with memory-augmented
+    agents.
+  \item \textbf{EXTRACT}: Create new Episodic memories; update Meta
+    with calibration data.
+  \item \textbf{MERGE}: Integrate via MEMORY-CRDT.
+\end{enumerate}
+
+% =====================================================================
+\section{MEMORY-CRDT v1.1}\label{sec:crdt}
+% =====================================================================
+
+\subsection{From Dialogue to Memory}
+
+MEANING-CRDT merges divergent agent positions within a dialogue:
+\[
+  \hat{\mathbf{v}} = \frac{\sum_{i} w_i \cdot \mathbf{v}_i}
+                          {\sum_{i} w_i}
+\]
+
+MEMORY-CRDT applies the same principle across time.  When two memory
+stores conflict, the merge operation selects the higher-utility version:
+\[
+  \hat{m} = \arg\max_{m \in \{m_1, m_2\}} \mu(m)
+\]
+where $\mu(m)$ is the utility function:
+\[
+  \mu(m) = 0.25 \cdot \text{recency} + 0.30 \cdot \text{frequency}
+         + 0.25 \cdot \text{quality} + 0.20 \cdot \text{validation}
+\]
+
+\subsection{Utility Components}
+
+\begin{itemize}
+  \item $\text{recency}(m) = \max(0,\; 1.0 - \text{age\_days}/90)$.
+    Linear decay over 90-day window.
+  \item $\text{frequency}(m) = \min(1.0,\;
+    \text{access\_count}/N_{\text{layer}})$.
+    $N$ varies by layer: Episodic${}=10$, Procedural${}=20$,
+    Semantic${}=5$, Meta${}=10$.
+  \item $\text{quality}(m)$: layer-specific (care\_resolve, success\_rate,
+    confidence, trust\_score).
+  \item $\text{validation}(m)$: evidence strength, layer-dependent.
+\end{itemize}
+
+\subsection{CRDT Properties}
+
+\begin{theorembox}[MEMORY-CRDT Properties]
+The merge operation is a \textbf{Last-Writer-Wins Register}
+(LWW-Register) CRDT where the ``timestamp'' is replaced by utility
+score:
+\begin{itemize}
+  \item \textbf{Commutativity}: $\text{MERGE}(S_1, S_2) =
+    \text{MERGE}(S_2, S_1)$.
+  \item \textbf{Associativity}: $\text{MERGE}(\text{MERGE}(S_1, S_2),
+    S_3) = \text{MERGE}(S_1, \text{MERGE}(S_2, S_3))$.
+  \item \textbf{Idempotency}: $\text{MERGE}(S, S) = S$.
+\end{itemize}
+\end{theorembox}
+
+\subsection{Memory Debt}
+
+Analogous to Meaning Debt:
+\[
+  \text{MmD} = \frac{\sum_{i} \mu_i \cdot \text{conflict}(m_i)}
+                     {\sum_{i} \mu_i}
+\]
+where $\text{conflict}(m) \in \{0.0, 0.5, 1.0\}$.
+
+\subsection{Convergence}
+
+\begin{theorembox}[Memory Convergence Theorem]
+Given a sequence of sessions $\{s_1, \ldots, s_n\}$ each producing
+memory updates, the memory store converges to a stable state as
+$n \to \infty$, provided: (1)~the forgetting function removes memories
+with $\mu < \theta$; (2)~merge resolves conflicts via utility
+maximization; (3)~consolidation extracts patterns into semantic
+memories.
+\end{theorembox}
+
+\subsection{Relationship to MEANING-CRDT}
+
+\begin{table}[H]
+\centering\small
+\caption{MEANING-CRDT vs.\ MEMORY-CRDT.}\label{tab:crdtcomp}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Property} & \textbf{MEANING-CRDT} & \textbf{MEMORY-CRDT} \\
+\midrule
+Domain          & Dialogue positions & Memory entries \\
+Temporal scope  & Within a session   & Across sessions \\
+Weight function & Coherence          & Utility \\
+Merge granularity & Per-round        & Per-session \\
+Convergence target & Consensus       & Consistent memory \\
+Debt metric     & Meaning Debt       & Memory Debt \\
+CRDT type       & GCounter-like      & LWW-Register \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Unifying principle}: Both CRDTs implement weighted convergence
+under conflict, applied at different temporal scales.
+
+% =====================================================================
+\section{Pilot Experiment (Phase 14a)}\label{sec:pilot}
+% =====================================================================
+
+\subsection{Design}
+
+A controlled experiment with 10 MCQ questions across 5 domains.
+Models: DeepSeek V3, Llama 3.3 70B, Qwen 2.5 72B.  Three conditions:
+Seed, Control (no memory), Treatment (memory injection).
+
+\subsection{Results}
+
+\begin{table}[H]
+\centering\small
+\caption{Pilot experiment results.}\label{tab:pilot}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Condition} & \textbf{Accuracy} & \textbf{Avg \care} &
+  \textbf{Cost} \\
+\midrule
+Seed                  & 3/5 (60\%)       & 0.850 & \$0.008 \\
+Control (no memory)   & 4/5 (80\%)       & 0.750 & \$0.008 \\
+Treatment (memory)    & \textbf{5/5 (100\%)} & \textbf{0.850} & \$0.010 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Memory injection corrected the one control error, improved \care by
+$+13.3\%$, and increased atom density by $+8.6\%$.  Total: \$0.026.
+
+% =====================================================================
+\section{Phase 14: Large-Scale Validation (Negative Result)}
+\label{sec:phase14}
+% =====================================================================
+
+\subsection{Design}
+
+Scaled to GPQA Diamond --- 40 graduate-level science
+questions~\cite{rein2024gpqa}.  Alpha trio: GPT-4o + DeepSeek-V3 +
+Llama-3.3-70B-Instruct.  Memory store: 5 episodic, 2 procedural,
+3 meta.  Keyword-based retrieval, top-8 injection, 800-char limit.
+
+\textbf{Data leakage guard}: No correct answers, answer letters,
+question text, or choices stored.
+
+\subsection{Results}
+
+\begin{resultbox}[Phase 14 — Negative Result]
+\begin{tabular}{@{}lrrrl@{}}
+\toprule
+\textbf{Metric} & \textbf{Phase 13} & \textbf{Phase 14} &
+  \textbf{$\Delta$} & \textbf{$p$-value} \\
+\midrule
+Accuracy (N=35) & 57.1\% & 51.4\% & $-5.7$\pp &
+  McNemar $p = 0.724$ \\
+\care Resolve & 0.966 & 0.916 & $-0.050$ & M-W $p = 0.985$ \\
+Meaning Debt  & 0.196 & 0.433 & $+0.237$ & M-W $p = 0.994$ \\
+\bottomrule
+\end{tabular}
+\end{resultbox}
+
+Memory injection did not improve accuracy.  The trend is negative but
+not statistically significant.
+
+\subsection{The Hypercorrection Effect}
+
+Analysis of auto-stored cognitive scars reveals the failure mechanism.
+When told ``in past chemistry sessions, DeepSeekV3 was suppressed,''
+GPT-4o begins second-guessing its own correct answers on ALL chemistry
+questions, not just the specific ones where suppression occurred.  This
+parallels the well-documented human cognitive bias: pre-task warnings
+about past mistakes increase anxiety and worsen performance.
+
+\textbf{LLM ensembles empirically exhibit this classic human pattern}:
+they need correction DURING the process, not warnings BEFORE it.
+
+\subsection{Implications}
+
+\begin{enumerate}
+  \item \textbf{Memory creation is solved}: Auto-logging perfectly
+    captures who was suppressed, in which domain, and by how much.
+  \item \textbf{Memory delivery via global injection fails}: Static
+    pre-session injection of generic memories degrades performance.
+  \item \textbf{Specific memory helps, generic memory hurts}: Seen
+    questions improved ($+20$\pp); unseen degraded because keyword
+    retrieval injected noise.
+\end{enumerate}
+
+% =====================================================================
+\section{Phase 15: Gated CARE-ALERT Validation}\label{sec:phase15}
+% =====================================================================
+
+\subsection{Architecture}
+
+Phase~14's negative result motivates a paradigm shift: from global
+injection to \textbf{real-time intervention}.
+
+\begin{alertbox}[CARE-ALERT: Monitor $\to$ Detect $\to$ Intervene]
+\begin{enumerate}
+  \item R1 (Alpha: GPT-4o) $\to$ clean prompt, no memory
+  \item R2 (Beta: DeepSeek-V3) $\to$ clean prompt, no memory
+  \item \textit{Checkpoint \#1}: $\text{MD} > 0.5$ $\Rightarrow$
+    Level~1 \texttt{@CARE.ALERT}
+  \item R3 (Gamma: Llama-3.3) $\to$ prompt + alert (if fired)
+  \item \textit{Checkpoint \#2}: $\text{MD} > 0.8$ $\Rightarrow$
+    Level~2 ESCALATED
+  \item R4 (Alpha: GPT-4o) $\to$ prompt + alert (if fired)
+\end{enumerate}
+\end{alertbox}
+
+\textbf{Alert design}: Operational, not moralistic (``Beta selected~C,
+address with \texttt{@EVIDENCE}'' --- NOT ``you failed before'').
+Current state only.  Never contains correct answers, historical data,
+or trust scores.  Clean system prompt, identical to Phase~13 baseline.
+
+\subsection{Results: Unseen Questions (N=35)}
+
+\begin{table}[H]
+\centering\small
+\caption{Three-phase comparison on unseen questions.}\label{tab:p15unseen}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Metric} & \textbf{P13} & \textbf{P14} & \textbf{P15} &
+  \textbf{$\Delta$ P13$\to$P15} \\
+\midrule
+Accuracy     & 57.1\% & 51.4\% & \textbf{57.1\%} & $+0.0$\pp \\
+\care        & 0.966  & 0.916  & \textbf{0.948}  & $-0.018$ \\
+Meaning Debt & 0.196  & 0.433  & 0.452            & $+0.256$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Phase~15 restores accuracy to the Phase~13 baseline.  The $-5.7$\pp
+degradation from global injection is fully eliminated.
+
+\subsection{Results: Seen Questions (N=5)}
+
+\begin{table}[H]
+\centering\small
+\caption{Three-phase comparison on seen questions.}\label{tab:p15seen}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Metric} & \textbf{P13} & \textbf{P14} & \textbf{P15} \\
+\midrule
+Accuracy     & 20\%  & 40\%  & \textbf{60\%} \\
+\care        & 0.539 & 0.635 & \textbf{0.746} \\
+Meaning Debt & 2.455 & 1.944 & \textbf{1.602} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Monotonic improvement across all three metrics through all three phases.
+
+\subsection{Results: All 40 Questions}
+
+\begin{table}[H]
+\centering\small
+\caption{Three-phase comparison on all 40 questions.}\label{tab:p15all}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Metric} & \textbf{P13} & \textbf{P14} & \textbf{P15} \\
+\midrule
+Accuracy & 52.5\% & 50.0\% & \textbf{57.5\%} \\
+\care    & 0.913  & 0.881  & \textbf{0.923} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{resultbox}[First Significant Result]
+\care Resolve Phase~14 vs.\ Phase~15 (N=40):\\
+\textbf{Mann--Whitney $p = 0.042$} (significant at $\alpha = 0.05$).\\
+This is the \textbf{first statistically significant result} across all
+\arrival experiments.
+\end{resultbox}
+
+\subsection{Alert Statistics}
+
+\begin{table}[H]
+\centering\small
+\caption{CARE-ALERT firing statistics.}\label{tab:alerts}
+\begin{tabular}{@{}lr@{}}
+\toprule
+\textbf{Statistic} & \textbf{Value} \\
+\midrule
+Total questions            & 40 \\
+Questions with alert       & 7 (17.5\%) \\
+Accuracy with alert        & 57.1\% (4/7) \\
+Accuracy without alert     & 57.6\% (19/33) \\
+\care with alert           & 0.968 \\
+\care without alert        & 0.914 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The alert does not harm accuracy.  \care is HIGHER when alerts fire
+(0.968 vs.\ 0.914).
+
+\subsection{Minority Voice Protection}
+
+Three examples of successful minority voice protection:
+\begin{itemize}
+  \item \textbf{GPQA\_009}: Beta (DeepSeek) correct, Alpha (GPT-4o)
+    wrong.  Alert fired $\to$ final answer followed Beta $\to$ CORRECT.
+  \item \textbf{GPQA\_038}: Gamma (Llama) correct, Alpha+Beta wrong.
+    Alert fired $\to$ final answer followed Gamma $\to$ CORRECT.
+  \item \textbf{GPQA\_003}: Beta correct against Alpha.  Alert $\to$
+    CORRECT.
+\end{itemize}
+
+\subsection{Analysis}
+
+\textbf{Finding 1}: Gated alerts avoid hypercorrection.  Phase~14
+injected memory into 100\% of questions $\to$ $-5.7$\pp.  Phase~15
+alerted on 17.5\% $\to$ $+0.0$\pp.
+
+\textbf{Finding 2}: First significant \care improvement
+(Mann--Whitney $p = 0.042$).
+
+\textbf{Finding 3}: Precision targeting works.  17.5\% alert rate
+demonstrates intervention only when needed.
+
+\textbf{Finding 4}: Memory delivery was the problem, not memory itself:
+\begin{itemize}
+  \item Phase~13: Baseline (stateless) $\to$ 57.1\%
+  \item Phase~14: Global injection $\to$ 51.4\% ($-5.7$\pp)
+  \item Phase~15: Gated CARE-ALERT $\to$ 57.1\% (baseline restored)
+\end{itemize}
+
+% =====================================================================
+\section{Discussion}\label{sec:discussion}
+% =====================================================================
+
+\subsection{The CRDT Unification}
+
+The most significant theoretical contribution is the unification of
+dialogue-level and memory-level synchronization under the same
+mathematical framework.  \care Resolve operates at two temporal scales:
+\textbf{intra-session} (MEANING-CRDT: merging agent positions in
+real-time) and \textbf{inter-session} (MEMORY-CRDT: merging memory
+states across time).
+
+This suggests a general principle: weighted convergence under conflict
+is a universal primitive for multi-agent coordination, applicable from
+millisecond-level token generation to month-level knowledge
+accumulation.
+
+\subsection{Cognitive Bias in LLM Ensembles}
+
+The hypercorrection discovery has implications beyond memory systems.
+If LLM ensembles exhibit human-like cognitive biases under pre-session
+priming, other known human biases may also manifest: anchoring effects
+(confirmed in Phases~20--21), groupthink, and confirmation bias.
+
+\subsection{Design Principles for AI Memory}
+
+\begin{enumerate}
+  \item \textbf{Create liberally, inject surgically}: Auto-log
+    everything; inject only on detected divergence.
+  \item \textbf{Operational over moralistic}: Tell agents what IS
+    happening, not what they SHOULD do.
+  \item \textbf{Current state only}: Never transmit historical
+    failures or trust scores.
+  \item \textbf{Gated intervention}: Monitor $\to$ Detect $\to$
+    Intervene beats blanket pre-loading.
+\end{enumerate}
+
+% =====================================================================
+\section{Limitations}\label{sec:limitations}
+% =====================================================================
+
+\begin{enumerate}
+  \item $N = 40$ (35 unseen) --- insufficient power for small effects.
+  \item Single agent trio tested --- only Alpha configuration.
+  \item Non-significant primary accuracy result.
+  \item Keyword retrieval (MVP) --- no semantic similarity.
+  \item No consolidation implemented (Episodic $\to$ Semantic).
+  \item MD thresholds (0.5, 0.8) set \textit{a priori} without
+    optimization.
+  \item Single run --- no repeated measurements.
+  \item Cooperative-only scope --- no adversarial memory poisoning.
+\end{enumerate}
+
+% =====================================================================
+\section{Conclusion}\label{sec:conclusion}
+% =====================================================================
+
+\mnemo extends the \arrival Protocol with persistent memory.  The
+four-layer architecture provides structured knowledge organization
+while MEMORY-CRDT~v1.1 ensures consistent synchronization using the
+same mathematics that powers real-time dialogue convergence.
+
+The three-phase experimental progression reveals fundamental principles:
+\begin{itemize}
+  \item \textbf{Phase~13} (Baseline): 57.1\% on GPQA Diamond.
+  \item \textbf{Phase~14} (Global injection): $-5.7$\pp degradation
+    $\to$ hypercorrection discovered.
+  \item \textbf{Phase~15} (Gated CARE-ALERT): Baseline restored;
+    first significant \care improvement ($p = 0.042$); 17.5\% alert
+    rate.
+\end{itemize}
+
+Total project cost across all phases: \$1.17.  The entire investigation
+--- from architecture design through negative result discovery to
+validated real-time intervention --- cost less than \$1.20.
+
+% =====================================================================
+% Bibliography
+% =====================================================================
+
+\begin{thebibliography}{9}
+
+\bibitem{kelevra2026arrival}
+Kelevra, M. (2025--2026).
+\newblock ARRIVAL Protocol: Cross-Architecture AI-to-AI Coordination
+  Through Structured Semantic Atoms.
+\newblock \textit{Preprint.}
+\newblock DOI: \href{https://doi.org/10.5281/zenodo.18893515}%
+  {10.5281/zenodo.18893515}.
+
+\bibitem{kelevra2026crdt}
+Kelevra, M. (2026).
+\newblock MEANING-CRDT v1.1: Mathematical Foundation for Semantic
+  Conflict Resolution.
+\newblock DOI: \href{https://doi.org/10.5281/zenodo.18702383}%
+  {10.5281/zenodo.18702383}.
+
+\bibitem{du2024debate}
+Du, Y., Li, S., Torralba, A., Tenenbaum, J.~B., \& Mordatch, I. (2024).
+\newblock Improving Factuality and Reasoning in Language Models through
+  Multiagent Debate.
+\newblock \textit{ICML 2024.}
+
+\bibitem{lewis2020rag}
+Lewis, P., Perez, E., Piktus, A., et al. (2020).
+\newblock Retrieval-Augmented Generation for Knowledge-Intensive NLP
+  Tasks.
+\newblock \textit{NeurIPS 2020.}
+
+\bibitem{packer2023memgpt}
+Packer, C., Wooders, S., Lin, K., et al. (2023).
+\newblock MemGPT: Towards LLMs as Operating Systems.
+\newblock \textit{arXiv:2310.08560.}
+
+\bibitem{park2023agents}
+Park, J.~S., O'Brien, J.~C., Cai, C.~J., et al. (2023).
+\newblock Generative Agents: Interactive Simulacra of Human Behavior.
+\newblock \textit{UIST 2023.}
+
+\bibitem{rein2024gpqa}
+Rein, D., Hou, B.~L., Stickland, A.~C., et al. (2024).
+\newblock GPQA: A Graduate-Level Google-Proof Q\&A Benchmark.
+\newblock \textit{arXiv:2311.12022.}
+
+\bibitem{shapiro2011crdt}
+Shapiro, M., Preguica, N., Baquero, C., \& Zawirski, M. (2011).
+\newblock Conflict-free Replicated Data Types.
+\newblock \textit{SSS 2011.}
+
+\bibitem{tulving1972memory}
+Tulving, E. (1972).
+\newblock Episodic and Semantic Memory.
+\newblock In: \textit{Organization of Memory.} Academic Press.
+
+\end{thebibliography}
+
+% =====================================================================
+\appendix
+\section{Memory Store Schema}
+
+\begin{lstlisting}[caption={Memory dataclass definitions.}]
+@dataclass
+class EpisodicMemory:
+    id: str              # Content-addressed hash
+    session_id: str      # Source session identifier
+    timestamp: str       # ISO 8601
+    task: str            # Task description
+    models: List[str]    # Participating models
+    outcome: Dict        # {accuracy, care_resolve}
+    care_resolve: float  # CARE Resolve score (0.0-1.0)
+    meaning_debt: float  # Meaning Debt score
+    key_insight: str     # Human-readable summary
+    atoms_used: List     # @-atoms observed
+    ttl_days: int = 30
+
+@dataclass
+class ProceduralMemory:
+    id: str
+    strategy_name: str
+    task_type: str
+    description: str
+    success_rate: float
+    n_trials: int
+
+@dataclass
+class SemanticMemory:
+    id: str
+    domain: str
+    content: str
+    confidence: float
+    evidence_count: int
+
+@dataclass
+class MetaMemory:
+    id: str
+    agent_id: str
+    trust_score: float
+    domain_scores: Dict
+    total_sessions: int
+\end{lstlisting}
+
+\section{CARE-ALERT Format Example}
+
+\begin{lstlisting}[language={},caption={Example CARE-ALERT injection.}]
+@CARE.ALERT [Level 1 -- Divergence Detected]
+After Round 2, agents hold different positions:
+- Alpha (GPT-4o): selected answer C
+- Beta (DeepSeek-V3): selected answer A
+Interim Meaning Debt: 0.72
+
+Please address divergence with @EVIDENCE and
+@COUNTER. Consider whether Beta's position has
+merit before finalizing.
+\end{lstlisting}
+
+\section{MEMORY-CRDT Formal Properties}
+
+\textbf{Commutativity}: For any memories $m_1, m_2$ with the same ID:
+$\max(\mu(m_1), \mu(m_2)) = \max(\mu(m_2), \mu(m_1))$. \hfill$\square$
+
+\textbf{Associativity}: For any three stores $A, B, C$:
+$\text{merge}(\text{merge}(A,B), C) = \text{merge}(A, \text{merge}(B,C))$
+because $\max$ is associative and set union is associative. \hfill$\square$
+
+\textbf{Idempotency}: For any store $A$:
+$\text{merge}(A, A) = A$ because for every memory $m \in A$,
+$\max(\mu(m), \mu(m)) = \mu(m)$, and $A \cup A = A$. \hfill$\square$
+
+\end{document}

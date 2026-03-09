@@ -59,7 +59,7 @@ def call_openrouter(prompt: str, model: str, system_prompt: str = "",
 
     headers = {
         "Authorization": f"Bearer {api_key}",
-        "HTTP-Referer": "https://github.com/DreamOS-Network/Arrival-Protocol",
+        "HTTP-Referer": "https://github.com/mifkilla/Arrival-Protocol",
         "X-Title": "ARRIVAL Protocol Phase 18",
         "Content-Type": "application/json",
     }

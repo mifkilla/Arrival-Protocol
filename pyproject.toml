@@ -53,10 +53,10 @@ viz = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/DreamOS-Network/Arrival-Protocol"
-Documentation = "https://github.com/DreamOS-Network/Arrival-Protocol/tree/main/docs"
-Repository = "https://github.com/DreamOS-Network/Arrival-Protocol"
-Issues = "https://github.com/DreamOS-Network/Arrival-Protocol/issues"
+Homepage = "https://github.com/mifkilla/Arrival-Protocol"
+Documentation = "https://github.com/mifkilla/Arrival-Protocol/tree/main/docs"
+Repository = "https://github.com/mifkilla/Arrival-Protocol"
+Issues = "https://github.com/mifkilla/Arrival-Protocol/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]

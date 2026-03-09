@@ -32,7 +32,7 @@ from pathlib import Path
 # ============================================================
 # Project Paths
 # ============================================================
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 RESULTS_DIR = PROJECT_ROOT / "results"
 LOGS_DIR = PROJECT_ROOT / "logs"
 

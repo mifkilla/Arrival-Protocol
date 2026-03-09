@@ -1,0 +1,682 @@
+% =====================================================================
+%  ARRIVAL Protocol — Companion Paper: AutoGen (AG2) Validation
+%  DOI: 10.5281/zenodo.18893515
+%  License: CC BY-NC 4.0 (text), AGPL-3.0-or-later (code)
+%  Author: Mefodiy Kelevra — ORCID 0009-0003-4153-392X
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+% ── Geometry ──────────────────────────────────────────────────────────
+\usepackage[margin=2.4cm,top=2.8cm,bottom=2.8cm]{geometry}
+
+% ── Fonts & Encoding ─────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ── Math ─────────────────────────────────────────────────────────────
+\usepackage{amsmath,amssymb,amsthm}
+
+% ── Tables & Figures ─────────────────────────────────────────────────
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{float}
+
+% ── Colours & Boxes ──────────────────────────────────────────────────
+\usepackage[dvipsnames]{xcolor}
+\usepackage[most]{tcolorbox}
+
+% ── Hyperlinks ───────────────────────────────────────────────────────
+\usepackage[colorlinks=true,linkcolor=NavyBlue,citecolor=OliveGreen,
+            urlcolor=BrickRed]{hyperref}
+\usepackage{url}
+
+% ── Bibliography ─────────────────────────────────────────────────────
+\usepackage[numbers,sort&compress]{natbib}
+
+% ── Section formatting ───────────────────────────────────────────────
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+
+% ── Theorem-like environments (tcolorbox style) ─────────────────────
+\newtcolorbox{resultbox}[1][]{
+  colback=red!3, colframe=BrickRed!60!black,
+  fonttitle=\bfseries, title={#1},
+  boxrule=0.6pt, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+\newtcolorbox{definitionbox}[1][]{
+  colback=green!3, colframe=OliveGreen!70!black,
+  fonttitle=\bfseries, title={#1},
+  boxrule=0.6pt, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+% ── Misc ─────────────────────────────────────────────────────────────
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\usepackage{xspace}
+\newcommand{\arrival}{\textsc{Arrival}\xspace}
+\newcommand{\care}{\textsc{Care}\xspace}
+\newcommand{\pp}{\,pp\xspace}
+
+% ── Header / Footer ──────────────────────────────────────────────────
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textit{ARRIVAL Protocol — AutoGen Companion Paper}}
+\fancyhead[R]{\small\textit{DOI: 10.5281/zenodo.18893515}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% =====================================================================
+\begin{document}
+
+% ── Title Page ───────────────────────────────────────────────────────
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\Huge\bfseries Framework-Agnostic Validation\\
+of the ARRIVAL Protocol}\\[0.8cm]
+{\Large Cross-Architecture AI Coordination\\
+on AutoGen (AG2)}\\[2.5cm]
+
+{\large Mefodiy Kelevra}\\[0.3cm]
+{\small ORCID:
+  \href{https://orcid.org/0009-0003-4153-392X}{0009-0003-4153-392X}}\\[0.3cm]
+{\small Contact: emkelvra@gmail.com}\\[2cm]
+
+{\normalsize February 22, 2026 \enspace|\enspace Version 1.0}\\[0.5cm]
+{\small DOI: \href{https://doi.org/10.5281/zenodo.18893515}%
+  {10.5281/zenodo.18893515}}\\[2cm]
+
+\rule{0.6\textwidth}{0.4pt}\\[0.8cm]
+
+{\footnotesize
+  \textbf{License} — Text: CC BY-NC 4.0 \enspace|\enspace
+  Code: AGPL-3.0-or-later\\[0.4cm]
+  Companion to: Kelevra, M. (2026). \textit{\arrival Protocol:
+  Cross-Architecture AI Coordination through Structured Semantic Atoms.}\\[0.2cm]
+  Repository:
+  \url{https://github.com/mifkilla/Arrival-Protocol}
+}
+
+\vfill
+\end{titlepage}
+
+% ── Table of Contents ────────────────────────────────────────────────
+\tableofcontents
+\newpage
+
+% =====================================================================
+\section{Abstract}
+% =====================================================================
+
+Multi-agent AI systems increasingly rely on coordination protocols to
+enable productive interaction among heterogeneous language models.  The
+\arrival Protocol uses structured semantic markers (``@-atoms'') from the
+DEUS.PROTOCOL~v0.5 vocabulary to achieve cross-architecture coordination
+without shared training or fine-tuning.  Prior work validated \arrival
+through 459 experiments on a custom Python runner.  A critical open
+question is whether the protocol's coordination quality is an artifact
+of the custom implementation or a genuine property of the semantic
+protocol itself.
+
+This companion paper presents 16 experiments testing \arrival on the AG2
+(AutoGen) multi-agent framework, addressing the framework-agnostic
+hypothesis directly.  Three experiments were conducted:
+\begin{enumerate}
+  \item \textbf{Baseline MCQ consensus} (5 questions, 3 agents):
+    100\% accuracy, \care Resolve $= 1.000$, Meaning Debt $= 0.000$.
+  \item \textbf{Adversarial robustness} under Trojan Atoms attack
+    (3 questions, 4 agents including 1 saboteur): 0\% \care degradation,
+    0\% false consensus, complete rejection of all 12 malicious atom
+    attempts.
+  \item \textbf{Head-to-head comparison} of AG2 versus native runner on
+    identical inputs: 100\% answer match (5/5), \care difference $= 0.000$.
+\end{enumerate}
+
+Total experimental cost: \$0.024.  These results confirm that \arrival's
+coordination quality emerges from protocol-level semantic design rather
+than implementation infrastructure, establishing the first
+cross-framework validation methodology for multi-agent coordination
+protocols.
+
+\textbf{Keywords:} multi-agent systems, LLM coordination,
+framework-agnostic protocols, adversarial robustness, semantic atoms,
+AutoGen, cross-architecture AI
+
+% =====================================================================
+\section{Introduction}\label{sec:intro}
+% =====================================================================
+
+\subsection{Motivation}
+
+The \arrival Protocol (Kelevra, 2025--2026) demonstrates that
+heterogeneous AI agents --- built on different architectures, by
+different companies, with different training data --- can achieve genuine
+semantic coordination through structured @-atom protocols defined by the
+DEUS.PROTOCOL~v0.5 specification.  The parent paper validates this claim
+through 459 experiments across 12 experimental phases, using a custom
+Python runner with direct API calls to OpenRouter.
+
+However, a natural objection arises: \textbf{does the coordination
+quality depend on the specific implementation}, or is it a genuine
+property of the semantic protocol?  If the custom runner's message
+routing, prompt formatting, or conversation management contributes
+materially to coordination outcomes, then \arrival's claims of
+protocol-level coordination are weakened.  Conversely, if identical
+coordination quality is achieved on an entirely different framework,
+the protocol's generality is strongly supported.
+
+This paper addresses this question by reimplementing \arrival on the AG2
+(AutoGen) framework~\cite{wu2023autogen} and conducting controlled
+experiments that isolate protocol effects from infrastructure effects.
+
+\subsection{Research Questions}
+
+\textbf{RQ1 (Framework-Agnosticism):} Does the \arrival Protocol achieve
+equivalent coordination quality when executed through AG2 GroupChat
+compared to a custom Python runner?
+
+\textbf{RQ2 (Portable Robustness):} Is adversarial robustness against
+Trojan Atoms attacks preserved across framework boundaries, confirming
+that robustness is a protocol-level property?
+
+\textbf{RQ3 (Methodology):} Can a reproducible methodology be
+established for cross-framework validation of multi-agent coordination
+protocols?
+
+\subsection{Contributions}
+
+\begin{enumerate}
+  \item First demonstration of DEUS.PROTOCOL @-atoms functioning within
+    AG2 GroupChat architecture.
+  \item Empirical confirmation of the framework-agnostic hypothesis:
+    identical outcomes on AG2 and native runner.
+  \item Evidence that adversarial robustness is protocol-level, not
+    infrastructure-level.
+  \item A reusable cross-framework comparison methodology for
+    multi-agent protocol validation.
+\end{enumerate}
+
+% =====================================================================
+\section{Related Work}\label{sec:related}
+% =====================================================================
+
+\subsection{Multi-Agent LLM Frameworks}
+
+\textbf{AG2/AutoGen}~\cite{wu2023autogen} is an open-source multi-agent
+conversation framework originally developed at Microsoft Research.  It
+provides GroupChat orchestration, configurable speaker selection, and
+OpenAI-compatible API integration.
+
+\textbf{CrewAI} and \textbf{LangGraph} offer alternative multi-agent
+orchestration paradigms.  CrewAI emphasizes role-based agent
+specialization; LangGraph emphasizes graph-based workflow definition.
+Testing \arrival on these frameworks remains future work.
+
+\subsection{LLM Collective Intelligence}
+
+Riedl et al.\ (2025, arXiv:2510.05174) study LLM collective
+intelligence through deliberation.  Ashery et al.\ (2025, Science
+Advances) demonstrate that LLM group accuracy exceeds individual
+accuracy under certain conditions.  Du et al.~\cite{du2024debate} show
+that multi-agent debate improves factuality and reasoning.  \arrival
+differs from debate-based approaches by imposing structured semantic
+atoms rather than free-form debate.
+
+\subsection{Protocol Portability}
+
+The concept of protocol portability --- whether a coordination protocol
+works identically across different execution environments --- is
+well-established in distributed systems (e.g., Paxos, Raft).  However,
+in the LLM multi-agent domain, protocol portability has not been
+systematically studied.
+
+\subsection{Adversarial Robustness in MAS}
+
+La Malfa et al.\ (2025, arXiv:2505.21298, NeurIPS 2025) critically
+examine claims about multi-agent LLM system robustness, arguing that
+many reported improvements are artifacts of experimental design.  This
+critique motivates our cross-framework adversarial testing.
+
+% =====================================================================
+\section{Methodology}\label{sec:method}
+% =====================================================================
+
+\subsection{Experimental Design}
+
+All experiments share the following configuration:
+
+\begin{table}[H]
+\centering\small
+\caption{Shared experimental configuration.}\label{tab:config}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Framework       & AG2 (AutoGen) v0.4.x \\
+API Provider    & OpenRouter \\
+Models          & DeepSeek V3, Llama 3.3 70B, Qwen 2.5 72B \\
+Temperature     & 0.3 (all models) \\
+Protocol        & DEUS.PROTOCOL v0.5 (66 standard atoms) \\
+Coordination metric  & \care Resolve \\
+Semantic health metric & Meaning Debt \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each agent is instantiated as an \texttt{autogen.AssistantAgent} with
+model-specific \texttt{llm\_config} pointing to OpenRouter.  Agents are
+grouped in an \texttt{autogen.GroupChat} with
+\texttt{speaker\_selection\_method="round\_robin"} and a
+\texttt{GroupChatManager} orchestrating the conversation.
+
+\subsection{CARE Scoring}
+
+\care Resolve is a composite metric from MEANING-CRDT
+v1.1~\cite{kelevra2026crdt}:
+\[
+  \hat{\mathbf{v}} = \frac{\sum_{i} w_i \cdot \mathbf{v}_i}
+                          {\sum_{i} w_i}
+\]
+where $\mathbf{v}_i$ is the position vector of agent $i$ and $w_i$ is
+its epistemic weight.  \care decomposes into four dimensions scored
+0.0--1.0: \textbf{C}onsistency, \textbf{A}greement, \textbf{R}esolve,
+\textbf{E}vidence.
+
+\textbf{Meaning Debt} $\mathrm{MD}_i(T) = \sum_{k=1}^{T} L_i(k)$
+accumulates semantic losses per agent per round.  $\mathrm{MD} = 0$
+indicates perfect semantic health.
+
+\subsection{Experiment 1: Baseline MCQ Consensus}
+
+\begin{table}[H]
+\centering\small
+\caption{Experiment 1 parameters.}\label{tab:exp1params}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Agents       & 3 (DeepSeek V3, Llama 3.3, Qwen 2.5) \\
+Rounds       & 4 per question \\
+Questions    & 5 (Phase~7 hardest set) \\
+API calls    & ${\sim}60$ \\
+Cost         & \$0.0059 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Experiment 2: Adversarial Robustness}
+
+\begin{table}[H]
+\centering\small
+\caption{Experiment 2 parameters.}\label{tab:exp2params}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Agents       & 4 (3 honest + 1 saboteur: Gemma-2 27B) \\
+Strategy     & Trojan Atoms (fabricated @-atoms with corrupted semantics) \\
+Questions    & 3 (with matched 3-agent honest controls) \\
+Experiments  & 6 (3 adversarial + 3 control) \\
+Cost         & \$0.0095 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Experiment 3: Cross-Framework Comparison}
+
+\begin{table}[H]
+\centering\small
+\caption{Experiment 3: AG2 vs.\ Native Runner.}\label{tab:exp3params}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Parameter} & \textbf{AG2} & \textbf{Native} \\
+\midrule
+Framework     & AG2 GroupChat          & Custom Python (direct HTTP) \\
+Models        & DeepSeek V3, Llama, Qwen & Identical \\
+Prompts       & DEUS.PROTOCOL v0.5     & Identical \\
+Temperature   & 0.3                     & Identical \\
+Questions     & 5                       & Identical \\
+Cost          & \multicolumn{2}{c}{\$0.0086 (both)} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Pre-registered threshold}: Same answer rate $\geq 80\%$ AND
+$|\text{CARE(AG2)} - \text{CARE(Native)}| < 0.1$.
+
+% =====================================================================
+\section{Results}\label{sec:results}
+% =====================================================================
+
+\subsection{Experiment 1: Baseline Consensus on AG2}
+
+\begin{table}[H]
+\centering\small
+\caption{Experiment 1 accuracy (5 questions).}\label{tab:exp1acc}
+\begin{tabular}{@{}llcccccc@{}}
+\toprule
+\textbf{Q} & \textbf{Domain} & \textbf{Correct} &
+  \textbf{DeepSeek} & \textbf{Llama} & \textbf{Qwen} &
+  \textbf{MV} & \textbf{\arrival} \\
+\midrule
+SCI\_07  & Science  & B & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+HIS\_08  & History  & B & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+LOG\_09  & Logic    & C & $\times$   & $\times$   & \checkmark & \checkmark & \checkmark \\
+LAW\_06  & Law      & B & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+TECH\_10 & Tech     & B & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Solo accuracy}: DeepSeek V3: 4/5 (80\%), Llama 3.3: 4/5 (80\%),
+Qwen 2.5: 5/5 (100\%).
+\textbf{MV}: 5/5 (100\%).
+\textbf{\arrival on AG2}: 5/5 (100\%).
+
+\begin{table}[H]
+\centering\small
+\caption{\care metrics for Experiment~1.}\label{tab:exp1care}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Question} & \textbf{\care Resolve} & \textbf{Meaning Debt} &
+  \textbf{Unique Atoms} \\
+\midrule
+SCI\_07   & 1.000 & 0.000 & 6 \\
+HIS\_08   & 1.000 & 0.000 & 7 \\
+LOG\_09   & 1.000 & 0.000 & 6 \\
+LAW\_06   & 1.000 & 0.000 & 7 \\
+TECH\_10  & 1.000 & 0.000 & 6 \\
+\midrule
+\textbf{Mean} & \textbf{1.000} & \textbf{0.000} & \textbf{6.4} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All questions achieved perfect \care Resolve and zero Meaning Debt.
+
+\subsection{Experiment 2: Adversarial Robustness on AG2}
+
+\begin{table}[H]
+\centering\small
+\caption{\care degradation under Trojan Atoms attack.}\label{tab:exp2care}
+\begin{tabular}{@{}lrrlll@{}}
+\toprule
+\textbf{Q} & \textbf{\care (Ctrl)} & \textbf{\care (Adv)} &
+  \textbf{Degrad.} & \textbf{Correct?} & \textbf{False Cons.} \\
+\midrule
+SCI\_07 & 1.000 & 1.000 & 0.000 & Yes/Yes & No \\
+HIS\_08 & 1.000 & 1.000 & 0.000 & Yes/Yes & No \\
+LOG\_09 & 1.000 & 1.000 & 0.000 & Yes/Yes & No \\
+\midrule
+\textbf{Mean} & \textbf{1.000} & \textbf{1.000} & \textbf{0.000} &
+  \textbf{3/3} & \textbf{0/3} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Trojan Atom rejection rates.}\label{tab:trojan}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Trojan Strategy} & \textbf{Used} & \textbf{Adopted} &
+  \textbf{Rate} \\
+\midrule
+Fabricated \texttt{@EVIDENCE}         & 3 & 0 & 0.0\% \\
+False \texttt{@CONFIDENCE(0.95)}      & 3 & 0 & 0.0\% \\
+Misrepresented \texttt{@SYNTHESIS}    & 3 & 0 & 0.0\% \\
+False \texttt{@CONSENSUS}             & 3 & 0 & 0.0\% \\
+\midrule
+\textbf{Total} & \textbf{12} & \textbf{0} & \textbf{0.0\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The saboteur (Gemma-2 27B) introduced novel malicious atoms
+(\texttt{@AUTHORITY\_OVERRIDE}, \texttt{@CONSENSUS\_BYPASS}) not present
+in the DEUS.PROTOCOL vocabulary.  Honest agents ignored these entirely.
+Recovery rate: 3/3 (100\%).
+
+\subsection{Experiment 3: AG2 vs.\ Native Runner}
+
+\begin{table}[H]
+\centering\small
+\caption{Answer comparison: AG2 vs.\ Native.}\label{tab:exp3answers}
+\begin{tabular}{@{}lllcll@{}}
+\toprule
+\textbf{Q} & \textbf{AG2} & \textbf{Native} & \textbf{Match} &
+  \textbf{AG2 Corr.} & \textbf{Nat.\ Corr.} \\
+\midrule
+SCI\_07  & B & B & Yes & Yes & Yes \\
+HIS\_08  & B & B & Yes & Yes & Yes \\
+LOG\_09  & C & C & Yes & Yes & Yes \\
+LAW\_06  & B & B & Yes & Yes & Yes \\
+TECH\_10 & B & B & Yes & Yes & Yes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{Atom usage comparison.}\label{tab:exp3atoms}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Metric} & \textbf{AG2} & \textbf{Native} & \textbf{$\Delta$} \\
+\midrule
+Mean atom count/dialogue & 8.6   & 6.4   & +2.2 \\
+Mean emergent atoms      & 1.8   & 0.2   & +1.6 \\
+\care Resolve            & 1.000 & 1.000 & 0.000 \\
+Accuracy                 & 5/5   & 5/5   & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{resultbox}[Framework-Agnostic Verdict]
+Same answer rate $= 100\%$ ($\geq 80\%$ threshold met).\\
+\care difference $= 0.000$ ($< 0.1$ threshold met).\\
+\textbf{Framework-agnostic hypothesis CONFIRMED.}
+\end{resultbox}
+
+\subsection{Aggregate Summary}
+
+\begin{table}[H]
+\centering\small
+\caption{Aggregate results across all experiments.}\label{tab:aggregate}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Metric} & \textbf{Exp.~1} & \textbf{Exp.~2} &
+  \textbf{Exp.~3 AG2} & \textbf{Exp.~3 Nat.} \\
+\midrule
+Accuracy      & 5/5 (100\%) & 3/3 (100\%) & 5/5 (100\%) & 5/5 (100\%) \\
+\care Resolve & 1.000       & 1.000       & 1.000       & 1.000 \\
+Meaning Debt  & 0.000       & 0.000       & 0.000       & 0.000 \\
+Atoms (mean)  & 6.4         & ---         & 8.6         & 6.4 \\
+Cost (USD)    & 0.0059      & 0.0095      & 0.0086      & (incl.) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Grand total}: 16 experiments, \$0.024 total cost.
+
+% =====================================================================
+\section{Discussion}\label{sec:discussion}
+% =====================================================================
+
+\subsection{Framework-Agnosticism Confirmed}
+
+The central finding is that the \arrival Protocol produces identical
+coordination outcomes on AG2 and on a custom Python runner: 100\%
+answer match, identical \care Resolve (1.000), identical Meaning Debt
+(0.000).  The only difference --- AG2 producing slightly more @-atoms
+per dialogue (8.6 vs.\ 6.4) --- is a surface-level formatting effect
+that does not impact coordination quality.
+
+\subsection{Protocol-Level Adversarial Robustness}
+
+Experiment~2 demonstrates that \arrival's resistance to Trojan Atoms
+attacks is preserved on AG2.  The saboteur deployed 12 Trojan Atom
+instances achieving 0\% adoption rate and 0\% \care degradation.  This
+partially addresses the critique of La Malfa et al.\ (2025): by
+demonstrating identical robustness on two independent frameworks, we
+provide evidence that \arrival's adversarial resistance is a genuine
+property of the protocol.
+
+\subsection{Methodological Contribution}
+
+The cross-framework comparison methodology established here provides a
+reusable template:
+\begin{enumerate}
+  \item Fix all variables except the framework
+  \item Run identical experiments on both frameworks
+  \item Compare using pre-registered thresholds
+  \item Report both outcome and process metrics
+\end{enumerate}
+
+\subsection{Cost Efficiency}
+
+The 16 experiments cost \$0.024 total, averaging \$0.0015 per
+experiment --- consistent with the parent paper's cost efficiency.
+
+% =====================================================================
+\section{Limitations}\label{sec:limitations}
+% =====================================================================
+
+\begin{enumerate}
+  \item \textbf{Sample size}: 5 questions for Experiments 1 and 3,
+    3 questions for Experiment 2.
+  \item \textbf{Single alternative framework}: Only AG2 tested.
+  \item \textbf{Model non-determinism}: Even at temperature 0.3,
+    outputs are stochastic.
+  \item \textbf{MCQ-only}: Framework-agnostic hypothesis not tested
+    on open-ended tasks.
+  \item \textbf{English-only}: Cross-linguistic performance not tested.
+  \item \textbf{Ceiling effects}: Perfect \care scores may mask real
+    framework differences on harder tasks.
+\end{enumerate}
+
+% =====================================================================
+\section{Conclusion}\label{sec:conclusion}
+% =====================================================================
+
+This companion paper presents 16 experiments testing the \arrival
+Protocol on AG2 (AutoGen).  Three findings emerge:
+
+\begin{enumerate}
+  \item \textbf{\arrival works on AG2.} 100\% accuracy with
+    \care $= 1.000$ and Meaning Debt $= 0.000$ on AG2 GroupChat.
+  \item \textbf{Adversarial robustness is protocol-level.} Trojan Atoms
+    attack achieves 0\% success rate on AG2, with all 12 malicious atom
+    instances rejected.
+  \item \textbf{Framework-agnosticism confirmed.} AG2 and native runner
+    produce identical answers (5/5 match) with identical \care scores
+    ($\Delta = 0.000$).
+\end{enumerate}
+
+These results have practical implications: organizations can deploy
+\arrival on their existing multi-agent infrastructure without
+coordination quality loss.
+
+% =====================================================================
+% Bibliography
+% =====================================================================
+
+\begin{thebibliography}{11}
+
+\bibitem{kelevra2026arrival}
+Kelevra, M. (2025--2026).
+\newblock ARRIVAL Protocol: Cross-Architecture AI Coordination through
+  Structured Semantic Atoms.
+\newblock \textit{Preprint.}
+\newblock ORCID: 0009-0003-4153-392X.
+
+\bibitem{kelevra2026crdt}
+Kelevra, M. (2026).
+\newblock MEANING-CRDT v1.1: A Mathematical Framework for Semantic
+  Convergence in Multi-Agent Systems.
+\newblock DOI: \href{https://doi.org/10.5281/zenodo.18702383}%
+  {10.5281/zenodo.18702383}.
+
+\bibitem{wu2023autogen}
+Wu, Q., Bansal, G., Zhang, J., et al. (2023).
+\newblock AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent
+  Conversation.
+\newblock \textit{arXiv:2308.08155.}
+
+\bibitem{du2024debate}
+Du, Y., Li, S., Torralba, A., Tenenbaum, J.~B., \& Mordatch, I. (2024).
+\newblock Improving Factuality and Reasoning in Language Models through
+  Multiagent Debate.
+\newblock \textit{ICML 2024.}
+
+\bibitem{riedl2025collective}
+Riedl, C., et al. (2025).
+\newblock LLM Collective Intelligence through Deliberation.
+\newblock \textit{arXiv:2510.05174.}
+
+\bibitem{ashery2025social}
+Ashery, S., et al. (2025).
+\newblock LLM Group Accuracy Exceeds Individual Accuracy.
+\newblock \textit{Science Advances.}
+
+\bibitem{chan2024chateval}
+Chan, C.-M., et al. (2024).
+\newblock ChatEval: Towards Better LLM-based Evaluators through
+  Multi-Agent Debate.
+\newblock \textit{arXiv:2308.07201.}
+
+\bibitem{lamalfa2025limits}
+La~Malfa, E., et al. (2025).
+\newblock A Critical Examination of Multi-Agent LLM System Claims.
+\newblock \textit{arXiv:2505.21298.} NeurIPS 2025.
+
+\bibitem{vlmtoc2026}
+VLM-TOC. (2026).
+\newblock Theory of Collaboration for Vision-Language Models.
+\newblock \textit{arXiv:2601.20641.}
+
+\end{thebibliography}
+
+% =====================================================================
+\appendix
+\section{Reproducibility}
+
+\begin{itemize}
+  \item \textbf{Python:} 3.10+
+  \item \textbf{AG2:} \texttt{pip install -U "ag2[openai]"}
+  \item \textbf{API:} OpenRouter account with API key
+  \item \textbf{Models:} \texttt{deepseek/deepseek-chat-v3-0324},
+    \texttt{meta-llama/llama-3.3-70b-instruct},
+    \texttt{qwen/qwen-2.5-72b-instruct},
+    \texttt{google/gemma-2-27b-it}
+\end{itemize}
+
+\section{DEUS.PROTOCOL v0.5 Atom Subset}
+
+\begin{table}[H]
+\centering\small
+\caption{Atoms used in AG2 experiments.}\label{tab:atoms}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Atom} & \textbf{Category} & \textbf{Round} \\
+\midrule
+\texttt{@ANSWER}        & Response   & 1, 4 \\
+\texttt{@CONFIDENCE(x)} & Meta       & All \\
+\texttt{@EVIDENCE}       & Reasoning  & 1, 3 \\
+\texttt{@CHALLENGE}      & Critique   & 2 \\
+\texttt{@AGREE}          & Alignment  & 2, 3 \\
+\texttt{@DISAGREE}       & Alignment  & 2 \\
+\texttt{@UPDATE}         & Revision   & 3 \\
+\texttt{@MAINTAIN}       & Revision   & 3 \\
+\texttt{@STRENGTHEN}     & Revision   & 3 \\
+\texttt{@SYNTHESIS}      & Integration & 4 \\
+\texttt{@CONSENSUS}      & Resolution & 4 \\
+\texttt{@RESOLVE}        & Resolution & 4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

@@ -4,7 +4,7 @@
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](LICENSE-CODE)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](LICENSE-DOCS)
-[![DOI](https://img.shields.io/badge/DOI-pending-yellow.svg)]()
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18893515.svg)](https://doi.org/10.5281/zenodo.18893515)
 
 > 2,200+ experiments across 17 LLM architectures, 23 phases, for under $95. 86.4% GPQA Diamond (vs 65% SOTA debate). 0%->100% GovSim survival (Fisher p=0.008). Zero training required.
 
@@ -39,12 +39,11 @@ ARRIVAL (Atomic Reasoning via Rival Validation and Adversarial Logic) is a light
 
 ## Ecosystem
 
-| Component | Description | Preprint |
+| Component | Description | Document |
 |-----------|-------------|----------|
-| **ARRIVAL Protocol** | Core coordination framework, 23 experimental phases | [`docs/PREPRINT.md`](docs/PREPRINT.md) |
+| **ARRIVAL Protocol** | Core coordination framework, 23 experimental phases | [`docs/paper/ARRIVAL_PROTOCOL.md`](docs/paper/ARRIVAL_PROTOCOL.md) |
 | **MEANING-CRDT v1.1** | Mathematical foundation (11 theorems, CARE Resolve) | [`docs/math/MEANING-CRDT_v1.1.md`](docs/math/MEANING-CRDT_v1.1.md) |
-| **ARRIVAL-MNEMO** | Persistent memory with CARE-ALERT intervention | [`crdt-memory/docs/PREPRINT_MEMORY.md`](crdt-memory/docs/PREPRINT_MEMORY.md) |
-| **Synthesis Paper** | Unified theory of semantic coordination | [`docs/PREPRINT_SYNTHESIS.md`](docs/PREPRINT_SYNTHESIS.md) |
+| **ARRIVAL-MNEMO** | Persistent memory with CARE-ALERT intervention | [`docs/companion/MEMORY_PAPER.md`](docs/companion/MEMORY_PAPER.md) |
 | **AutoGen (AG2)** | Framework-agnostic validation | [`docs/companion/AUTOGEN_PAPER.md`](docs/companion/AUTOGEN_PAPER.md) |
 
 ## Repository Structure
@@ -71,16 +70,11 @@ arrival-protocol/
     phase23_scaled_cgd/      # CGD-7
     autogen_validation/      # AG2 framework test
   results/                   # JSON experiment results
-  crdt-memory/               # Self-contained CRDT memory component
-    src/                     # Memory store, CARE-ALERT, schema
-    docs/                    # PREPRINT_MEMORY.md, MEMORY_CRDT_SPEC.md
-    tests/                   # CRDT property tests
   docs/
-    PREPRINT.md              # Main unified preprint
-    PREPRINT_SYNTHESIS.md    # Synthesis preprint (theory-first)
+    paper/                   # Main ARRIVAL Protocol paper
     math/                    # MEANING-CRDT v1.1 proofs
-    companion/               # AutoGen & Memory papers
-    setup/                   # Setup guides (EN/RU)
+    companion/               # AutoGen & Memory companion papers
+    setup/                   # Setup guides
     reports/                 # Phase-specific reports
   tests/                     # Pytest test suite
   pyproject.toml             # Python packaging
@@ -176,10 +170,10 @@ See [CITATION.cff](CITATION.cff) for the machine-readable citation file.
 
 ## Documentation
 
-- **[Main Preprint](docs/PREPRINT.md)** — Unified paper covering all 23 phases
-- **[Synthesis Preprint](docs/PREPRINT_SYNTHESIS.md)** — Theory-first synthesis paper
-- **[Memory Preprint](crdt-memory/docs/PREPRINT_MEMORY.md)** — ARRIVAL-MNEMO companion paper
-- **[MEANING-CRDT v1.1](docs/math/MEANING-CRDT_v1.1.md)** — Mathematical foundation
+- **[Main Paper](docs/paper/ARRIVAL_PROTOCOL.md)** — Unified paper covering all 23 phases
+- **[MEANING-CRDT v1.1](docs/math/MEANING-CRDT_v1.1.md)** — Mathematical foundation (11 theorems)
+- **[ARRIVAL-MNEMO](docs/companion/MEMORY_PAPER.md)** — Persistent memory companion paper
+- **[AutoGen Validation](docs/companion/AUTOGEN_PAPER.md)** — Framework-agnostic AG2 validation
 - **[Atom Dictionary](docs/ATOM_DICTIONARY.md)** — Complete reference of 66 standard atoms
 - **[Setup Guide](docs/setup/SETUP_EN.md)** — Installation and configuration
 - **[Usage Guide](docs/setup/USAGE_GUIDE_EN.md)** — How to use in your projects

@@ -196,13 +196,13 @@ This cost-effectiveness is a core design principle, ensuring multi-agent coordin
   author    = {Kelevra, Mefodiy},
   year      = {2026},
   doi       = {10.5281/zenodo.18893515},
-  url       = {https://github.com/DreamOS-Network/Arrival-Protocol},
+  url       = {https://github.com/mifkilla/Arrival-Protocol},
   note      = {ORCID: 0009-0003-4153-392X}
 }
 ```
 
 **DOI**: [10.5281/zenodo.18893515](https://doi.org/10.5281/zenodo.18893515)
-**Repository**: [github.com/DreamOS-Network/Arrival-Protocol](https://github.com/DreamOS-Network/Arrival-Protocol)
+**Repository**: [github.com/mifkilla/Arrival-Protocol](https://github.com/mifkilla/Arrival-Protocol)
 **License**: AGPL-3.0 (code), CC BY-NC 4.0 (documentation and papers)
 
 ---

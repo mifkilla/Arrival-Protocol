@@ -5,7 +5,7 @@
 **Date**: March 2026
 **DOI**: [10.5281/zenodo.18893515](https://doi.org/10.5281/zenodo.18893515)
 **License**: CC BY-NC 4.0 (text), AGPL-3.0-or-later (code)
-**Repository**: https://github.com/DreamOS-Network/Arrival-Protocol
+**Repository**: https://github.com/mifkilla/Arrival-Protocol
 
 **Keywords**: multi-agent debate, LLM coordination, CRDT, semantic atoms, echo chamber, adversarial robustness, GPQA, cross-architecture, confidence-gated debate, CGD, agreement gating
 

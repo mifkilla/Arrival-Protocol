@@ -50,7 +50,7 @@
   ],
   "language": "eng",
   "doi": "10.5281/zenodo.18893515",
-  "notes": "Documentation is bilingual (English/Russian). Code is licensed under AGPL-3.0-or-later; documentation under CC BY-NC 4.0. Mathematical foundation: MEANING-CRDT v1.1 (DOI: 10.5281/zenodo.18702383). Repository: https://github.com/DreamOS-Network/Arrival-Protocol",
+  "notes": "Documentation is bilingual (English/Russian). Code is licensed under AGPL-3.0-or-later; documentation under CC BY-NC 4.0. Mathematical foundation: MEANING-CRDT v1.1 (DOI: 10.5281/zenodo.18702383). Repository: https://github.com/mifkilla/Arrival-Protocol",
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.18702383",

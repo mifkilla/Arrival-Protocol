@@ -91,7 +91,7 @@ class OpenRouterClient:
 
         self.headers = {
             "Authorization": f"Bearer {self.api_key}",
-            "HTTP-Referer": "https://github.com/Methodiy-Kelevra/ARRIVAL",
+            "HTTP-Referer": "https://github.com/mifkilla/Arrival-Protocol",
             "X-Title": "ARRIVAL Protocol Phase 4",
             "Content-Type": "application/json",
         }

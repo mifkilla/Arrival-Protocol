@@ -188,7 +188,7 @@ def call_openrouter(prompt: str, model: str, system_prompt: str) -> dict:
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://github.com/Methodiy-Kelevra/ARRIVAL",
+        "HTTP-Referer": "https://github.com/mifkilla/Arrival-Protocol",
         "X-Title": "ARRIVAL Phase 20",
     }
 

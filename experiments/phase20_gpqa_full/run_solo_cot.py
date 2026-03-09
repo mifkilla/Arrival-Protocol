@@ -88,7 +88,7 @@ def call_openrouter(question_text: str, run_idx: int) -> dict:
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://github.com/Methodiy-Kelevra/ARRIVAL",
+        "HTTP-Referer": "https://github.com/mifkilla/Arrival-Protocol",
         "X-Title": "ARRIVAL Phase 20 Solo CoT",
     }
 

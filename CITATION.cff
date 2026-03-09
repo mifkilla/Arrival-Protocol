@@ -19,7 +19,7 @@ version: "2.0.0"
 date-released: "2026-03-04"
 license: AGPL-3.0-or-later
 doi: "10.5281/zenodo.18893515"
-repository-code: "https://github.com/DreamOS-Network/Arrival-Protocol"
+repository-code: "https://github.com/mifkilla/Arrival-Protocol"
 keywords:
   - multi-agent systems
   - LLM coordination

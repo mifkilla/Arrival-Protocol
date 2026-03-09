@@ -3,7 +3,7 @@
 **Author**: Mefodiy Kelevra
 **ORCID**: [0009-0003-4153-392X](https://orcid.org/0009-0003-4153-392X)
 **Date**: February 2026
-**Protocol Version**: DEUS.PROTOCOL v0.4
+**Protocol Version**: [DEUS.PROTOCOL v7.1](https://zenodo.org/records/18715125)
 
 ---
 
@@ -266,7 +266,7 @@ The key observation: consensus should be reached without any 2-against-1 coaliti
 
 ```bash
 # Clone the repository
-git clone https://github.com/DreamOS-Network/Arrival-Protocol.git
+git clone https://github.com/mifkilla/Arrival-Protocol.git
 cd "Arrival Protocol"
 
 # Create a virtual environment (recommended)
