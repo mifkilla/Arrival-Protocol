@@ -1,65 +1,65 @@
-# MEANING-CRDT: Объяснение простым языком
+# MEANING-CRDT: A Plain-Language Explanation
 
-## Для кого этот документ
-Вы — айтишник (пентестер) и психиатр. Вы понимаете распределённые системы и человеческую психику. Этот документ объясняет MEANING-CRDT на стыке этих областей.
-
----
-
-## Главная идея в одном абзаце
-
-**Представьте два Git-репозитория, которые хранят не код, а "мнения" двух людей в паре.** Каждый человек делает локальные коммиты ("я изменил своё мнение"), потом происходит merge. Но в отличие от Git, где конфликты решаются вручную, здесь есть **автоматические стратегии разрешения конфликтов**: доминирование (один всегда прав), last-write-wins (кто последний крикнул), или care-merge (взвешенное среднее по важности). Статья доказывает математически, что **care-merge — оптимальная стратегия**, но она уязвима к манипуляциям (как квадратичное голосование без защиты от Sybil-атак).
+## Target Audience
+You are an IT professional (pentester) and a psychiatrist. You understand distributed systems and the human psyche. This document explains MEANING-CRDT at the intersection of these domains.
 
 ---
 
-## Часть 1: IT-перспектива (для пентестера)
+## The Core Idea in One Paragraph
 
-### Что такое CRDT?
+**Imagine two Git repositories that store not code but "opinions" of two people in a relationship.** Each person makes local commits ("I changed my mind"), then a merge occurs. But unlike Git, where conflicts are resolved manually, here there are **automatic conflict resolution strategies**: dominance (one is always right), last-writer-wins (whoever spoke last), or care-merge (weighted average by importance). The paper proves mathematically that **care-merge is the optimal strategy**, but it is vulnerable to manipulation (like quadratic voting without Sybil protection).
 
-Из статьи:
+---
+
+## Part 1: IT Perspective (For the Pentester)
+
+### What is a CRDT?
+
+From the paper:
 > "CRDTs guarantee *eventual consistency* without centralized consensus."
 
-**Простыми словами:** CRDT — это структура данных, которая позволяет нескольким репликам изменяться независимо, а потом сливаться без конфликтов. Примеры:
-- **G-Counter** (grow-only counter): каждая реплика увеличивает свой счётчик, merge = сумма всех.
-- **LWW-Register** (last-write-wins): побеждает запись с более поздним timestamp.
-- **MV-Register** (multi-value): хранит все конкурирующие значения, пока не будет явного разрешения.
+**In plain language:** A CRDT is a data structure that allows multiple replicas to be modified independently, then merged without conflicts. Examples:
+- **G-Counter** (grow-only counter): each replica increments its counter, merge = sum of all.
+- **LWW-Register** (last-writer-wins): the write with the latest timestamp wins.
+- **MV-Register** (multi-value): stores all competing values until explicit resolution.
 
-В MEANING-CRDT используется **MV-Register** для хранения конкурирующих мнений двух агентов.
+MEANING-CRDT uses an **MV-Register** to store competing opinions of two agents.
 
-### Структура данных
+### Data Structure
 
-Для каждого "измерения смысла" (например, "куда поехать в отпуск", "сколько тратить на еду", "как воспитывать детей") каждый агент хранит:
+For each "meaning dimension" (e.g., "where to vacation", "how much to spend on food", "how to raise the children"), each agent stores:
 
 ```python
 class AgentState:
-    v: float       # позиция (мнение) на числовой оси
-    w: float       # важность (вес, "сколько мне это важно")
-    t: int         # логический timestamp (версия)
+    v: float       # position (opinion) on a numerical axis
+    w: float       # importance (weight, "how much this matters to me")
+    t: int         # logical timestamp (version)
 ```
 
-Глобальное состояние:
+Global state:
 ```python
-S = {state_A, state_B}  # множество конкурирующих значений
+S = {state_A, state_B}  # set of competing values
 ```
 
-**Merge** — это просто `set.union()`. Коммутативно, ассоциативно, идемпотентно → валидный state-based CRDT.
+**Merge** is simply `set.union()`. Commutative, associative, idempotent — a valid state-based CRDT.
 
-### Три стратегии resolve (чтение при конфликте)
+### Three Resolve Strategies (Reading Under Conflict)
 
-Когда нужно принять решение, вызывается `resolve(S) -> float`:
+When a decision must be made, `resolve(S) -> float` is called:
 
-#### 1. **DOM (Dominance)** — диктатура
+#### 1. **DOM (Dominance)** — Dictatorship
 ```python
 def resolve_DOM(state_A, state_B):
-    return state_A.v  # агент A всегда побеждает
+    return state_A.v  # agent A always wins
 ```
 
-**Аналогия в IT:** root-доступ у одного пользователя, остальные — read-only.
+**IT analogy:** Root access for one user, everyone else is read-only.
 
-**В отношениях:** классическая авторитарная модель ("я главный, делаем как я сказал").
+**In relationships:** Classic authoritarian model ("I'm in charge, we do what I say").
 
 ---
 
-#### 2. **LWW (Last-Writer-Wins)** — гонка timestamp'ов
+#### 2. **LWW (Last-Writer-Wins)** — Timestamp Race
 ```python
 def resolve_LWW(state_A, state_B):
     if state_A.t > state_B.t:
@@ -68,284 +68,284 @@ def resolve_LWW(state_A, state_B):
         return state_B.v
 ```
 
-**Аналогия в IT:** как в Cassandra или Riak — побеждает последняя запись.
+**IT analogy:** Like Cassandra or Riak — the latest write wins.
 
-**Проблема (из статьи):**
+**Problem (from the paper):**
 > "Consider the 'reactive strategy': the LWW loser in round k increments their timestamp to win the next round without changing position v. Then [...] the sequence does not converge and oscillates indefinitely."
 
-**Простыми словами:** если оба агента начинают "кричать громче" (инкрементить timestamp), система превращается в бесконечный пинг-понг. Это как race condition в многопоточности, только в человеческих отношениях.
+**In plain language:** If both agents start "shouting louder" (incrementing timestamps), the system becomes an infinite ping-pong. It's like a race condition in multithreading, but in human relationships.
 
-**В отношениях:** "последнее слово" — токсичная динамика, где каждый пытается переорать другого.
+**In relationships:** "Having the last word" — a toxic dynamic where each tries to out-argue the other.
 
 ---
 
-#### 3. **CARE (Care-weighted averaging)** — взвешенное среднее
+#### 3. **CARE (Care-weighted Averaging)** — Weighted Mean
 ```python
 def resolve_CARE(state_A, state_B):
     return (state_A.w * state_A.v + state_B.w * state_B.v) / (state_A.w + state_B.w)
 ```
 
-**Аналогия в IT:** 
-- Weighted load balancing (nginx upstream с весами).
-- Bayesian fusion of estimates (см. ниже).
-- Quadratic voting (но без защиты от манипуляций).
+**IT analogy:**
+- Weighted load balancing (nginx upstream with weights).
+- Bayesian fusion of estimates (see below).
+- Quadratic voting (but without manipulation protection).
 
-**Главная теорема (Theorem 1):**
+**Main theorem (Theorem 1):**
 > "Among all choices v̂ = f(vₐ, wₐ, vᵦ, wᵦ), the value v̂_CARE is the **unique minimizer** of total dissatisfaction under quadratic loss."
 
-**Простыми словами:** если измерять "боль" каждого агента как `w * (v - v̂)²`, то CARE — единственная стратегия, которая минимизирует суммарную боль. Это не мнение, это **математический факт**.
+**In plain language:** If you measure each agent's "pain" as `w * (v - v̂)²`, then CARE is the only strategy that minimizes total pain. This is not an opinion — it is a **mathematical fact**.
 
 ---
 
-### Уязвимость CARE: weight inflation attack
+### CARE Vulnerability: Weight Inflation Attack
 
 **Theorem 9:**
 > "Suppose an agent can report weight w̃ᵢ, while the true loss is computed using the real wᵢ. Then [...] the agent always benefits from inflating their declared weight."
 
-**Простыми словами:** если агенты могут врать о важности, они **всегда** выиграют от завышения веса. Это как:
-- **Sybil-атака** в квадратичном голосовании.
-- **Amplification attack** в DDoS (завышение трафика).
-- **Credential stuffing** (завышение количества попыток).
+**In plain language:** If agents can lie about importance, they **always** benefit from inflating their weight. This is like:
+- **Sybil attack** in quadratic voting.
+- **Amplification attack** in DDoS (inflating traffic).
+- **Credential stuffing** (inflating the number of attempts).
 
-**В отношениях:** "Мне это ОЧЕНЬ важно!" (на самом деле не очень) → манипуляция.
+**In relationships:** "This is REALLY important to me!" (when it actually isn't) — manipulation.
 
-**Решения (из статьи):**
-1. **Influence budget** — ограниченный ресурс на "высокие веса" (как rate limiting).
-2. **Quadratic cost** — штраф за завышение веса (как proof-of-work).
-3. **Side-payments** — компенсация за "перетягивание одеяла" (как gas fees в Ethereum).
-4. **Behavioral stakes** — вес подтверждается действиями (время, деньги, риск) — как proof-of-stake.
+**Solutions (from the paper):**
+1. **Influence budget** — a limited resource for "high weights" (like rate limiting).
+2. **Quadratic cost** — a penalty for inflating weight (like proof-of-work).
+3. **Side-payments** — compensation for "pulling the blanket" (like gas fees in Ethereum).
+4. **Behavioral stakes** — weight confirmed by actions (time, money, risk) — like proof-of-stake.
 
 ---
 
-## Часть 2: Психиатрическая перспектива
+## Part 2: Psychiatric Perspective
 
-### Модель как формализация паттернов отношений
+### The Model as Formalization of Relationship Patterns
 
-Из статьи:
+From the paper:
 > "DOM in the limit 'erases the identity' of the subordinate agent (their position converges to the dominant agent's), whereas CARE preserves both contributions."
 
-**Простыми словами:**
+**In plain language:**
 
-#### DOM = Авторитарная динамика
-- Один агент всегда определяет исход.
-- Второй агент постепенно **теряет свою идентичность** (его позиция сходится к позиции доминанта).
-- **Клинический аналог:** созависимость, синдром выученной беспомощности, потеря self-agency.
+#### DOM = Authoritarian Dynamics
+- One agent always determines the outcome.
+- The second agent gradually **loses their identity** (their position converges to the dominant's).
+- **Clinical analogue:** Codependency, learned helplessness syndrome, loss of self-agency.
 
 **Theorem 7:**
 > "Under DOM with adaptation of B only, we obtain vᵦ⁽ᵏ⁾ → vₐ⁽⁰⁾: the position of B converges in the limit to that of A (erasure of B's contribution)."
 
-**Математически:** если агент B каждый раз немного сдвигается к решению A, через N итераций его мнение полностью совпадёт с A. Это **формальное доказательство "стирания личности"**.
+**Mathematically:** If agent B shifts slightly toward A's decision each time, after N iterations their opinion will completely match A's. This is a **formal proof of "identity erasure"**.
 
 ---
 
-#### LWW = Реактивная эскалация
-- Каждый пытается "перекричать" другого.
-- **Не сходится** — бесконечные качели.
-- **Клинический аналог:** эскалация конфликта, реактивная агрессия, borderline-динамика ("splitting").
+#### LWW = Reactive Escalation
+- Each tries to "out-shout" the other.
+- **Does not converge** — infinite oscillations.
+- **Clinical analogue:** Conflict escalation, reactive aggression, borderline dynamics ("splitting").
 
-**Из статьи:**
+From the paper:
 > "LWW under 'reactive' agents produces **non-convergent oscillations**."
 
-**В терапии:** это паттерн "pursue-withdraw" или "demand-withdraw" — один требует, другой отстраняется, потом роли меняются. Цикл бесконечен.
+**In therapy:** This is the "pursue-withdraw" or "demand-withdraw" pattern — one demands, the other withdraws, then roles switch. The cycle is infinite.
 
 ---
 
-#### CARE = Взаимное признание
-- Оба агента влияют на исход пропорционально важности.
-- **Сходится** к общей точке, зависящей от обоих.
-- **Клинический аналог:** secure attachment, эмоциональная валидация, диалектика (DBT).
+#### CARE = Mutual Recognition
+- Both agents influence the outcome proportionally to importance.
+- **Converges** to a shared point that depends on both.
+- **Clinical analogue:** Secure attachment, emotional validation, dialectics (DBT).
 
 **Theorem 5:**
 > "If CARE resolve is applied at every round and both agents update according to adaptive dynamics, then disagreement Δ⁽ᵏ⁾ = (1-α)ᵏΔ⁽⁰⁾ → 0 exponentially."
 
-**Простыми словами:** если оба агента после каждого решения немного сдвигаются к общей точке, их разногласия **экспоненциально затухают**. Это формальная модель **терапевтического прогресса**.
+**In plain language:** If both agents shift slightly toward the shared point after each decision, their disagreements **decay exponentially**. This is a formal model of **therapeutic progress**.
 
 ---
 
-### Meaning Debt — аналог психологического стресса
+### Meaning Debt — Analogue of Psychological Stress
 
-**Из статьи:**
+From the paper:
 > "Meaning debt (accumulated cost from unresolved or poorly resolved conflict)."
 
-**Определение:**
+**Definition:**
 ```
-MD_i(T) = Σ L_i^(k)  — сумма "боли" агента i за T итераций
+MD_i(T) = Σ L_i^(k) — sum of agent i's "pain" over T iterations
 ```
 
 **Theorem 6:**
 > "Under CARE + adaptation, accumulated meaning debt is **bounded**."
 
-**Простыми словами:** 
-- При DOM или LWW "долг" может расти бесконечно (хронический стресс, burnout).
-- При CARE "долг" ограничен — система **самоисцеляется**.
+**In plain language:**
+- Under DOM or LWW, "debt" can grow infinitely (chronic stress, burnout).
+- Under CARE, "debt" is bounded — the system **self-heals**.
 
-**Клинический аналог:** 
-- **Allostatic load** (аллостатическая нагрузка) — накопленный физиологический износ от хронического стресса.
-- **Emotional debt** — накопленные невыраженные эмоции, обиды, невалидированные потребности.
+**Clinical analogue:**
+- **Allostatic load** — accumulated physiological wear from chronic stress.
+- **Emotional debt** — accumulated unexpressed emotions, resentments, unvalidated needs.
 
-CARE — единственная стратегия, при которой этот долг не растёт до бесконечности.
+CARE is the only strategy where this debt does not grow to infinity.
 
 ---
 
-### Фактор 4: количественная оценка улучшения
+### The Factor of 4: Quantitative Improvement Assessment
 
 **Theorem 3:**
 > "With equal importance weights, CARE reduces the subordinate agent's loss by a factor of **4** compared to DOM."
 
-**Простыми словами:** если важность для обоих одинакова, CARE снижает страдание подчинённого агента **в 4 раза** по сравнению с доминированием.
+**In plain language:** If importance is equal for both, CARE reduces the subordinate agent's suffering **by a factor of 4** compared to dominance.
 
-**Клиническая значимость:** это не "немного лучше", это **радикальное улучшение**. Как разница между:
-- Антидепрессантом с effect size 0.3 (слабый эффект) и 1.2 (сильный эффект).
-- Терапией с 25% ремиссией и 100% ремиссией.
+**Clinical significance:** This is not "slightly better" — it is a **radical improvement**. Like the difference between:
+- An antidepressant with effect size 0.3 (weak effect) and 1.2 (strong effect).
+- Therapy with 25% remission and 100% remission.
 
 ---
 
-## Часть 3: Связь с другими теориями
+## Part 3: Connections to Other Theories
 
 ### 1. Bayesian Brain / Predictive Processing
 
 **Theorem 8:**
 > "CARE is equivalent to **Bayesian fusion** of estimates under Gaussian beliefs, where w plays the role of precision."
 
-**Простыми словами:**
-- Каждый агент — это Bayesian observer с prior belief `N(v_i, 1/w_i)`.
-- `w_i` = precision (обратная дисперсия) = "насколько я уверен в своём мнении".
-- CARE = posterior mean при перемножении двух Gaussian'ов.
+**In plain language:**
+- Each agent is a Bayesian observer with prior belief `N(v_i, 1/w_i)`.
+- `w_i` = precision (inverse variance) = "how confident I am in my opinion".
+- CARE = posterior mean when multiplying two Gaussians.
 
-**Связь с FEP (Free Energy Principle):**
-Из статьи:
+**Connection to FEP (Free Energy Principle):**
+From the paper:
 > "Within Gaussian approximations, CARE corresponds to a step minimizing quadratic error, which is consistent with typical variational/Bayesian updates."
 
-**Осторожно:** авторы честно предупреждают, что это **не полный FEP**, а лишь частный случай. Но интуиция верна: CARE — это как два мозга, которые обновляют свои beliefs через социальное взаимодействие.
+**Caveat:** The authors honestly note this is **not a full FEP implementation**, just a special case. But the intuition holds: CARE is like two brains updating their beliefs through social interaction.
 
 ---
 
-### 2. Gottman-Murray (математика брака)
+### 2. Gottman-Murray (Mathematics of Marriage)
 
-Из статьи:
+From the paper:
 > "DOM ⇒ one-sided fixed point (erasure), CARE ⇒ joint fixed point depending on both agents — this resonates with the systems dynamics of relationships."
 
-**Простыми словами:** 
-- Gottman изучал динамику конфликтов в парах через дифференциальные уравнения.
-- MEANING-CRDT — дискретная версия той же идеи, но с явными стратегиями разрешения.
-- **Fixed point** (неподвижная точка) = стабильное состояние отношений.
+**In plain language:**
+- Gottman studied couple conflict dynamics through differential equations.
+- MEANING-CRDT is a discrete version of the same idea, but with explicit resolution strategies.
+- **Fixed point** = stable state of the relationship.
 
 ---
 
-### 3. Mechanism Design (теория игр)
+### 3. Mechanism Design (Game Theory)
 
-**Проблема:** CARE не incentive-compatible (Theorem 9).
+**Problem:** CARE is not incentive-compatible (Theorem 9).
 
-**Решения:**
-- **Quadratic voting** (Vitalik Buterin, Glen Weyl) — но с защитой от Sybil.
-- **Harberger tax** — налог на "владение влиянием".
-- **Prediction markets** — ставки на исход как proof-of-belief.
+**Solutions:**
+- **Quadratic voting** (Vitalik Buterin, Glen Weyl) — but with Sybil protection.
+- **Harberger tax** — a tax on "owning influence".
+- **Prediction markets** — bets on outcomes as proof-of-belief.
 
-**В отношениях:** это как пренап (prenuptial agreement) или терапевтический контракт — механизм, который делает честность выгодной.
-
----
-
-## Часть 4: Практические выводы
-
-### Для терапии пар
-
-1. **Диагностика паттерна:**
-   - Если один партнёр всегда "побеждает" → DOM → риск потери идентичности у второго.
-   - Если каждый пытается "перекричать" → LWW → эскалация.
-   - Если учитывается важность для обоих → CARE → здоровая динамика.
-
-2. **Интервенция:**
-   - Учить пары **эксплицитно называть важность** ("Для меня это 8 из 10").
-   - Проверять честность через **поведенческие stakes** ("Если тебе это так важно, готов ли ты...?").
-   - Отслеживать **meaning debt** (накопленные обиды) и работать с ним.
-
-3. **Прогноз:**
-   - CARE + адаптация → экспоненциальная сходимость (Theorem 5) → хороший прогноз.
-   - DOM или LWW → unbounded debt → плохой прогноз.
+**In relationships:** This is like a prenuptial agreement or a therapeutic contract — a mechanism that makes honesty profitable.
 
 ---
 
-### Для IT-систем (аналогии)
+## Part 4: Practical Conclusions
+
+### For Couples Therapy
+
+1. **Pattern Diagnosis:**
+   - If one partner always "wins" → DOM → risk of identity loss for the other.
+   - If each tries to "out-shout" → LWW → escalation.
+   - If importance for both is considered → CARE → healthy dynamics.
+
+2. **Intervention:**
+   - Teach couples to **explicitly state importance** ("This is 8 out of 10 for me").
+   - Verify honesty through **behavioral stakes** ("If this matters so much, are you willing to...?").
+   - Track **meaning debt** (accumulated resentments) and work with it.
+
+3. **Prognosis:**
+   - CARE + adaptation → exponential convergence (Theorem 5) → good prognosis.
+   - DOM or LWW → unbounded debt → poor prognosis.
+
+---
+
+### For IT Systems (Analogies)
 
 1. **Distributed consensus:**
-   - CARE можно использовать для merge conflicting configs в distributed systems.
-   - Пример: два дата-центра с разными приоритетами (latency vs throughput).
+   - CARE can be used to merge conflicting configs in distributed systems.
+   - Example: two data centers with different priorities (latency vs throughput).
 
 2. **Multi-agent RL:**
-   - CARE как reward aggregation в cooperative multi-agent RL.
-   - Вес = "насколько этот агент компетентен в этой задаче".
+   - CARE as reward aggregation in cooperative multi-agent RL.
+   - Weight = "how competent this agent is at this task".
 
 3. **Federated learning:**
-   - CARE как weighted averaging моделей от разных клиентов.
-   - Защита от weight inflation = Byzantine-robust aggregation.
+   - CARE as weighted averaging of models from different clients.
+   - Protection from weight inflation = Byzantine-robust aggregation.
 
 ---
 
-## Часть 5: Ограничения модели
+## Part 5: Model Limitations
 
-Из статьи:
+From the paper:
 > "The model does not account for safety (abuse/violence): in such systems, DOM may not be a 'policy' but coercion, and different protocols are required (boundaries, exit, external protection)."
 
-**Критически важно:** 
-- Модель предполагает **good faith** (добросовестность).
-- В ситуациях насилия/принуждения математика не применима — нужны **границы, выход, защита**.
-- CARE работает только в **safe container** (безопасном контейнере).
+**Critically important:**
+- The model assumes **good faith** (good-faith participation).
+- In situations of violence/coercion, the mathematics does not apply — **boundaries, exit, protection** are needed.
+- CARE only works in a **safe container**.
 
-**Клинический аналог:** 
-- Нельзя применять парную терапию при активном домашнем насилии.
-- Сначала — безопасность, потом — работа с динамикой.
+**Clinical analogue:**
+- Couples therapy cannot be applied during active domestic violence.
+- First — safety, then — work with dynamics.
 
 ---
 
-## Резюме: ключевые цитаты
+## Summary: Key Quotes
 
-### Оптимальность CARE
+### CARE Optimality
 > "CARE uniquely minimizes total dissatisfaction under a quadratic loss function."
 
-### Фактор 4
+### Factor of 4
 > "With equal importance weights, CARE reduces the subordinate agent's loss by a factor of 4 compared to DOM."
 
-### Сходимость
+### Convergence
 > "CARE combined with adaptive position update dynamics yields exponential convergence of disagreement and a bounded accumulated meaning debt."
 
-### Уязвимость
+### Vulnerability
 > "CARE is not incentive-compatible: when agents can strategically inflate their declared importance, they always benefit from weight inflation."
 
-### Идентичность
+### Identity
 > "DOM in the limit 'erases the identity' of the subordinate agent, whereas CARE preserves both contributions."
 
-### Требование доверия
+### Trust Requirement
 > "CARE requires good faith or a trust infrastructure: without it, weights become a field of manipulation."
 
 ---
 
-## Финальная метафора
+## Final Metaphor
 
-**MEANING-CRDT — это как протокол HTTPS для отношений:**
-- **HTTP** (незащищённый) = DOM или LWW — работает, но уязвим.
-- **HTTPS** (защищённый) = CARE с механизмами защиты от манипуляций.
-- **Certificate Authority** = trust infrastructure (терапевт, контракт, культура честности).
+**MEANING-CRDT is like the HTTPS protocol for relationships:**
+- **HTTP** (unprotected) = DOM or LWW — works, but vulnerable.
+- **HTTPS** (protected) = CARE with manipulation protection mechanisms.
+- **Certificate Authority** = trust infrastructure (therapist, contract, culture of honesty).
 
-Без CA (доверия) HTTPS бесполезен. Без trust infrastructure CARE превращается в игру "кто больше соврёт о важности".
+Without a CA (trust), HTTPS is useless. Without trust infrastructure, CARE becomes a game of "who can lie more about importance".
 
-**Но при наличии доверия — это единственная стратегия, которая:**
-1. Минимизирует суммарное страдание (Theorem 1).
-2. Сохраняет идентичность обоих (Theorem 7).
-3. Гарантирует сходимость (Theorem 5).
-4. Ограничивает накопленный стресс (Theorem 6).
-
----
-
-## Дополнительные ресурсы
-
-- **Оригинальная статья:** MEANING-CRDT v1.1 (полный текст с доказательствами)
-- **CRDT intro:** [crdt.tech](https://crdt.tech) — интерактивное введение в CRDTs
-- **Quadratic voting:** Glen Weyl, "Radical Markets" — про механизмы защиты от weight inflation
-- **Gottman:** "The Mathematics of Marriage" — эмпирическая база для динамики отношений
-- **FEP:** Karl Friston, "The Free-Energy Principle" — связь с Bayesian brain
+**But with trust in place — this is the only strategy that:**
+1. Minimizes total suffering (Theorem 1).
+2. Preserves both identities (Theorem 7).
+3. Guarantees convergence (Theorem 5).
+4. Bounds accumulated stress (Theorem 6).
 
 ---
 
-**Автор объяснения:** AI-ассистент, адаптация для IT-специалиста и психиатра  
-**Дата:** 19 февраля 2026  
-**Лицензия:** CC BY 4.0 (как и оригинальная статья)
+## Additional Resources
+
+- **Original paper:** MEANING-CRDT v1.1 (full text with proofs)
+- **CRDT intro:** [crdt.tech](https://crdt.tech) — interactive introduction to CRDTs
+- **Quadratic voting:** Glen Weyl, "Radical Markets" — on mechanisms protecting against weight inflation
+- **Gottman:** "The Mathematics of Marriage" — empirical basis for relationship dynamics
+- **FEP:** Karl Friston, "The Free-Energy Principle" — connection to the Bayesian brain
+
+---
+
+**Author of explanation:** AI assistant, adaptation for IT specialist and psychiatrist
+**Date:** February 19, 2026 (translated March 2026)
+**License:** CC BY-NC 4.0

@@ -2,8 +2,9 @@
 
 **Author**: Mefodiy Kelevra
 **ORCID**: [0009-0003-4153-392X](https://orcid.org/0009-0003-4153-392X)
-**Date**: February 21, 2026
-**Project**: ARRIVAL Protocol / Arrival CRDT
+**Date**: March 2026 (Updated)
+**Version**: 2.0
+**Project**: ARRIVAL Protocol / MEANING-CRDT v1.1
 
 ---
 
@@ -29,7 +30,7 @@ This document provides a comprehensive analysis of the scientific landscape surr
 | Dimension | Du et al. (MAD) | ARRIVAL |
 |-----------|-----------------|---------|
 | Communication | Free-form natural language | Structured @-atoms (66 standard) |
-| Architecture | Same-model instances | Cross-architecture (5-8 different LLMs) |
+| Architecture | Same-model instances | Cross-architecture (17 different LLM architectures) |
 | Formalization | None | CARE Resolve + Meaning Debt (11 theorems) |
 | Adversarial | Not tested | Byzantine saboteur (3 attack strategies) |
 | Protocol overhead | Zero | Minimal (system prompt injection) |
@@ -82,7 +83,7 @@ This document provides a comprehensive analysis of the scientific landscape surr
 | Protocol definition | Template-based messages | Semantic atoms (composable tags) |
 | Mathematical model | None | MEANING-CRDT (11 theorems) |
 | Adversarial testing | None | Byzantine saboteur |
-| Cross-architecture | Not specified | Explicitly tested (5-8 LLMs) |
+| Cross-architecture | Not specified | Explicitly tested (17 LLM architectures) |
 
 **What we borrow**: The hierarchical refinement concept could enhance our Phase 12 (bottleneck communication), where a relay agent must compress and transmit context between subgroups.
 
@@ -140,8 +141,8 @@ This document provides a comprehensive analysis of the scientific landscape surr
 |-----------|-------|---------|
 | Emergence measurement | Information-theoretic (TDMI, PID) | Atom-based (adoption rate, emergent count) |
 | Coordination mechanism | ToM prompts | @-atom protocol |
-| Agent differentiation | Persona-based | Architecture-based + role-based |
-| Scale | Small groups, guessing game | 8 architectures, 416+ experiments |
+| Agent differentiation | Persona-based | Architecture-based + role-based (17 architectures) |
+| Scale | Small groups, guessing game | 17 architectures, 2,200+ experiments |
 
 **What we borrow**: Riedl's information-theoretic metrics (synergy, complementarity, redundancy) provide a powerful complementary analysis layer. ARRIVAL's atom-annotated transcripts contain sufficient data to compute TDMI and PID measures, which could quantify whether @-atoms create genuine higher-order structure or merely correlated responses.
 
@@ -185,7 +186,7 @@ This document provides a comprehensive analysis of the scientific landscape surr
 | Protocol origin | Emergent (spontaneous) | Engineered (@-atoms) |
 | Transparency | Can become opaque/covert | Explicitly transparent |
 | Modality | Vision + Language | Language only |
-| Architecture | Same-model pairs (VLMs) | Cross-architecture (5-8 LLMs) |
+| Architecture | Same-model pairs (VLMs) | Cross-architecture (17 LLM architectures) |
 | Adversarial | Not tested | Byzantine saboteur |
 | Safety implication | Covert = concerning | Transparent = auditable |
 
@@ -300,7 +301,7 @@ This document provides a comprehensive analysis of the scientific landscape surr
 No existing work combines all four of these properties:
 
 1. **Engineered transparent protocol** (66 semantic atoms with formal definitions) --- vs. free-form debate or emergent opaque languages
-2. **Cross-architecture validation** (5-8 different LLM architectures) --- vs. same-model instances or single-architecture pairs
+2. **Cross-architecture validation** (17 different LLM architectures across 23 phases, 2,200+ experiments) --- vs. same-model instances or single-architecture pairs
 3. **Mathematical formalization** (CARE Resolve + Meaning Debt with 11 theorems from MEANING-CRDT v1.1) --- vs. ad-hoc metrics or no formal model
 4. **Adversarial robustness testing** (Byzantine saboteur with 3 attack strategies) --- vs. cooperative-only evaluation
 
@@ -314,9 +315,21 @@ ARRIVAL is part of a three-paper research program:
 
 1. **DEUS Protocol v7.1** (Kelevra, 2026) --- The theoretical foundation defining the semantic atom system, xenopsychological behavior induction, Constraint Satisfaction Conflict (CSC) model, and UCP Crystallization. Provides the "why" behind the 66 atoms.
 
-2. **MEANING-CRDT v1.1** (Kelevra, 2026) --- The mathematical framework providing CARE Resolve optimality (Theorem 5.1), bounded meaning debt (Theorem 5.8), and incentive incompatibility under Byzantine attack (Theorem 5.11). Provides the formal analysis tools.
+2. **MEANING-CRDT v1.1** (Kelevra, 2026) --- The mathematical framework providing 11 theorems including CARE Resolve optimality (Theorem 1), bounded meaning debt (Theorem 6), identity erasure under dominance (Theorem 7), Bayesian equivalence (Theorem 8), and incentive incompatibility under Byzantine attack (Theorem 9). Provides the formal analysis tools.
 
-3. **ARRIVAL Protocol** (this work) --- The experimental validation demonstrating that the protocol works in practice across 416+ experiments, costs under $5 USD, and resists adversarial attack. Provides the empirical evidence.
+3. **ARRIVAL Protocol** (this work) --- The experimental validation demonstrating that the protocol works in practice across 2,200+ experiments in 23 phases, 17 LLM architectures, costs under $95 USD (~14,500 API calls), and resists adversarial attack. Headline results: 86.4% GPQA Diamond (CGD), 0%→100% GovSim survival, 88.4% WMV+D-3 project-high. Provides the empirical evidence.
+
+### 7.1 Wang et al. Critique Validation (Phase 17)
+
+**Paper**: "Is Multi-Agent Debate Really Better? Rethinking Debate via Self-Play" (ACL 2024)
+
+Phase 17 directly tested this critique by running a single Qwen3-235B with enhanced CoT on the same 40 GPQA Diamond questions as the 5-agent ARRIVAL (Phase 16). Solo CoT MV achieved ~71.4% vs ARRIVAL's 65.0%. However: (1) prompt strength was confounded, (2) no run was statistically significant, and (3) multi-agent ARRIVAL provides audit trails, CARE metrics, and adversarial detection unavailable in single-agent setups. The critique is partially validated for accuracy but not for the broader value proposition.
+
+### 7.2 Choi et al. — LLM-based Multi-Agent Debate (Reference)
+
+**Paper**: "LLM-based Multi-Agent Debate for Advanced Reasoning" (arXiv:2508.17536)
+
+Referenced in the ARRIVAL Protocol paper as corroborating evidence that multi-agent debate improves reasoning on complex tasks. Their work on structured debate mechanisms aligns with ARRIVAL's approach but without the mathematical formalization (MEANING-CRDT) or adversarial testing framework.
 
 ---
 
@@ -336,6 +349,8 @@ ARRIVAL is part of a three-paper research program:
 - DecentLLMs (2025) --- decentralized BFT
 - LACP (2025) --- protocol standardization context
 - ProtocolBench (2025) --- benchmark for protocols
+- Wang et al. (2024) --- single-agent vs multi-agent critique (validated Phase 17)
+- Choi et al. (2025) --- LLM-based multi-agent debate (arXiv:2508.17536)
 
 ### May cite (broader context):
 - BlockAgents (2024) --- blockchain BFT approach
@@ -381,3 +396,7 @@ ARRIVAL is part of a three-paper research program:
 16. ICLR Blog Authors (2025). Multi-LLM-Agents Debate: Performance, Efficiency, and Scaling Challenges. *ICLR 2025 Blogposts*.
 
 17. DMAD Authors (2025). Breaking Mental Set to Improve Reasoning through Diverse Multi-Agent Debate. *ICLR 2025 Submission*.
+
+18. Wang, Y., et al. (2024). Is Multi-Agent Debate Really Better? Rethinking Debate via Self-Play. *ACL 2024*.
+
+19. Choi, J., et al. (2025). LLM-based Multi-Agent Debate for Advanced Reasoning. arXiv:2508.17536.
