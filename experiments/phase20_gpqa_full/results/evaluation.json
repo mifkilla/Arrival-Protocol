@@ -1,0 +1,112 @@
+{
+  "phase": 20,
+  "timestamp": "2026-03-01T21:06:22.714408",
+  "n_arrival": 198,
+  "n_solo": 198,
+  "n_matched": 198,
+  "accuracy": {
+    "arrival_r4": {
+      "value": 0.6666666666666666,
+      "correct": 132,
+      "total": 198,
+      "ci_95": [
+        0.5984,
+        0.7286
+      ]
+    },
+    "arrival_mv": {
+      "value": 0.6767676767676768,
+      "correct": 134,
+      "total": 198,
+      "ci_95": [
+        0.6088,
+        0.738
+      ]
+    },
+    "solo_cot_mv": {
+      "value": 0.6212121212121212,
+      "correct": 123,
+      "total": 198,
+      "ci_95": [
+        0.5519,
+        0.6859
+      ]
+    },
+    "solo_cot_per_run": {
+      "value": 0.5909090909090909,
+      "correct": 585,
+      "total": 990
+    },
+    "solo_cot_oracle": {
+      "value": 0.8333333333333334,
+      "correct": 165,
+      "total": 198
+    }
+  },
+  "mcnemar_arrival_vs_mv": {
+    "chi2": 0.0625,
+    "p_value": 0.802587,
+    "b_right_wrong": 9,
+    "c_wrong_right": 7,
+    "significant_005": false,
+    "significant_001": false
+  },
+  "mcnemar_arrival_vs_solo": {
+    "chi2": 1.4222,
+    "p_value": 0.233038,
+    "b_right_wrong": 18,
+    "c_wrong_right": 27,
+    "significant_005": false,
+    "significant_001": false
+  },
+  "fisher_arrival_vs_mv": 0.914807,
+  "fisher_arrival_vs_solo": 0.401191,
+  "contingency_arrival_vs_mv": {
+    "both_correct": 125,
+    "mv_right_ar_wrong": 9,
+    "mv_wrong_ar_right": 7,
+    "both_wrong": 57
+  },
+  "contingency_arrival_vs_solo": {
+    "both_correct": 105,
+    "solo_right_ar_wrong": 18,
+    "solo_wrong_ar_right": 27,
+    "both_wrong": 48
+  },
+  "rescue_rate": 0.109375,
+  "regression_rate": 0.06716417910447761,
+  "flip_rates": {
+    "r1_r2": 0.09090909090909091,
+    "r2_r3": 0.12626262626262627,
+    "r3_r4": 0.10606060606060606
+  },
+  "crdt": {
+    "avg_care_resolve": 0.9550403061224491,
+    "avg_meaning_debt": 0.3192888888888889
+  },
+  "per_domain": {
+    "Biology": {
+      "arrival_accuracy": 0.7894736842105263,
+      "mv_accuracy": 0.7368421052631579,
+      "solo_accuracy": 0.5789473684210527,
+      "n": 19
+    },
+    "Chemistry": {
+      "arrival_accuracy": 0.5161290322580645,
+      "mv_accuracy": 0.5268817204301075,
+      "solo_accuracy": 0.45161290322580644,
+      "n": 93
+    },
+    "Physics": {
+      "arrival_accuracy": 0.8023255813953488,
+      "mv_accuracy": 0.8255813953488372,
+      "solo_accuracy": 0.813953488372093,
+      "n": 86
+    }
+  },
+  "cost": {
+    "arrival_usd": 2.4089946800000006,
+    "solo_cot_usd": 2.363285924999996,
+    "total_usd": 4.772280604999997
+  }
+}

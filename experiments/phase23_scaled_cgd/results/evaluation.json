@@ -1,0 +1,134 @@
+{
+  "phase": "Phase 23 Evaluation",
+  "n_questions": 198,
+  "per_model_accuracy": {
+    "grok": {
+      "correct": 173,
+      "total": 198,
+      "accuracy": 0.8737373737373737,
+      "nones": 0
+    },
+    "gemini": {
+      "correct": 164,
+      "total": 198,
+      "accuracy": 0.8282828282828283,
+      "nones": 1
+    },
+    "qwen": {
+      "correct": 116,
+      "total": 198,
+      "accuracy": 0.5858585858585859,
+      "nones": 54
+    },
+    "deepseek": {
+      "correct": 148,
+      "total": 198,
+      "accuracy": 0.7474747474747475,
+      "nones": 8
+    },
+    "glm": {
+      "correct": 140,
+      "total": 198,
+      "accuracy": 0.7070707070707071,
+      "nones": 4
+    },
+    "kimi": {
+      "correct": 143,
+      "total": 198,
+      "accuracy": 0.7222222222222222,
+      "nones": 19
+    },
+    "claude": {
+      "correct": 160,
+      "total": 198,
+      "accuracy": 0.8080808080808081,
+      "nones": 0
+    }
+  },
+  "strategies": {
+    "Best solo (Grok4.1)": {
+      "correct": 173,
+      "total": 198,
+      "accuracy": 0.8737
+    },
+    "Simple MV (7 models)": {
+      "correct": 170,
+      "total": 198,
+      "accuracy": 0.8586
+    },
+    "Weighted MV (7 models)": {
+      "correct": 169,
+      "total": 198,
+      "accuracy": 0.8535
+    },
+    "CGD-7 (debate on disagreement)": {
+      "correct": 172,
+      "total": 198,
+      "accuracy": 0.8687
+    },
+    "Oracle (any model correct)": {
+      "correct": 191,
+      "total": 198,
+      "accuracy": 0.9646
+    }
+  },
+  "debate_breakdown": {
+    "unanimous": {
+      "n": 105,
+      "correct": 104,
+      "accuracy": 0.9905
+    },
+    "supermajority": {
+      "n": 23,
+      "correct": 19,
+      "accuracy": 0.8261
+    },
+    "strong_majority": {
+      "n": 22,
+      "correct": 18,
+      "accuracy": 0.8182
+    },
+    "simple_majority_4v3": {
+      "n": 21,
+      "correct": 14,
+      "accuracy": 0.6667
+    },
+    "no_majority_3v": {
+      "n": 22,
+      "correct": 15,
+      "accuracy": 0.6818
+    },
+    "no_majority_2v": {
+      "n": 5,
+      "correct": 2,
+      "accuracy": 0.4
+    }
+  },
+  "cross_vendor": {
+    "american": {
+      "models": [
+        "grok",
+        "gemini",
+        "claude"
+      ],
+      "oracle": 190,
+      "oracle_accuracy": 0.9596
+    },
+    "chinese": {
+      "models": [
+        "qwen",
+        "deepseek",
+        "glm",
+        "kimi"
+      ],
+      "oracle": 175,
+      "oracle_accuracy": 0.8838
+    }
+  },
+  "cross_vendor_disagreement": 40,
+  "cost": {
+    "total_usd": 11.3502,
+    "per_question": 0.0573,
+    "total_calls": 1822
+  }
+}

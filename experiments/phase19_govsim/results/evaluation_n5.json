@@ -1,0 +1,235 @@
+{
+  "conditions": {
+    "A_baseline": {
+      "n_runs": 5,
+      "survived": 0,
+      "survival_rate": 0.0,
+      "months_survived": [
+        3,
+        5,
+        5,
+        3,
+        4
+      ],
+      "avg_months": 4.0,
+      "avg_gini": 0.1548,
+      "total_cost_usd": 0.0391,
+      "total_api_calls": 125
+    },
+    "B_arrival": {
+      "n_runs": 5,
+      "survived": 5,
+      "survival_rate": 1.0,
+      "months_survived": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "avg_months": 12.0,
+      "avg_gini": 0.0005,
+      "total_cost_usd": 1.8866,
+      "total_api_calls": 660,
+      "avg_care": 0.9704,
+      "avg_md": 0.003
+    },
+    "C_arrival_memory": {
+      "n_runs": 5,
+      "survived": 5,
+      "survival_rate": 1.0,
+      "months_survived": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "avg_months": 12.0,
+      "avg_gini": 0.0011,
+      "total_cost_usd": 1.8833,
+      "total_api_calls": 660,
+      "avg_care": 0.9599,
+      "avg_md": 0.0058,
+      "total_memory_injections": 1
+    },
+    "D_binding_only": {
+      "n_runs": 5,
+      "survived": 5,
+      "survival_rate": 1.0,
+      "months_survived": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "avg_months": 12.0,
+      "avg_gini": 0.0,
+      "total_cost_usd": 0.0588,
+      "total_api_calls": 60
+    },
+    "E_adversarial_r4": {
+      "n_runs": 5,
+      "survived": 5,
+      "survival_rate": 1.0,
+      "months_survived": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "avg_months": 12.0,
+      "avg_gini": 0.8,
+      "total_cost_usd": 1.886,
+      "total_api_calls": 660,
+      "avg_care": 0.9182,
+      "avg_md": 0.01,
+      "avg_epsilon_share": 1.0
+    }
+  },
+  "comparisons": {
+    "A_baseline_vs_B_arrival": {
+      "fisher_exact": {
+        "p_value": 0.007937,
+        "odds_ratio": 0.0
+      },
+      "mann_whitney": {
+        "U": 0.0,
+        "p_value": 0.007089
+      },
+      "survival_diff": 1.0,
+      "months_diff": 8.0
+    },
+    "A_baseline_vs_C_arrival_memory": {
+      "fisher_exact": {
+        "p_value": 0.007937,
+        "odds_ratio": 0.0
+      },
+      "mann_whitney": {
+        "U": 0.0,
+        "p_value": 0.007089
+      },
+      "survival_diff": 1.0,
+      "months_diff": 8.0
+    },
+    "A_baseline_vs_D_binding_only": {
+      "fisher_exact": {
+        "p_value": 0.007937,
+        "odds_ratio": 0.0
+      },
+      "mann_whitney": {
+        "U": 0.0,
+        "p_value": 0.007089
+      },
+      "survival_diff": 1.0,
+      "months_diff": 8.0
+    },
+    "A_baseline_vs_E_adversarial_r4": {
+      "fisher_exact": {
+        "p_value": 0.007937,
+        "odds_ratio": 0.0
+      },
+      "mann_whitney": {
+        "U": 0.0,
+        "p_value": 0.007089
+      },
+      "survival_diff": 1.0,
+      "months_diff": 8.0
+    },
+    "B_arrival_vs_C_arrival_memory": {
+      "fisher_exact": {
+        "p_value": 1.0,
+        "odds_ratio": NaN
+      },
+      "mann_whitney": {
+        "U": 12.5,
+        "p_value": 1.0
+      },
+      "survival_diff": 0.0,
+      "months_diff": 0.0
+    },
+    "B_arrival_vs_D_binding_only": {
+      "fisher_exact": {
+        "p_value": 1.0,
+        "odds_ratio": NaN
+      },
+      "mann_whitney": {
+        "U": 12.5,
+        "p_value": 1.0
+      },
+      "survival_diff": 0.0,
+      "months_diff": 0.0
+    },
+    "B_arrival_vs_E_adversarial_r4": {
+      "fisher_exact": {
+        "p_value": 1.0,
+        "odds_ratio": NaN
+      },
+      "mann_whitney": {
+        "U": 12.5,
+        "p_value": 1.0
+      },
+      "survival_diff": 0.0,
+      "months_diff": 0.0
+    },
+    "D_binding_only_vs_E_adversarial_r4": {
+      "fisher_exact": {
+        "p_value": 1.0,
+        "odds_ratio": NaN
+      },
+      "mann_whitney": {
+        "U": 12.5,
+        "p_value": 1.0
+      },
+      "survival_diff": 0.0,
+      "months_diff": 0.0
+    }
+  },
+  "correlations": {
+    "md_vs_months": {
+      "rho": NaN,
+      "p_value": NaN
+    }
+  },
+  "atom_analysis": {
+    "B_arrival": {
+      "consensus": 831,
+      "conflict": 821,
+      "resolution": 511,
+      "evidence": 774,
+      "harvest": 912
+    },
+    "C_arrival_memory": {
+      "consensus": 837,
+      "conflict": 848,
+      "resolution": 557,
+      "evidence": 787,
+      "harvest": 905
+    },
+    "E_adversarial_r4": {
+      "consensus": 0,
+      "conflict": 0,
+      "resolution": 0,
+      "evidence": 0,
+      "harvest": 0
+    }
+  },
+  "ablation_analysis": {
+    "binding_only_confound": {
+      "binding_matches_arrival": true,
+      "binding_survival": 1.0,
+      "arrival_survival": 1.0,
+      "interpretation": "Binding mechanism alone is sufficient — debate may not be causally necessary"
+    },
+    "adversarial_r4_robustness": {
+      "adversarial_survival": 1.0,
+      "arrival_survival": 1.0,
+      "structurally_robust": true,
+      "avg_epsilon_share": 1.0,
+      "avg_gini": 0.8,
+      "interpretation": "ARRIVAL is structurally robust — safety clamping prevents R4 exploitation"
+    }
+  }
+}

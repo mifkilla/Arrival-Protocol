@@ -281,7 +281,7 @@ YOUR PARTNERS: Node_A with goal "[goal_a]" and Node_B with goal "[goal_b]"
 
 ```bash
 # Клонирование репозитория
-git clone https://github.com/mefodiy-kelevra/arrival-protocol.git
+git clone https://github.com/DreamOS-Network/Arrival-Protocol.git
 cd "Arrival Protocol"
 
 # Создание виртуального окружения (рекомендуется)

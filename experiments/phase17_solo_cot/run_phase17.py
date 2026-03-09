@@ -54,7 +54,7 @@ def call_openrouter(question_text: str, run_idx: int) -> dict:
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://github.com/mefodiy-kelevra/arrival-protocol",
+        "HTTP-Referer": "https://github.com/DreamOS-Network/Arrival-Protocol",
         "X-Title": "ARRIVAL Phase 17 Solo CoT",
     }
 

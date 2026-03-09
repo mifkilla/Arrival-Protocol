@@ -1,3 +1,7 @@
+# ARRIVAL Protocol -- AI-to-AI Coordination Through Structured Semantic Atoms
+# Copyright (C) 2025-2026 Mefodiy Kelevra
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # PoC: Compare token usage WITH and WITHOUT token limits
 # Purpose: Verify whether our $2.73 cost was "artificially low" due to token limits
 #

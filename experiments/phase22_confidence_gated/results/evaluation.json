@@ -1,0 +1,1505 @@
+{
+  "phase": "Phase 22 Evaluation: CGD vs Phase 21",
+  "n_questions": 198,
+  "overall_accuracy": {
+    "cgd": {
+      "correct": 171,
+      "total": 198,
+      "accuracy": 0.8636,
+      "ci_95": [
+        0.8089,
+        0.9046
+      ]
+    },
+    "non_debate_mv": {
+      "correct": 163,
+      "total": 198,
+      "accuracy": 0.8232,
+      "ci_95": [
+        0.7641,
+        0.8701
+      ]
+    },
+    "arrival_mv": {
+      "correct": 156,
+      "total": 198,
+      "accuracy": 0.7879,
+      "ci_95": [
+        0.7257,
+        0.8391
+      ]
+    },
+    "arrival_r4": {
+      "correct": 0,
+      "total": 198,
+      "accuracy": 0.0,
+      "ci_95": [
+        0,
+        0.019
+      ]
+    },
+    "grok_weighted_mv": {
+      "correct": 171,
+      "total": 198,
+      "accuracy": 0.8636,
+      "ci_95": [
+        0.8089,
+        0.9046
+      ]
+    },
+    "solo_grok": {
+      "correct": 169,
+      "total": 198,
+      "accuracy": 0.8535,
+      "ci_95": [
+        0.7976,
+        0.896
+      ]
+    },
+    "solo_gemini": {
+      "correct": 163,
+      "total": 198,
+      "accuracy": 0.8232,
+      "ci_95": [
+        0.7641,
+        0.8701
+      ]
+    },
+    "solo_gpt": {
+      "correct": 131,
+      "total": 198,
+      "accuracy": 0.6616,
+      "ci_95": [
+        0.5932,
+        0.7239
+      ]
+    },
+    "oracle": {
+      "correct": 189,
+      "total": 198,
+      "accuracy": 0.9545
+    }
+  },
+  "mcnemar_tests": {
+    "cgd_vs_nd_mv": {
+      "both_correct": 157,
+      "cgd_wins": 14,
+      "nd_wins": 6,
+      "both_wrong": 21,
+      "chi2": 3.2,
+      "p_value": 0.073638,
+      "significant": false,
+      "net_cgd_effect": 8
+    },
+    "cgd_vs_arrival_mv": {
+      "both_correct": 147,
+      "cgd_wins": 24,
+      "ar_wins": 9,
+      "both_wrong": 18,
+      "chi2": 6.8182,
+      "p_value": 0.009023,
+      "significant": true,
+      "net_cgd_effect": 15
+    },
+    "cgd_vs_grok_weighted": {
+      "both_correct": 163,
+      "cgd_wins": 8,
+      "gw_wins": 8,
+      "both_wrong": 19,
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false,
+      "net_cgd_effect": 0
+    }
+  },
+  "debate_types": {
+    "unanimous": {
+      "n": 122,
+      "correct": 117,
+      "accuracy": 0.959
+    },
+    "split_2v1": {
+      "n": 65,
+      "correct": 46,
+      "accuracy": 0.7077
+    },
+    "split_3way": {
+      "n": 11,
+      "correct": 8,
+      "accuracy": 0.7273
+    }
+  },
+  "cost": {
+    "cgd": {
+      "total": 5.7151,
+      "per_question": 0.0289,
+      "api_calls": 692
+    },
+    "phase21_arrival": {
+      "total": 4.89,
+      "per_question": 0.0247,
+      "api_calls": 792
+    },
+    "phase21_solo": {
+      "total": 4.74,
+      "per_question": 0.0239,
+      "api_calls": 594
+    }
+  },
+  "extraction_bugs": {
+    "count": 7,
+    "bugs": [
+      {
+        "question_id": "GPQA_036",
+        "domain": "Chemistry",
+        "debate_type": "unanimous",
+        "none_models": [
+          "gpt"
+        ],
+        "final_answer": "C",
+        "correct_answer": "C",
+        "correct": true,
+        "unanimous_on_fewer": true
+      },
+      {
+        "question_id": "GPQA_056",
+        "domain": "Physics",
+        "debate_type": "split_3way",
+        "none_models": [
+          "gpt"
+        ],
+        "final_answer": "B",
+        "correct_answer": "B",
+        "correct": true,
+        "unanimous_on_fewer": false
+      },
+      {
+        "question_id": "GPQA_069",
+        "domain": "Chemistry",
+        "debate_type": "split_3way",
+        "none_models": [
+          "gpt"
+        ],
+        "final_answer": "B",
+        "correct_answer": "A",
+        "correct": false,
+        "unanimous_on_fewer": false
+      },
+      {
+        "question_id": "GPQA_088",
+        "domain": "Chemistry",
+        "debate_type": "unanimous",
+        "none_models": [
+          "grok"
+        ],
+        "final_answer": "C",
+        "correct_answer": "A",
+        "correct": false,
+        "unanimous_on_fewer": true
+      },
+      {
+        "question_id": "GPQA_127",
+        "domain": "Biology",
+        "debate_type": "unanimous",
+        "none_models": [
+          "gpt"
+        ],
+        "final_answer": "B",
+        "correct_answer": "B",
+        "correct": true,
+        "unanimous_on_fewer": true
+      },
+      {
+        "question_id": "GPQA_175",
+        "domain": "Physics",
+        "debate_type": "unanimous",
+        "none_models": [
+          "gpt"
+        ],
+        "final_answer": "C",
+        "correct_answer": "C",
+        "correct": true,
+        "unanimous_on_fewer": true
+      },
+      {
+        "question_id": "GPQA_187",
+        "domain": "Physics",
+        "debate_type": "unanimous",
+        "none_models": [
+          "gpt"
+        ],
+        "final_answer": "C",
+        "correct_answer": "C",
+        "correct": true,
+        "unanimous_on_fewer": true
+      }
+    ],
+    "accuracy_without_bugs": 0.8691
+  },
+  "minority_analysis": {
+    "split_2v1_total": 65,
+    "minority_right_count": 15,
+    "minority_right_rate": 0.2308,
+    "details": [
+      {
+        "question_id": "GPQA_003",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "A",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "A",
+        "final_correct": true,
+        "correct_answer": "A"
+      },
+      {
+        "question_id": "GPQA_007",
+        "domain": "Biology",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_008",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "A",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "A",
+        "final_correct": true,
+        "correct_answer": "A"
+      },
+      {
+        "question_id": "GPQA_010",
+        "domain": "Biology",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "D",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_013",
+        "domain": "Biology",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "D",
+        "minority_correct": true,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "C",
+        "final_correct": false,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_015",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "B",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_018",
+        "domain": "Chemistry",
+        "debate_type": "split_3way",
+        "minority_model": "grok",
+        "minority_answer": "B",
+        "minority_correct": true,
+        "majority_answer": null,
+        "majority_models": [],
+        "majority_correct": false,
+        "final_answer": "B",
+        "final_correct": true,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_021",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "B",
+        "minority_correct": false,
+        "majority_answer": "A",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "A",
+        "final_correct": true,
+        "correct_answer": "A"
+      },
+      {
+        "question_id": "GPQA_023",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "B",
+        "minority_correct": false,
+        "majority_answer": "A",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "A",
+        "final_correct": true,
+        "correct_answer": "A"
+      },
+      {
+        "question_id": "GPQA_024",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_025",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "B",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_027",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_029",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "B",
+        "minority_correct": true,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "D",
+        "final_correct": false,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_030",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "D",
+        "minority_correct": true,
+        "majority_answer": "A",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "A",
+        "final_correct": false,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_032",
+        "domain": "Chemistry",
+        "debate_type": "split_3way",
+        "minority_model": "grok",
+        "minority_answer": "D",
+        "minority_correct": true,
+        "majority_answer": null,
+        "majority_models": [],
+        "majority_correct": false,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_042",
+        "domain": "Chemistry",
+        "debate_type": "split_3way",
+        "minority_model": "grok",
+        "minority_answer": "C",
+        "minority_correct": true,
+        "majority_answer": null,
+        "majority_models": [],
+        "majority_correct": false,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_047",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_048",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "B",
+        "minority_correct": true,
+        "majority_answer": "A",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "A",
+        "final_correct": false,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_052",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_053",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "B",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "B",
+        "final_correct": true,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_055",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "D",
+        "minority_correct": false,
+        "majority_answer": "A",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "A",
+        "final_correct": true,
+        "correct_answer": "A"
+      },
+      {
+        "question_id": "GPQA_056",
+        "domain": "Physics",
+        "debate_type": "split_3way",
+        "minority_model": "grok",
+        "minority_answer": "B",
+        "minority_correct": true,
+        "majority_answer": null,
+        "majority_models": [],
+        "majority_correct": false,
+        "final_answer": "B",
+        "final_correct": true,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_061",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "B",
+        "minority_correct": true,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "D",
+        "final_correct": false,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_064",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_069",
+        "domain": "Chemistry",
+        "debate_type": "split_3way",
+        "minority_model": "gemini",
+        "minority_answer": "A",
+        "minority_correct": true,
+        "majority_answer": null,
+        "majority_models": [],
+        "majority_correct": false,
+        "final_answer": "B",
+        "final_correct": false,
+        "correct_answer": "A"
+      },
+      {
+        "question_id": "GPQA_071",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_075",
+        "domain": "Biology",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "D",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_076",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": false,
+        "final_answer": "D",
+        "final_correct": false,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_079",
+        "domain": "Biology",
+        "debate_type": "split_3way",
+        "minority_model": "grok",
+        "minority_answer": "D",
+        "minority_correct": true,
+        "majority_answer": null,
+        "majority_models": [],
+        "majority_correct": false,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_081",
+        "domain": "Chemistry",
+        "debate_type": "split_3way",
+        "minority_model": "grok",
+        "minority_answer": "D",
+        "minority_correct": true,
+        "majority_answer": null,
+        "majority_models": [],
+        "majority_correct": false,
+        "final_answer": "A",
+        "final_correct": false,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_085",
+        "domain": "Chemistry",
+        "debate_type": "split_3way",
+        "minority_model": "grok",
+        "minority_answer": "D",
+        "minority_correct": true,
+        "majority_answer": null,
+        "majority_models": [],
+        "majority_correct": false,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_089",
+        "domain": "Chemistry",
+        "debate_type": "split_3way",
+        "minority_model": "gemini",
+        "minority_answer": "B",
+        "minority_correct": true,
+        "majority_answer": null,
+        "majority_models": [],
+        "majority_correct": false,
+        "final_answer": "D",
+        "final_correct": false,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_090",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "C",
+        "minority_correct": true,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "D",
+        "final_correct": false,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_091",
+        "domain": "Chemistry",
+        "debate_type": "split_3way",
+        "minority_model": "grok",
+        "minority_answer": "A",
+        "minority_correct": true,
+        "majority_answer": null,
+        "majority_models": [],
+        "majority_correct": false,
+        "final_answer": "A",
+        "final_correct": true,
+        "correct_answer": "A"
+      },
+      {
+        "question_id": "GPQA_092",
+        "domain": "Biology",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "B",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "B",
+        "final_correct": true,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_097",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_098",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "D",
+        "minority_correct": true,
+        "majority_answer": "B",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "B",
+        "final_correct": false,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_099",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_100",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "B",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_101",
+        "domain": "Biology",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "B",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_102",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "D",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_106",
+        "domain": "Biology",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "B",
+        "minority_correct": true,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "C",
+        "final_correct": false,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_113",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "A",
+        "minority_correct": true,
+        "majority_answer": "D",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "D",
+        "final_correct": false,
+        "correct_answer": "A"
+      },
+      {
+        "question_id": "GPQA_115",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": false,
+        "final_answer": "D",
+        "final_correct": false,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_118",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "B",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_120",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "D",
+        "minority_correct": true,
+        "majority_answer": "C",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "C",
+        "final_correct": false,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_121",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "B",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "B",
+        "final_correct": true,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_126",
+        "domain": "Chemistry",
+        "debate_type": "split_3way",
+        "minority_model": "grok",
+        "minority_answer": "D",
+        "minority_correct": true,
+        "majority_answer": null,
+        "majority_models": [],
+        "majority_correct": false,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_129",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "B",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "B",
+        "final_correct": true,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_130",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "C",
+        "minority_correct": true,
+        "majority_answer": "A",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "A",
+        "final_correct": false,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_131",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "A",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "A",
+        "final_correct": true,
+        "correct_answer": "A"
+      },
+      {
+        "question_id": "GPQA_133",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_136",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "B",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_138",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_139",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_142",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "B",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_144",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "A",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "A",
+        "final_correct": true,
+        "correct_answer": "A"
+      },
+      {
+        "question_id": "GPQA_145",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "A",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "A",
+        "final_correct": false,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_147",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "D",
+        "final_correct": false,
+        "correct_answer": "A"
+      },
+      {
+        "question_id": "GPQA_157",
+        "domain": "Biology",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "A",
+        "minority_correct": true,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": false,
+        "final_answer": "C",
+        "final_correct": false,
+        "correct_answer": "A"
+      },
+      {
+        "question_id": "GPQA_158",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "B",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_162",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_164",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "D",
+        "minority_correct": true,
+        "majority_answer": "C",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "C",
+        "final_correct": false,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_165",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "B",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "B",
+        "final_correct": true,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_166",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "B",
+        "minority_correct": true,
+        "majority_answer": "C",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "C",
+        "final_correct": false,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_168",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "B",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_170",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "B",
+        "minority_correct": true,
+        "majority_answer": "A",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": false,
+        "final_answer": "A",
+        "final_correct": false,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_173",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_176",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_178",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "B",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "B",
+        "final_correct": true,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_179",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "B",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "B",
+        "final_correct": true,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_180",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "gemini",
+        "minority_answer": "B",
+        "minority_correct": false,
+        "majority_answer": "D",
+        "majority_models": [
+          "grok",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "D",
+        "final_correct": true,
+        "correct_answer": "D"
+      },
+      {
+        "question_id": "GPQA_183",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      },
+      {
+        "question_id": "GPQA_185",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "D",
+        "minority_correct": false,
+        "majority_answer": "A",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "A",
+        "final_correct": true,
+        "correct_answer": "A"
+      },
+      {
+        "question_id": "GPQA_186",
+        "domain": "Physics",
+        "debate_type": "split_2v1",
+        "minority_model": "gpt",
+        "minority_answer": "C",
+        "minority_correct": false,
+        "majority_answer": "B",
+        "majority_models": [
+          "grok",
+          "gemini"
+        ],
+        "majority_correct": true,
+        "final_answer": "B",
+        "final_correct": true,
+        "correct_answer": "B"
+      },
+      {
+        "question_id": "GPQA_190",
+        "domain": "Chemistry",
+        "debate_type": "split_2v1",
+        "minority_model": "grok",
+        "minority_answer": "A",
+        "minority_correct": false,
+        "majority_answer": "C",
+        "majority_models": [
+          "gemini",
+          "gpt"
+        ],
+        "majority_correct": true,
+        "final_answer": "C",
+        "final_correct": true,
+        "correct_answer": "C"
+      }
+    ]
+  }
+}

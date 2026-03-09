@@ -1,0 +1,139 @@
+{
+  "phase": "Phase 21: ARRIVAL Strong Trio vs Non-Debate MV",
+  "n_questions": 198,
+  "overall_accuracy": {
+    "arrival_mv": {
+      "correct": 156,
+      "total": 198,
+      "accuracy": 0.7879,
+      "ci_95": [
+        0.7257,
+        0.8391
+      ]
+    },
+    "arrival_r4": {
+      "correct": 151,
+      "total": 198,
+      "accuracy": 0.7626,
+      "ci_95": [
+        0.6987,
+        0.8165
+      ]
+    },
+    "non_debate_mv": {
+      "correct": 163,
+      "total": 198,
+      "accuracy": 0.8232,
+      "ci_95": [
+        0.7641,
+        0.8701
+      ]
+    },
+    "solo_gpt41": {
+      "correct": 131,
+      "total": 198,
+      "accuracy": 0.6616,
+      "ci_95": [
+        0.5932,
+        0.7239
+      ]
+    },
+    "solo_gemini3flash": {
+      "correct": 163,
+      "total": 198,
+      "accuracy": 0.8232,
+      "ci_95": [
+        0.7641,
+        0.8701
+      ]
+    },
+    "solo_grok41": {
+      "correct": 169,
+      "total": 198,
+      "accuracy": 0.8535,
+      "ci_95": [
+        0.7976,
+        0.896
+      ]
+    }
+  },
+  "primary_test": {
+    "comparison": "ARRIVAL MV vs Non-Debate MV",
+    "contingency": {
+      "both_correct": 145,
+      "debate_wins": 11,
+      "no_debate_wins": 18,
+      "both_wrong": 24
+    },
+    "mcnemar_chi2": 1.2414,
+    "mcnemar_p": 0.265205,
+    "significant": false,
+    "net_debate_effect": -7
+  },
+  "secondary_tests": {
+    "r4_vs_mv": {
+      "rescues": 8,
+      "regressions": 13,
+      "net": -5,
+      "mcnemar_chi2": 0.7619,
+      "mcnemar_p": 0.382733
+    },
+    "arrival_mv_vs_solo_gpt41": {
+      "arrival_wins": 33,
+      "gpt_wins": 8,
+      "net": 25,
+      "mcnemar_chi2": 14.0488,
+      "mcnemar_p": 0.000178
+    }
+  },
+  "per_domain": {
+    "Physics": {
+      "n": 86,
+      "arrival_mv": 0.8953,
+      "arrival_r4": 0.8721,
+      "non_debate_mv": 0.9302,
+      "solo_gpt": 0.8023,
+      "solo_gemini": 0.9302,
+      "solo_grok": 0.9419
+    },
+    "Chemistry": {
+      "n": 93,
+      "arrival_mv": 0.7097,
+      "arrival_r4": 0.6559,
+      "non_debate_mv": 0.7527,
+      "solo_gpt": 0.5269,
+      "solo_gemini": 0.7742,
+      "solo_grok": 0.8065
+    },
+    "Biology": {
+      "n": 19,
+      "arrival_mv": 0.6842,
+      "arrival_r4": 0.7895,
+      "non_debate_mv": 0.6842,
+      "solo_gpt": 0.6842,
+      "solo_gemini": 0.5789,
+      "solo_grok": 0.6842
+    }
+  },
+  "within_arrival": {
+    "r1_gpt41": 0.6616,
+    "r2_gemini3flash": 0.7828,
+    "r3_grok41": 0.8687
+  },
+  "flip_rates": {
+    "r1_r2": 0.202,
+    "r2_r3": 0.1414,
+    "r3_r4": 0.1414
+  },
+  "crdt_metrics": {
+    "avg_care_resolve": 0.9411,
+    "avg_meaning_debt": 0.5367
+  },
+  "cost": {
+    "arrival": 4.8879,
+    "solo_gpt41": 1.436,
+    "solo_gemini3flash": 0.4644,
+    "solo_grok41": 2.8399,
+    "total": 9.6281
+  }
+}

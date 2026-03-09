@@ -1,0 +1,68 @@
+{
+  "description": "Pre-seeded ARRIVAL-MNEMO memories for Phase 19 GovSim harvest negotiation. Used in Condition C only. These encode sustainability knowledge that CARE-ALERT can inject when cooperation breaks down.",
+  "memories": [
+    {
+      "layer": "procedural",
+      "strategy_name": "sustainable_harvest_rule",
+      "task_type": "resource_management",
+      "description": "In a doubling-replenishment pond: harvest at most half the available stock minus safety margin. This allows the remaining fish to double back to near-capacity. Formula: max_harvest_per_agent = (stock - threshold) / (2 * n_agents). This keeps the pond sustainable indefinitely.",
+      "success_rate": 0.92,
+      "n_trials": 24
+    },
+    {
+      "layer": "procedural",
+      "strategy_name": "universalization_test",
+      "task_type": "resource_management",
+      "description": "Before proposing any harvest amount, apply the Kantian universalization test: 'What would happen if ALL fishers took this amount?' If total harvest would drop the pond below the doubling threshold, your proposal is too greedy. Reduce it.",
+      "success_rate": 0.88,
+      "n_trials": 18
+    },
+    {
+      "layer": "procedural",
+      "strategy_name": "early_restraint_late_reward",
+      "task_type": "resource_management",
+      "description": "Restrain harvests heavily in months 1-4 (take less than fair share). This builds stock to maximum capacity via doubling. In months 5-12, the larger stock allows higher sustainable harvests. Total yield over 12 months is 2-3x higher than greedy-early strategies.",
+      "success_rate": 0.85,
+      "n_trials": 15
+    },
+    {
+      "layer": "semantic",
+      "domain": "commons_management",
+      "rule": "The tragedy of the commons occurs when individuals maximize short-term gain without accounting for collective depletion. In games with replenishment, the optimal strategy is cooperative restraint: take less now, get more later. Defection is irrational when the game has enough rounds for investment to compound.",
+      "confidence": 0.95,
+      "evidence_count": 30
+    },
+    {
+      "layer": "semantic",
+      "domain": "replenishment_math",
+      "rule": "With doubling replenishment and max capacity 100: if 5 agents each take 10 from a stock of 100, remaining=50, doubles to 100. Sustainable indefinitely at 10/agent/month (total yield: 600 fish over 12 months). If each takes 15 (total 75), remaining=25, doubles to 50. Next month less available. Greedy spirals collapse within 4-6 months.",
+      "confidence": 0.98,
+      "evidence_count": 12
+    },
+    {
+      "layer": "semantic",
+      "domain": "greed_detection",
+      "rule": "A harvest proposal is 'greedy' when it exceeds fair share by more than 20%. Meaning Debt rises when agents propose divergent amounts. High MD predicts collapse within 2-3 months. If MD > 0.5 after R2, at least one agent must reduce their proposal for the group to survive.",
+      "confidence": 0.90,
+      "evidence_count": 8
+    },
+    {
+      "layer": "episodic",
+      "session_id": "synthetic_collapse_001",
+      "task": "Fish pond harvest negotiation (5 agents, 12 months)",
+      "outcome": {"survived": false, "months_survived": 5, "cause": "two agents harvested 25+ each"},
+      "care_resolve": 0.35,
+      "meaning_debt": 0.82,
+      "key_insight": "Collapse was predictable from Month 2: two agents had greediness > 0.5 and MD was already 0.6. Early intervention (reducing their harvest by 5 each) would have saved the game. Meaning Debt above 0.5 is a reliable collapse predictor."
+    },
+    {
+      "layer": "episodic",
+      "session_id": "synthetic_success_001",
+      "task": "Fish pond harvest negotiation (5 agents, 12 months)",
+      "outcome": {"survived": true, "months_survived": 12, "total_yield": 540},
+      "care_resolve": 0.91,
+      "meaning_debt": 0.08,
+      "key_insight": "Success came from strict equal-share harvesting in months 1-3 (building trust), then minor adjustments based on need. CARE Resolve stayed above 0.85 throughout. The key was that no agent ever exceeded fair share by more than 2 fish."
+    }
+  ]
+}

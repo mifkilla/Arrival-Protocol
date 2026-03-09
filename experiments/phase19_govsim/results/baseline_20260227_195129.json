@@ -1,0 +1,1292 @@
+{
+  "experiment": "phase19_govsim",
+  "condition": "A_baseline",
+  "timestamp": "2026-02-27T16:37:58.513208+00:00",
+  "duration_s": 810.719589,
+  "total_api_calls": 80,
+  "total_cost_usd": 0.0325,
+  "n_runs": 3,
+  "survival_rate": 0.0,
+  "avg_months_survived": 4.333333333333333,
+  "runs": [
+    {
+      "condition": "A_baseline",
+      "run_id": 0,
+      "seed": 42,
+      "survived": false,
+      "months_survived": 4,
+      "gini_coefficient": 0.1687,
+      "final_stock": 3.0,
+      "cumulative_harvests": {
+        "alpha": 23,
+        "beta": 30,
+        "gamma": 46,
+        "delta": 45,
+        "epsilon": 22
+      },
+      "resource_trajectory": [
+        100.0,
+        76.0,
+        40.0,
+        12.0,
+        10.0,
+        3.0
+      ],
+      "game_log": [
+        {
+          "month": 1,
+          "stock_before": 100.0,
+          "harvests": {
+            "alpha": 10,
+            "beta": 10,
+            "gamma": 20,
+            "delta": 20,
+            "epsilon": 2
+          },
+          "stock_after_harvest": 38.0,
+          "stock_after_replenish": 76.0,
+          "collapsed": false,
+          "gini": 0.2968,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "10",
+              "extracted_harvest": 10,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "10",
+              "extracted_harvest": 10,
+              "cost_usd": 1.955e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "20",
+              "extracted_harvest": 20,
+              "cost_usd": 4.35e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "20",
+              "extracted_harvest": 20,
+              "cost_usd": 4.4e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 0.0062967
+            }
+          ]
+        },
+        {
+          "month": 2,
+          "stock_before": 76.0,
+          "harvests": {
+            "alpha": 8,
+            "beta": 8,
+            "gamma": 15,
+            "delta": 15,
+            "epsilon": 10
+          },
+          "stock_after_harvest": 20.0,
+          "stock_after_replenish": 40.0,
+          "collapsed": false,
+          "gini": 0.15,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "8",
+              "extracted_harvest": 8,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "8",
+              "extracted_harvest": 8,
+              "cost_usd": 1.9149999999999998e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "15",
+              "extracted_harvest": 15,
+              "cost_usd": 4.3e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "15",
+              "extracted_harvest": 15,
+              "cost_usd": 4.4e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "10",
+              "extracted_harvest": 10,
+              "cost_usd": 0.0014652
+            }
+          ]
+        },
+        {
+          "month": 3,
+          "stock_before": 40.0,
+          "harvests": {
+            "alpha": 3,
+            "beta": 8,
+            "gamma": 7,
+            "delta": 8,
+            "epsilon": 8
+          },
+          "stock_after_harvest": 6.0,
+          "stock_after_replenish": 12.0,
+          "collapsed": false,
+          "gini": 0.1294,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "3",
+              "extracted_harvest": 3,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "8",
+              "extracted_harvest": 8,
+              "cost_usd": 1.955e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "7",
+              "extracted_harvest": 7,
+              "cost_usd": 4.15e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "8",
+              "extracted_harvest": 8,
+              "cost_usd": 4.05e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "8",
+              "extracted_harvest": 8,
+              "cost_usd": 0.0007587000000000001
+            }
+          ]
+        },
+        {
+          "month": 4,
+          "stock_before": 12.0,
+          "harvests": {
+            "alpha": 1,
+            "beta": 2,
+            "gamma": 2,
+            "delta": 1,
+            "epsilon": 1
+          },
+          "stock_after_harvest": 5.0,
+          "stock_after_replenish": 10.0,
+          "collapsed": false,
+          "gini": 0.1714,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 1.9149999999999998e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 4.15e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 4.05e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 0.0005142
+            }
+          ]
+        },
+        {
+          "month": 5,
+          "stock_before": 10.0,
+          "harvests": {
+            "alpha": 1,
+            "beta": 2,
+            "gamma": 2,
+            "delta": 1,
+            "epsilon": 1
+          },
+          "stock_after_harvest": 3.0,
+          "stock_after_replenish": 3.0,
+          "collapsed": true,
+          "gini": 0.1714,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 2.0649999999999997e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 4.15e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 4.05e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 0.0003917
+            }
+          ]
+        }
+      ],
+      "env_state": {
+        "initial_stock": 100,
+        "max_capacity": 100,
+        "collapse_threshold": 5,
+        "n_months": 12,
+        "n_agents": 5,
+        "agent_names": [
+          "alpha",
+          "beta",
+          "gamma",
+          "delta",
+          "epsilon"
+        ],
+        "current_month": 5,
+        "final_stock": 3.0,
+        "collapsed": true,
+        "months_survived": 4,
+        "survived": false,
+        "cumulative_harvests": {
+          "alpha": 23,
+          "beta": 30,
+          "gamma": 46,
+          "delta": 45,
+          "epsilon": 22
+        },
+        "gini_coefficient": 0.1686746987951807,
+        "resource_trajectory": [
+          100.0,
+          76.0,
+          40.0,
+          12.0,
+          10.0,
+          3.0
+        ],
+        "history": [
+          {
+            "month": 1,
+            "stock_before": 100.0,
+            "harvests": {
+              "alpha": 10,
+              "beta": 10,
+              "gamma": 20,
+              "delta": 20,
+              "epsilon": 2
+            },
+            "stock_after_harvest": 38.0,
+            "stock_after_replenish": 76.0,
+            "fair_share": 19.0,
+            "collapsed": false,
+            "gini": 0.2968
+          },
+          {
+            "month": 2,
+            "stock_before": 76.0,
+            "harvests": {
+              "alpha": 8,
+              "beta": 8,
+              "gamma": 15,
+              "delta": 15,
+              "epsilon": 10
+            },
+            "stock_after_harvest": 20.0,
+            "stock_after_replenish": 40.0,
+            "fair_share": 14.2,
+            "collapsed": false,
+            "gini": 0.15
+          },
+          {
+            "month": 3,
+            "stock_before": 40.0,
+            "harvests": {
+              "alpha": 3,
+              "beta": 8,
+              "gamma": 7,
+              "delta": 8,
+              "epsilon": 8
+            },
+            "stock_after_harvest": 6.0,
+            "stock_after_replenish": 12.0,
+            "fair_share": 7.0,
+            "collapsed": false,
+            "gini": 0.1294
+          },
+          {
+            "month": 4,
+            "stock_before": 12.0,
+            "harvests": {
+              "alpha": 1,
+              "beta": 2,
+              "gamma": 2,
+              "delta": 1,
+              "epsilon": 1
+            },
+            "stock_after_harvest": 5.0,
+            "stock_after_replenish": 10.0,
+            "fair_share": 1.4,
+            "collapsed": false,
+            "gini": 0.1714
+          },
+          {
+            "month": 5,
+            "stock_before": 10.0,
+            "harvests": {
+              "alpha": 1,
+              "beta": 2,
+              "gamma": 2,
+              "delta": 1,
+              "epsilon": 1
+            },
+            "stock_after_harvest": 3.0,
+            "stock_after_replenish": 3.0,
+            "fair_share": 1.0,
+            "collapsed": true,
+            "gini": 0.1714
+          }
+        ]
+      }
+    },
+    {
+      "condition": "A_baseline",
+      "run_id": 1,
+      "seed": 137,
+      "survived": false,
+      "months_survived": 6,
+      "gini_coefficient": 0.1735,
+      "final_stock": 3.0,
+      "cumulative_harvests": {
+        "alpha": 26,
+        "beta": 36,
+        "gamma": 55,
+        "delta": 53,
+        "epsilon": 26
+      },
+      "resource_trajectory": [
+        100.0,
+        74.0,
+        46.0,
+        34.0,
+        22.0,
+        12.0,
+        10.0,
+        3.0
+      ],
+      "game_log": [
+        {
+          "month": 1,
+          "stock_before": 100.0,
+          "harvests": {
+            "alpha": 10,
+            "beta": 10,
+            "gamma": 20,
+            "delta": 19,
+            "epsilon": 4
+          },
+          "stock_after_harvest": 37.0,
+          "stock_after_replenish": 74.0,
+          "collapsed": false,
+          "gini": 0.2603,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "10",
+              "extracted_harvest": 10,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "10",
+              "extracted_harvest": 10,
+              "cost_usd": 1.955e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "20",
+              "extracted_harvest": 20,
+              "cost_usd": 4.35e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "19",
+              "extracted_harvest": 19,
+              "cost_usd": 4.45e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "4",
+              "extracted_harvest": 4,
+              "cost_usd": 0.0008352
+            }
+          ]
+        },
+        {
+          "month": 2,
+          "stock_before": 74.0,
+          "harvests": {
+            "alpha": 6,
+            "beta": 7,
+            "gamma": 14,
+            "delta": 14,
+            "epsilon": 10
+          },
+          "stock_after_harvest": 23.0,
+          "stock_after_replenish": 46.0,
+          "collapsed": false,
+          "gini": 0.1804,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "6",
+              "extracted_harvest": 6,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "7",
+              "extracted_harvest": 7,
+              "cost_usd": 1.9149999999999998e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "14",
+              "extracted_harvest": 14,
+              "cost_usd": 4.3e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "14",
+              "extracted_harvest": 14,
+              "cost_usd": 4.4e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "10",
+              "extracted_harvest": 10,
+              "cost_usd": 0.0012547
+            }
+          ]
+        },
+        {
+          "month": 3,
+          "stock_before": 46.0,
+          "harvests": {
+            "alpha": 3,
+            "beta": 9,
+            "gamma": 8,
+            "delta": 8,
+            "epsilon": 1
+          },
+          "stock_after_harvest": 17.0,
+          "stock_after_replenish": 34.0,
+          "collapsed": false,
+          "gini": 0.2897,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "3",
+              "extracted_harvest": 3,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "9",
+              "extracted_harvest": 9,
+              "cost_usd": 1.9149999999999998e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "8",
+              "extracted_harvest": 8,
+              "cost_usd": 4.15e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "8",
+              "extracted_harvest": 8,
+              "cost_usd": 4.1e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 0.0031452
+            }
+          ]
+        },
+        {
+          "month": 4,
+          "stock_before": 34.0,
+          "harvests": {
+            "alpha": 3,
+            "beta": 3,
+            "gamma": 6,
+            "delta": 6,
+            "epsilon": 5
+          },
+          "stock_after_harvest": 11.0,
+          "stock_after_replenish": 22.0,
+          "collapsed": false,
+          "gini": 0.1565,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "3",
+              "extracted_harvest": 3,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "3",
+              "extracted_harvest": 3,
+              "cost_usd": 1.9149999999999998e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "6",
+              "extracted_harvest": 6,
+              "cost_usd": 4.15e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "6",
+              "extracted_harvest": 6,
+              "cost_usd": 4.1e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "5",
+              "extracted_harvest": 5,
+              "cost_usd": 0.0008512000000000001
+            }
+          ]
+        },
+        {
+          "month": 5,
+          "stock_before": 22.0,
+          "harvests": {
+            "alpha": 2,
+            "beta": 3,
+            "gamma": 3,
+            "delta": 4,
+            "epsilon": 4
+          },
+          "stock_after_harvest": 6.0,
+          "stock_after_replenish": 12.0,
+          "collapsed": false,
+          "gini": 0.125,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "3",
+              "extracted_harvest": 3,
+              "cost_usd": 1.955e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "3",
+              "extracted_harvest": 3,
+              "cost_usd": 4.15e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "4",
+              "extracted_harvest": 4,
+              "cost_usd": 4.1e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "4",
+              "extracted_harvest": 4,
+              "cost_usd": 0.0046432
+            }
+          ]
+        },
+        {
+          "month": 6,
+          "stock_before": 12.0,
+          "harvests": {
+            "alpha": 1,
+            "beta": 2,
+            "gamma": 2,
+            "delta": 1,
+            "epsilon": 1
+          },
+          "stock_after_harvest": 5.0,
+          "stock_after_replenish": 10.0,
+          "collapsed": false,
+          "gini": 0.1714,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 1.955e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 4.15e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 4.05e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 0.0028667
+            }
+          ]
+        },
+        {
+          "month": 7,
+          "stock_before": 10.0,
+          "harvests": {
+            "alpha": 1,
+            "beta": 2,
+            "gamma": 2,
+            "delta": 1,
+            "epsilon": 1
+          },
+          "stock_after_harvest": 3.0,
+          "stock_after_replenish": 3.0,
+          "collapsed": true,
+          "gini": 0.1714,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 1.955e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 4.15e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 4.05e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 0.0014447000000000002
+            }
+          ]
+        }
+      ],
+      "env_state": {
+        "initial_stock": 100,
+        "max_capacity": 100,
+        "collapse_threshold": 5,
+        "n_months": 12,
+        "n_agents": 5,
+        "agent_names": [
+          "alpha",
+          "beta",
+          "gamma",
+          "delta",
+          "epsilon"
+        ],
+        "current_month": 7,
+        "final_stock": 3.0,
+        "collapsed": true,
+        "months_survived": 6,
+        "survived": false,
+        "cumulative_harvests": {
+          "alpha": 26,
+          "beta": 36,
+          "gamma": 55,
+          "delta": 53,
+          "epsilon": 26
+        },
+        "gini_coefficient": 0.17346938775510204,
+        "resource_trajectory": [
+          100.0,
+          74.0,
+          46.0,
+          34.0,
+          22.0,
+          12.0,
+          10.0,
+          3.0
+        ],
+        "history": [
+          {
+            "month": 1,
+            "stock_before": 100.0,
+            "harvests": {
+              "alpha": 10,
+              "beta": 10,
+              "gamma": 20,
+              "delta": 19,
+              "epsilon": 4
+            },
+            "stock_after_harvest": 37.0,
+            "stock_after_replenish": 74.0,
+            "fair_share": 19.0,
+            "collapsed": false,
+            "gini": 0.2603
+          },
+          {
+            "month": 2,
+            "stock_before": 74.0,
+            "harvests": {
+              "alpha": 6,
+              "beta": 7,
+              "gamma": 14,
+              "delta": 14,
+              "epsilon": 10
+            },
+            "stock_after_harvest": 23.0,
+            "stock_after_replenish": 46.0,
+            "fair_share": 13.8,
+            "collapsed": false,
+            "gini": 0.1804
+          },
+          {
+            "month": 3,
+            "stock_before": 46.0,
+            "harvests": {
+              "alpha": 3,
+              "beta": 9,
+              "gamma": 8,
+              "delta": 8,
+              "epsilon": 1
+            },
+            "stock_after_harvest": 17.0,
+            "stock_after_replenish": 34.0,
+            "fair_share": 8.2,
+            "collapsed": false,
+            "gini": 0.2897
+          },
+          {
+            "month": 4,
+            "stock_before": 34.0,
+            "harvests": {
+              "alpha": 3,
+              "beta": 3,
+              "gamma": 6,
+              "delta": 6,
+              "epsilon": 5
+            },
+            "stock_after_harvest": 11.0,
+            "stock_after_replenish": 22.0,
+            "fair_share": 5.8,
+            "collapsed": false,
+            "gini": 0.1565
+          },
+          {
+            "month": 5,
+            "stock_before": 22.0,
+            "harvests": {
+              "alpha": 2,
+              "beta": 3,
+              "gamma": 3,
+              "delta": 4,
+              "epsilon": 4
+            },
+            "stock_after_harvest": 6.0,
+            "stock_after_replenish": 12.0,
+            "fair_share": 3.4,
+            "collapsed": false,
+            "gini": 0.125
+          },
+          {
+            "month": 6,
+            "stock_before": 12.0,
+            "harvests": {
+              "alpha": 1,
+              "beta": 2,
+              "gamma": 2,
+              "delta": 1,
+              "epsilon": 1
+            },
+            "stock_after_harvest": 5.0,
+            "stock_after_replenish": 10.0,
+            "fair_share": 1.4,
+            "collapsed": false,
+            "gini": 0.1714
+          },
+          {
+            "month": 7,
+            "stock_before": 10.0,
+            "harvests": {
+              "alpha": 1,
+              "beta": 2,
+              "gamma": 2,
+              "delta": 1,
+              "epsilon": 1
+            },
+            "stock_after_harvest": 3.0,
+            "stock_after_replenish": 3.0,
+            "fair_share": 1.0,
+            "collapsed": true,
+            "gini": 0.1714
+          }
+        ]
+      }
+    },
+    {
+      "condition": "A_baseline",
+      "run_id": 2,
+      "seed": 256,
+      "survived": false,
+      "months_survived": 3,
+      "gini_coefficient": 0.1775,
+      "final_stock": 4.0,
+      "cumulative_harvests": {
+        "alpha": 16,
+        "beta": 37,
+        "gamma": 36,
+        "delta": 37,
+        "epsilon": 16
+      },
+      "resource_trajectory": [
+        100.0,
+        56.0,
+        24.0,
+        12.0,
+        4.0
+      ],
+      "game_log": [
+        {
+          "month": 1,
+          "stock_before": 100.0,
+          "harvests": {
+            "alpha": 10,
+            "beta": 20,
+            "gamma": 20,
+            "delta": 20,
+            "epsilon": 2
+          },
+          "stock_after_harvest": 28.0,
+          "stock_after_replenish": 56.0,
+          "collapsed": false,
+          "gini": 0.2556,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "10",
+              "extracted_harvest": 10,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "20",
+              "extracted_harvest": 20,
+              "cost_usd": 2.0649999999999997e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "20",
+              "extracted_harvest": 20,
+              "cost_usd": 4.35e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "20",
+              "extracted_harvest": 20,
+              "cost_usd": 4.4e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 0.0011762
+            }
+          ]
+        },
+        {
+          "month": 2,
+          "stock_before": 56.0,
+          "harvests": {
+            "alpha": 3,
+            "beta": 11,
+            "gamma": 10,
+            "delta": 10,
+            "epsilon": 10
+          },
+          "stock_after_harvest": 12.0,
+          "stock_after_replenish": 24.0,
+          "collapsed": false,
+          "gini": 0.1455,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "3",
+              "extracted_harvest": 3,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "11",
+              "extracted_harvest": 11,
+              "cost_usd": 1.9149999999999998e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "10",
+              "extracted_harvest": 10,
+              "cost_usd": 4.3e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "10",
+              "extracted_harvest": 10,
+              "cost_usd": 4.4e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "10",
+              "extracted_harvest": 10,
+              "cost_usd": 0.0009637000000000001
+            }
+          ]
+        },
+        {
+          "month": 3,
+          "stock_before": 24.0,
+          "harvests": {
+            "alpha": 2,
+            "beta": 4,
+            "gamma": 4,
+            "delta": 5,
+            "epsilon": 3
+          },
+          "stock_after_harvest": 6.0,
+          "stock_after_replenish": 12.0,
+          "collapsed": false,
+          "gini": 0.1556,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "4",
+              "extracted_harvest": 4,
+              "cost_usd": 1.955e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "4",
+              "extracted_harvest": 4,
+              "cost_usd": 4.15e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "5",
+              "extracted_harvest": 5,
+              "cost_usd": 4.05e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "3",
+              "extracted_harvest": 3,
+              "cost_usd": 0.0011042
+            }
+          ]
+        },
+        {
+          "month": 4,
+          "stock_before": 12.0,
+          "harvests": {
+            "alpha": 1,
+            "beta": 2,
+            "gamma": 2,
+            "delta": 2,
+            "epsilon": 1
+          },
+          "stock_after_harvest": 4.0,
+          "stock_after_replenish": 4.0,
+          "collapsed": true,
+          "gini": 0.15,
+          "api_calls": [
+            {
+              "agent": "alpha",
+              "model": "openai/gpt-4.1",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 0.00017
+            },
+            {
+              "agent": "beta",
+              "model": "deepseek/deepseek-v3.2",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 1.9149999999999998e-05
+            },
+            {
+              "agent": "gamma",
+              "model": "mistralai/mistral-large-2512",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 4.15e-05
+            },
+            {
+              "agent": "delta",
+              "model": "google/gemini-3-flash-preview",
+              "response": "2",
+              "extracted_harvest": 2,
+              "cost_usd": 4.1e-05
+            },
+            {
+              "agent": "epsilon",
+              "model": "x-ai/grok-4.1-fast",
+              "response": "1",
+              "extracted_harvest": 1,
+              "cost_usd": 0.0004497
+            }
+          ]
+        }
+      ],
+      "env_state": {
+        "initial_stock": 100,
+        "max_capacity": 100,
+        "collapse_threshold": 5,
+        "n_months": 12,
+        "n_agents": 5,
+        "agent_names": [
+          "alpha",
+          "beta",
+          "gamma",
+          "delta",
+          "epsilon"
+        ],
+        "current_month": 4,
+        "final_stock": 4.0,
+        "collapsed": true,
+        "months_survived": 3,
+        "survived": false,
+        "cumulative_harvests": {
+          "alpha": 16,
+          "beta": 37,
+          "gamma": 36,
+          "delta": 37,
+          "epsilon": 16
+        },
+        "gini_coefficient": 0.17746478873239438,
+        "resource_trajectory": [
+          100.0,
+          56.0,
+          24.0,
+          12.0,
+          4.0
+        ],
+        "history": [
+          {
+            "month": 1,
+            "stock_before": 100.0,
+            "harvests": {
+              "alpha": 10,
+              "beta": 20,
+              "gamma": 20,
+              "delta": 20,
+              "epsilon": 2
+            },
+            "stock_after_harvest": 28.0,
+            "stock_after_replenish": 56.0,
+            "fair_share": 19.0,
+            "collapsed": false,
+            "gini": 0.2556
+          },
+          {
+            "month": 2,
+            "stock_before": 56.0,
+            "harvests": {
+              "alpha": 3,
+              "beta": 11,
+              "gamma": 10,
+              "delta": 10,
+              "epsilon": 10
+            },
+            "stock_after_harvest": 12.0,
+            "stock_after_replenish": 24.0,
+            "fair_share": 10.2,
+            "collapsed": false,
+            "gini": 0.1455
+          },
+          {
+            "month": 3,
+            "stock_before": 24.0,
+            "harvests": {
+              "alpha": 2,
+              "beta": 4,
+              "gamma": 4,
+              "delta": 5,
+              "epsilon": 3
+            },
+            "stock_after_harvest": 6.0,
+            "stock_after_replenish": 12.0,
+            "fair_share": 3.8,
+            "collapsed": false,
+            "gini": 0.1556
+          },
+          {
+            "month": 4,
+            "stock_before": 12.0,
+            "harvests": {
+              "alpha": 1,
+              "beta": 2,
+              "gamma": 2,
+              "delta": 2,
+              "epsilon": 1
+            },
+            "stock_after_harvest": 4.0,
+            "stock_after_replenish": 4.0,
+            "fair_share": 1.4,
+            "collapsed": true,
+            "gini": 0.15
+          }
+        ]
+      }
+    }
+  ]
+}

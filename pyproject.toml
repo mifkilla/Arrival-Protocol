@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "arrival-protocol"
-version = "1.0.0"
+version = "2.0.0"
 description = "ARRIVAL Protocol: Cross-architecture AI-to-AI coordination through structured semantic atoms"
 readme = "README.md"
 license = "AGPL-3.0-or-later"
@@ -53,10 +53,10 @@ viz = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/mefodiy-kelevra/arrival-protocol"
-Documentation = "https://github.com/mefodiy-kelevra/arrival-protocol/tree/main/docs"
-Repository = "https://github.com/mefodiy-kelevra/arrival-protocol"
-Issues = "https://github.com/mefodiy-kelevra/arrival-protocol/issues"
+Homepage = "https://github.com/DreamOS-Network/Arrival-Protocol"
+Documentation = "https://github.com/DreamOS-Network/Arrival-Protocol/tree/main/docs"
+Repository = "https://github.com/DreamOS-Network/Arrival-Protocol"
+Issues = "https://github.com/DreamOS-Network/Arrival-Protocol/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]

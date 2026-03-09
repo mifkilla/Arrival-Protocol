@@ -1,0 +1,111 @@
+{
+  "conditions": {
+    "A_baseline": {
+      "n_runs": 3,
+      "survived": 0,
+      "survival_rate": 0.0,
+      "months_survived": [
+        4,
+        6,
+        3
+      ],
+      "avg_months": 4.3,
+      "avg_gini": 0.1732,
+      "total_cost_usd": 0.0325,
+      "total_api_calls": 80
+    },
+    "B_arrival": {
+      "n_runs": 3,
+      "survived": 3,
+      "survival_rate": 1.0,
+      "months_survived": [
+        12,
+        12,
+        12
+      ],
+      "avg_months": 12.0,
+      "avg_gini": 0.0012,
+      "total_cost_usd": 1.1382,
+      "total_api_calls": 396,
+      "avg_care": 0.9692,
+      "avg_md": 0.0012
+    },
+    "C_arrival_memory": {
+      "n_runs": 3,
+      "survived": 3,
+      "survival_rate": 1.0,
+      "months_survived": [
+        12,
+        12,
+        12
+      ],
+      "avg_months": 12.0,
+      "avg_gini": 0.0,
+      "total_cost_usd": 1.1355,
+      "total_api_calls": 394,
+      "avg_care": 0.972,
+      "avg_md": 0.0012,
+      "total_memory_injections": 0
+    }
+  },
+  "comparisons": {
+    "A_vs_B": {
+      "fisher_exact": {
+        "p_value": 0.1,
+        "odds_ratio": 0.0
+      },
+      "mann_whitney": {
+        "U": 0.0,
+        "p_value": 0.0636
+      },
+      "survival_diff": 1.0,
+      "months_diff": 7.7
+    },
+    "A_vs_C": {
+      "fisher_exact": {
+        "p_value": 0.1,
+        "odds_ratio": 0.0
+      },
+      "mann_whitney": {
+        "U": 0.0,
+        "p_value": 0.0636
+      },
+      "survival_diff": 1.0,
+      "months_diff": 7.7
+    },
+    "B_vs_C": {
+      "fisher_exact": {
+        "p_value": 1.0,
+        "odds_ratio": NaN
+      },
+      "mann_whitney": {
+        "U": 4.5,
+        "p_value": 1.0
+      },
+      "survival_diff": 0.0,
+      "months_diff": 0.0
+    }
+  },
+  "correlations": {
+    "md_vs_months": {
+      "rho": NaN,
+      "p_value": NaN
+    }
+  },
+  "atom_analysis": {
+    "B_arrival": {
+      "consensus": 524,
+      "conflict": 481,
+      "resolution": 327,
+      "evidence": 456,
+      "harvest": 561
+    },
+    "C_arrival_memory": {
+      "consensus": 492,
+      "conflict": 495,
+      "resolution": 329,
+      "evidence": 447,
+      "harvest": 535
+    }
+  }
+}

@@ -1,3 +1,7 @@
+# ARRIVAL Protocol -- AI-to-AI Coordination Through Structured Semantic Atoms
+# Copyright (C) 2025-2026 Mefodiy Kelevra
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # ARRIVAL-MNEMO: Memory Store — Load, Save, Query, Merge
 # Copyright (C) 2026 Mefodiy Kelevra (AGPL-3.0)
 #

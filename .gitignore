@@ -50,3 +50,17 @@ logs/*.jsonl
 # Coverage
 .coverage
 htmlcov/
+
+# Claude Code workspace
+.claude/
+
+# Session/dev files
+SESSION_RECOVERY.md
+SESSION_CONTINUITY.md
+chat_history.md
+
+# pytest cache
+.pytest_cache/
+
+# Local excluded files archive
+Git Negative/

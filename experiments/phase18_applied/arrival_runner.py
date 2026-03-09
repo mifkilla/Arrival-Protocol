@@ -1,3 +1,7 @@
+# ARRIVAL Protocol -- AI-to-AI Coordination Through Structured Semantic Atoms
+# Copyright (C) 2025-2026 Mefodiy Kelevra
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 """
 Phase 18: ARRIVAL Protocol Runner (Shared)
 ===========================================
@@ -55,7 +59,7 @@ def call_openrouter(prompt: str, model: str, system_prompt: str = "",
 
     headers = {
         "Authorization": f"Bearer {api_key}",
-        "HTTP-Referer": "https://github.com/mefodiy-kelevra/arrival-protocol",
+        "HTTP-Referer": "https://github.com/DreamOS-Network/Arrival-Protocol",
         "X-Title": "ARRIVAL Protocol Phase 18",
         "Content-Type": "application/json",
     }

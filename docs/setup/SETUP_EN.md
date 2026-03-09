@@ -266,7 +266,7 @@ The key observation: consensus should be reached without any 2-against-1 coaliti
 
 ```bash
 # Clone the repository
-git clone https://github.com/mefodiy-kelevra/arrival-protocol.git
+git clone https://github.com/DreamOS-Network/Arrival-Protocol.git
 cd "Arrival Protocol"
 
 # Create a virtual environment (recommended)
