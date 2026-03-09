@@ -90,7 +90,7 @@ arrival-protocol/
 
 ```bash
 # Clone the repository
-git clone https://github.com/DreamOS-Network/Arrival-Protocol.git
+git clone https://github.com/mifkilla/Arrival-Protocol.git
 cd arrival-protocol
 
 # Install in development mode
@@ -168,7 +168,7 @@ Average cost per experiment: ~$0.04.
   year         = 2026,
   version      = {2.0.0},
   license      = {AGPL-3.0-or-later},
-  url          = {https://github.com/DreamOS-Network/Arrival-Protocol}
+  url          = {https://github.com/mifkilla/Arrival-Protocol}
 }
 ```
 
@@ -194,47 +194,3 @@ See [CITATION.cff](CITATION.cff) for the machine-readable citation file.
 
 **Mefodiy Kelevra** | ORCID: [0009-0003-4153-392X](https://orcid.org/0009-0003-4153-392X)
 
----
-
-# ARRIVAL Protocol (RU)
-
-**Кросс-архитектурная координация ИИ-ИИ через структурированные семантические атомы**
-
----
-
-ARRIVAL (Atomic Reasoning via Rival Validation and Adversarial Logic) --- легковесный коммуникационный протокол для координации между гетерогенными архитектурами LLM без файн-тюнинга, общих весов или совместного обучения. Использует 66 структурированных семантических @-атомов (DEUS.PROTOCOL v0.5), инжектируемых через системные промпты.
-
-## Основные результаты
-
-| Эксперимент | Условие | Результат | Статистика |
-|-------------|---------|-----------|------------|
-| Фаза 13 (3 агента, GPQA Diamond) | Голосование большинством | 42.5% | |
-| | **ARRIVAL** | **63.8%** | McNemar p = 0.006 |
-| Фаза 22 (CGD-3, GPQA Diamond 198q) | Лучшая соло модель | 69.2% | |
-| | **CGD-3** | **86.4%** | +17.2 п.п. |
-| Фаза 19 (GovSim кооперация) | Базовые LLM | 0% выживание | |
-| | **ARRIVAL + R4** | **100% выживание** | Fisher p = 0.008 |
-
-- **2,200+ экспериментов** на **17 архитектурах LLM** за **менее $95**
-- **MEANING-CRDT v1.1**: 11 теорем формализации разрешения конфликтов
-- **7 метрик эхо-камеры**: количественное обнаружение социального конформизма
-- **Confidence-Gated Debate (CGD)**: 86.4% точности на GPQA Diamond
-
-## Быстрый старт
-
-```bash
-git clone https://github.com/DreamOS-Network/Arrival-Protocol.git
-cd arrival-protocol
-pip install -e ".[dev]"
-export OPENROUTER_API_KEY="sk-or-v1-ваш-ключ"
-pytest tests/ -v
-```
-
-## Лицензия
-
-- **Код**: [AGPL-3.0-or-later](LICENSE-CODE) (анти-корпоративная: производные работы тоже должны быть открыты)
-- **Документация**: [CC BY-NC 4.0](LICENSE-DOCS)
-
-## Автор
-
-**Мефодий Келевра** | ORCID: [0009-0003-4153-392X](https://orcid.org/0009-0003-4153-392X)
